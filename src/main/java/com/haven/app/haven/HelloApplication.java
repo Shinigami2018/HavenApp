@@ -15,7 +15,7 @@ public class HelloApplication extends Application {
         primaryStage = stage;
         Parent root = FXMLLoader.load(getClass().getResource("log.fxml"));
         Scene scene = new Scene(root);
-        stage.setResizable(false);
+        stage.setResizable(true);
 
         stage.setTitle("HAVEN");
         stage.setScene(scene);
