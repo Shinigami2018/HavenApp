@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="648.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.HelloController">
+   <left>
+      <AnchorPane prefHeight="648.0" prefWidth="490.0" style="-fx-background-color: #9A9A9A;" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane fx:id="prompt1" layoutX="-2.0" prefHeight="648.0" prefWidth="494.0" visible="false">
+               <children>
+                  <Text layoutX="64.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question 1" wrappingWidth="350.1366882324219" />
+                  <RadioButton layoutX="78.0" layoutY="146.0" mnemonicParsing="false" text="Yes">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="A" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton layoutX="225.0" layoutY="146.0" mnemonicParsing="false" text="No" toggleGroup="$A" />
+                  <Text layoutX="64.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question 2" wrappingWidth="350.1366882324219" />
+                  <RadioButton layoutX="78.0" layoutY="234.0" mnemonicParsing="false" text="Yes">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="A1" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton layoutX="225.0" layoutY="234.0" mnemonicParsing="false" text="No" toggleGroup="$A1" />
+                  <Text layoutX="64.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question 3" wrappingWidth="350.1366882324219" />
+                  <RadioButton layoutX="78.0" layoutY="315.0" mnemonicParsing="false" text="Yes">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="A11" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton layoutX="225.0" layoutY="315.0" mnemonicParsing="false" text="No" toggleGroup="$A11" />
+                  <Text layoutX="64.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question 4" wrappingWidth="350.1366882324219" />
+                  <RadioButton layoutX="78.0" layoutY="401.0" mnemonicParsing="false" text="Yes">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="A111" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton layoutX="225.0" layoutY="401.0" mnemonicParsing="false" text="No" toggleGroup="$A111" />
+                  <Text layoutX="64.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question 5" wrappingWidth="350.1366882324219" />
+                  <RadioButton layoutX="78.0" layoutY="481.0" mnemonicParsing="false" text="Yes">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="A1111" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton layoutX="225.0" layoutY="481.0" mnemonicParsing="false" text="No" toggleGroup="$A1111" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="prompt2" layoutY="-1.0" prefHeight="648.0" prefWidth="494.0" style="-fx-background-color: #9A9A9A;">
+               <children>
+                  <Text layoutX="83.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question " wrappingWidth="262.1367645263672" />
+                  <Text layoutX="83.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question " wrappingWidth="262.1367645263672" />
+                  <Text layoutX="83.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question " wrappingWidth="262.1367645263672" />
+                  <Text layoutX="83.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question " wrappingWidth="262.1367645263672" />
+                  <RadioButton layoutX="83.0" layoutY="123.0" mnemonicParsing="false" text="Yes" />
+                  <RadioButton layoutX="203.0" layoutY="123.0" mnemonicParsing="false" text="No" />
+                  <RadioButton layoutX="83.0" layoutY="219.0" mnemonicParsing="false" text="Yes" />
+                  <RadioButton layoutX="203.0" layoutY="219.0" mnemonicParsing="false" text="No" />
+                  <RadioButton layoutX="83.0" layoutY="324.0" mnemonicParsing="false" text="Yes" />
+                  <RadioButton layoutX="203.0" layoutY="324.0" mnemonicParsing="false" text="No" />
+                  <RadioButton layoutX="83.0" layoutY="441.0" mnemonicParsing="false" text="Yes" />
+                  <RadioButton layoutX="203.0" layoutY="441.0" mnemonicParsing="false" text="No" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="648.0" prefWidth="410.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="next" layoutX="129.0" layoutY="531.0" mnemonicParsing="false" onAction="#setPrompt2" prefHeight="42.0" prefWidth="128.0" text="Next" />
+            <Button fx:id="finished" layoutX="128.0" layoutY="531.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="129.0" text="Finish" />
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
