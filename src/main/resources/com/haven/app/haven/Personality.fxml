@@ -50,7 +50,7 @@
                   <RadioButton layoutX="225.0" layoutY="481.0" mnemonicParsing="false" text="No" toggleGroup="$A1111" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="prompt2" visible="false" layoutY="-1.0" prefHeight="648.0" prefWidth="494.0" style="-fx-background-color: #9A9A9A;">
+            <AnchorPane fx:id="prompt2" layoutY="-1.0" prefHeight="648.0" prefWidth="494.0" style="-fx-background-color: #9A9A9A;" visible="false">
                <children>
                   <Text layoutX="83.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question " wrappingWidth="262.1367645263672" />
                   <Text layoutX="83.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question " wrappingWidth="262.1367645263672" />
@@ -72,8 +72,8 @@
    <right>
       <AnchorPane prefHeight="648.0" prefWidth="410.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="next" visible="true" layoutX="129.0" layoutY="531.0" mnemonicParsing="false" onAction="#setPrompt2" prefHeight="42.0" prefWidth="128.0" text="Next" />
-            <Button fx:id="finished" visible="false" layoutX="128.0" layoutY="531.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="129.0" text="Finish" />
+            <Button fx:id="next" layoutX="129.0" layoutY="531.0" mnemonicParsing="false" onAction="#setPrompt2" prefHeight="42.0" prefWidth="128.0" text="Next" visible="true" />
+            <Button fx:id="finished" layoutX="128.0" layoutY="531.0" mnemonicParsing="false" onAction="#switch_screen_to_dashboard" prefHeight="42.0" prefWidth="129.0" text="Finish" visible="false" />
          </children>
       </AnchorPane>
    </right>
