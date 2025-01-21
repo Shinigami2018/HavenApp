@@ -2,8 +2,10 @@ package com.haven.app.haven;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.sql.SQLOutput;
 
@@ -14,6 +16,7 @@ public class HelloController {
     public AnchorPane signuppane;
     public AnchorPane prompt1,prompt2;
     public Button next,finished;
+    public AnchorPane dashbboard;
 
 
     public void setLogin(ActionEvent event)
@@ -48,6 +51,16 @@ public class HelloController {
         next.setVisible(true);
         finished.setVisible(false);
     }*/
+
+    public void switch_screen_to_dashboard(ActionEvent event)
+    {
+        HelloApplication.switchRoot("Dashboard.fxml");
+        //dashbboard.setVisible(true);
+        System.out.println("YES");
+
+
+
+    }
 
     public void setPrompt2(ActionEvent event)
     {
