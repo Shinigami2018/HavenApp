@@ -57,9 +57,12 @@ public class HelloController {
         HelloApplication.switchRoot("Dashboard.fxml");
         dashbboard.setVisible(true);
         System.out.println("YES");
-
-
-
+    }
+    public void switch_screen_to_dashboard2(ActionEvent event)
+    {
+        HelloApplication.switchRoot("Dashboard.fxml");
+        dashbboard.setVisible(true);
+        System.out.println("YES");
     }
 
     public void setPrompt2(ActionEvent event)

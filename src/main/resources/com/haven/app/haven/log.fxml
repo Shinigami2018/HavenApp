@@ -32,7 +32,7 @@
                     <PasswordField layoutX="107.0" layoutY="94.0" minHeight="25.6" minWidth="149.6" prefHeight="25.6" prefWidth="149.6" />
                     <Label layoutX="41.0" layoutY="97.0" text="Password" />
                     <TextField layoutX="108.0" layoutY="61.0" />
-                    <Button layoutX="108.0" layoutY="136.0" minHeight="29.6" minWidth="149.6" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" text="Login" />
+                    <Button fx:id="login_to_dashboard" layoutX="108.0" layoutY="136.0" minHeight="29.6" minWidth="149.6" mnemonicParsing="false" onAction="#switch_screen_to_dashboard" prefHeight="26.0" prefWidth="138.0" text="Login" />
                 </children>
             </AnchorPane>
             <AnchorPane fx:id="signuppane" prefHeight="400.0" prefWidth="343.0" style="-fx-background-color: #A9A9A9;" visible="true">
