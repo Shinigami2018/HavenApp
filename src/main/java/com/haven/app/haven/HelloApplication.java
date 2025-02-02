@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-/// hi i am ariful who comment this
+
 public class HelloApplication extends Application {
     public static Stage primaryStage;
 
