@@ -16,6 +16,7 @@ public class HelloApplication extends Application {
         primaryStage = stage;
         Parent root = FXMLLoader.load(getClass().getResource("log.fxml"));
         Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setResizable(true);
 
         stage.setTitle("HAVEN");
