@@ -1,3 +1,19 @@
 .root{
     -fx-background-color: green;
+
+    -fx-background-image: url(background.jpg);
+    -fx-background-size: cover; /* Adjust size */
+    -fx-background-repeat: no-repeat; /* No repeating */
+    -fx-background-position: center; /* Center the image */
+}
+.circular-button {
+    -fx-background-radius: 50%; /* Makes it circular */
+    -fx-min-width: 50px;
+    -fx-min-height: 50px;
+    -fx-max-width: 50px;
+    -fx-max-height: 50px;
+    -fx-background-color: #A9A9A9; /* Blue color */
+    -fx-text-fill: white; /* Text color */
+    -fx-font-size: 14px;
+    -fx-alignment: center;
 }

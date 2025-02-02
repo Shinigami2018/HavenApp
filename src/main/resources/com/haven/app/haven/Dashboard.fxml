@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="dashboard" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="815.0" style="-fx-background-image: background.jpg;" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="68.0" layoutY="139.0" mnemonicParsing="false" text="Game" />
-      <Button layoutX="474.0" layoutY="139.0" mnemonicParsing="false" text="Outdoor" />
-      <Button layoutX="66.0" layoutY="298.0" mnemonicParsing="false" text="Checkin" />
-      <Button layoutX="479.0" layoutY="298.0" mnemonicParsing="false" text="Journal" />
+      <ImageView fitHeight="59.0" fitWidth="57.0" layoutX="39.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../haven_logo.png" />
+         </image>
+      </ImageView>
+      <Button id="user_button" fx:id="user_button" layoutX="721.0" layoutY="28.0" mnemonicParsing="false" styleClass="circular-button" stylesheets="@style.css">
+         <graphic>
+            <ImageView visible="false" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../noun-male-5295254.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <ImageView fitHeight="41.0" fitWidth="49.0" layoutX="724.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" visible="true">
+         <image>
+            <Image url="@../../../../noun-female-5295234.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
