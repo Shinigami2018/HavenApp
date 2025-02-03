@@ -17,3 +17,47 @@
     -fx-font-size: 14px;
     -fx-alignment: center;
 }
+/* Hover Effect */
+.circular-button:hover {
+    -fx-background-color: #6c95af; /* Darker blue on hover */
+    -fx-scale-x: 1.1; /* Slightly increase size */
+    -fx-scale-y: 1.1;
+}
+
+.left-curved-button {
+    -fx-background-color: #3498db; /* Blue color */
+    -fx-text-fill: white; /* Text color */
+    -fx-font-size: 10px;
+    -fx-padding: 5px 15px;
+    -fx-background-radius: 15px 0px 0px 15px; /* only left Curved edges */
+    -fx-border-radius: 15px 0px 0px 15px;
+    -fx-border-width: 2px;
+
+}
+.right-curved-button {
+    -fx-background-color: #3498db; /* Blue color */
+    -fx-text-fill: white; /* Text color */
+    -fx-font-size: 10px;
+    -fx-padding: 5px 15px;
+    -fx-background-radius: 0px 15px 15px 0px; /* only right Curved edges */
+    -fx-border-radius: 0px 15px 15px 0px;
+    -fx-border-width: 2px;
+
+}
+.menu-middle-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 10px;
+    -fx-padding: 5px 15px;
+}
+.menu-middle-button:hover {
+    -fx-background-color: #6c95af;
+
+}
+
+.left-curved-button:hover {
+    -fx-background-color: #6c95af;
+}
+.right-curved-button {
+    -fx-background-color: #3498db;
+}
