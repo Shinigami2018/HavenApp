@@ -19,6 +19,7 @@ public class HelloController {
     public AnchorPane dashbboard;
 
 
+
     public void setLogin(ActionEvent event)
     {
         loginpane.setVisible(true);
@@ -72,6 +73,11 @@ public class HelloController {
         next.setVisible(false);
         finished.setVisible(true);
     }
+
+
+
+
+
 
 
 
