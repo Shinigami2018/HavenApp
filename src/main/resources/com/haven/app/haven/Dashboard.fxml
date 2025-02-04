@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="815.0" style="-fx-background-image: background.jpg;" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="815.0" style="-fx-background-image: background.jpg;" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.HelloController">
    <children>
       <ImageView fitHeight="59.0" fitWidth="57.0" layoutX="39.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -34,15 +34,15 @@
          </graphic></Button>
       <HBox layoutX="205.0" layoutY="34.0" prefHeight="38.0" prefWidth="488.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="82.4" styleClass="left-curved-button" stylesheets="@style.css" text="Dashboard">
+            <Button fx:id="left_curved_button" mnemonicParsing="false" onAction="#change_color1" prefHeight="26.0" prefWidth="82.4" styleClass="left-curved-button" stylesheets="@style.css" text="Dashboard">
                <font>
                   <Font size="10.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="82.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Journal" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="82.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Button" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="82.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Button" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="82.0" styleClass="right-curved-button" stylesheets="@style.css" text="Button" />
+            <Button fx:id="middle_button1" mnemonicParsing="false" onAction="#change_color3" prefHeight="26.0" prefWidth="82.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Journal" />
+            <Button fx:id="middle_button2" mnemonicParsing="false" onAction="#change_color4" prefHeight="26.0" prefWidth="82.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Button" />
+            <Button fx:id="middle_button3" mnemonicParsing="false" onAction="#change_color5" prefHeight="26.0" prefWidth="82.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Button" />
+            <Button fx:id="right_curved_button" mnemonicParsing="false" onAction="#change_color2" prefHeight="26.0" prefWidth="82.0" styleClass="right-curved-button" stylesheets="@style.css" text="Button" />
          </children>
       </HBox>
    </children>

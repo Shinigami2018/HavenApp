@@ -17,7 +17,7 @@ public class HelloController {
     public AnchorPane prompt1,prompt2;
     public Button next,finished;
     public AnchorPane dashbboard;
-
+    public Button left_curved_button,right_curved_button,middle_button1,middle_button2,middle_button3;
 
 
     public void setLogin(ActionEvent event)
@@ -74,6 +74,50 @@ public class HelloController {
         finished.setVisible(true);
     }
 
+    public void change_color1(ActionEvent event)
+    {
+        left_curved_button.getStyleClass().add("left-curved-button-clicked");
+        right_curved_button.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        middle_button1.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        middle_button2.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        middle_button3.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+    }
+
+    public void change_color2(ActionEvent event)
+    {
+        left_curved_button.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        right_curved_button.getStyleClass().add("right-curved-button-clicked");
+        middle_button1.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        middle_button2.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        middle_button3.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+    }
+
+    public void change_color3(ActionEvent event)
+    {
+        left_curved_button.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        right_curved_button.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        middle_button1.getStyleClass().add("middle-button-clicked");
+        middle_button2.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        middle_button3.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+    }
+
+    public void change_color4(ActionEvent event)
+    {
+        left_curved_button.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        right_curved_button.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        middle_button1.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        middle_button2.getStyleClass().add("middle-button-clicked");
+        middle_button3.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+    }
+
+    public void change_color5(ActionEvent event)
+    {
+        left_curved_button.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        right_curved_button.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        middle_button1.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        middle_button2.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        middle_button3.getStyleClass().add("middle-button-clicked");
+    }
 
 
 

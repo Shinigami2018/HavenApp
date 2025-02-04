@@ -68,3 +68,16 @@
     -fx-scale-x: 1.1; /* Slightly increase size */
     -fx-scale-y: 1.1;
 }
+
+/* Clicked Styles */
+.left-curved-button-clicked {
+    -fx-background-color: rgba(246, 248, 248, 0.75); /* Lighter color when clicked */
+}
+
+.right-curved-button-clicked {
+    -fx-background-color: rgba(246, 248, 248, 0.75);
+}
+
+.middle-button-clicked {
+    -fx-background-color: rgba(246, 248, 248, 0.75);
+}
