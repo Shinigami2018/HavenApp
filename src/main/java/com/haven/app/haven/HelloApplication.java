@@ -38,6 +38,8 @@ public class HelloApplication extends Application {
         }
     }
 
+    /*test*/
+
     public static void main(String[] args) {
         launch();
     }
