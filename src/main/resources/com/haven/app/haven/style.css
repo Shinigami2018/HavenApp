@@ -81,3 +81,22 @@
 .middle-button-clicked {
     -fx-background-color: rgba(246, 248, 248, 0.75);
 }
+
+.daily-quote-box {
+    -fx-background-color: rgba(163, 57, 223, 0.25);
+    -fx-background-radius: 15px 15px 15px 15px;
+
+}
+
+.mood-box {
+    -fx-background-color: rgba(163, 57, 223, 0.25);
+}
+
+.relaxing-box {
+    -fx-background-color: rgba(163, 57, 223, 0.25);
+}
+
+.music-button {
+    -fx-background-color: rgba(163, 57, 223, 0.5);
+    -fx-background-radius: 50%;
+}
