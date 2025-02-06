@@ -1,69 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="648.0" maxWidth="894.0" minHeight="648.0" minWidth="894.0" prefHeight="648.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.HelloController">
+<BorderPane maxHeight="648.0" maxWidth="894.0" minHeight="648.0" minWidth="894.0" prefHeight="648.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.HelloController">
    <left>
       <AnchorPane prefHeight="648.0" prefWidth="490.0" style="-fx-background-color: #9A9A9A;" BorderPane.alignment="CENTER">
          <children>
             <AnchorPane fx:id="prompt1" layoutX="-2.0" prefHeight="648.0" prefWidth="494.0" visible="true">
                <children>
-                  <Text layoutX="64.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question 1" wrappingWidth="350.1366882324219" />
+                  <Text layoutX="64.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="In the past two weeks, have you felt little interest or pleasure in doing things?" wrappingWidth="350.1366882324219" />
                   <RadioButton layoutX="78.0" layoutY="146.0" mnemonicParsing="false" text="Yes">
                      <toggleGroup>
                         <ToggleGroup fx:id="A" />
                      </toggleGroup>
                   </RadioButton>
                   <RadioButton layoutX="225.0" layoutY="146.0" mnemonicParsing="false" text="No" toggleGroup="$A" />
-                  <Text layoutX="64.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question 2" wrappingWidth="350.1366882324219" />
+                  <Text layoutX="64.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Have you often felt down,depressed or hopeless?" wrappingWidth="350.1366882324219" />
                   <RadioButton layoutX="78.0" layoutY="234.0" mnemonicParsing="false" text="Yes">
                      <toggleGroup>
                         <ToggleGroup fx:id="A1" />
                      </toggleGroup>
                   </RadioButton>
                   <RadioButton layoutX="225.0" layoutY="234.0" mnemonicParsing="false" text="No" toggleGroup="$A1" />
-                  <Text layoutX="64.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question 3" wrappingWidth="350.1366882324219" />
+                  <Text layoutX="64.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Have you had trouble sleeping? (sleeping too much or too little)" wrappingWidth="350.1366882324219" />
                   <RadioButton layoutX="78.0" layoutY="315.0" mnemonicParsing="false" text="Yes">
                      <toggleGroup>
                         <ToggleGroup fx:id="A11" />
                      </toggleGroup>
                   </RadioButton>
                   <RadioButton layoutX="225.0" layoutY="315.0" mnemonicParsing="false" text="No" toggleGroup="$A11" />
-                  <Text layoutX="64.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question 4" wrappingWidth="350.1366882324219" />
+                  <Text layoutX="64.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Have you felt tired or had little energy most of the time?" wrappingWidth="350.1366882324219" />
                   <RadioButton layoutX="78.0" layoutY="401.0" mnemonicParsing="false" text="Yes">
                      <toggleGroup>
                         <ToggleGroup fx:id="A111" />
                      </toggleGroup>
                   </RadioButton>
                   <RadioButton layoutX="225.0" layoutY="401.0" mnemonicParsing="false" text="No" toggleGroup="$A111" />
-                  <Text layoutX="64.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question 5" wrappingWidth="350.1366882324219" />
-                  <RadioButton layoutX="78.0" layoutY="481.0" mnemonicParsing="false" text="Yes">
+                  <Text layoutX="64.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Have you had trouble concentrating on tasks, such as reading or watching TV?" wrappingWidth="350.1366882324219" />
+                  <RadioButton layoutX="78.0" layoutY="511.0" mnemonicParsing="false" text="Yes">
                      <toggleGroup>
                         <ToggleGroup fx:id="A1111" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton layoutX="225.0" layoutY="481.0" mnemonicParsing="false" text="No" toggleGroup="$A1111" />
+                  <RadioButton layoutX="225.0" layoutY="511.0" mnemonicParsing="false" text="No" toggleGroup="$A1111" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="prompt2" layoutY="-1.0" prefHeight="648.0" prefWidth="494.0" style="-fx-background-color: #9A9A9A;" visible="false">
                <children>
-                  <Text layoutX="83.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question " wrappingWidth="262.1367645263672" />
-                  <Text layoutX="83.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question " wrappingWidth="262.1367645263672" />
-                  <Text layoutX="83.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question " wrappingWidth="262.1367645263672" />
-                  <Text layoutX="83.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question " wrappingWidth="262.1367645263672" />
+                  <Text layoutX="83.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Have you ever had thoughts that you would be better off dead?" wrappingWidth="262.1367645263672" />
+                  <Text layoutX="83.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="In the past month, have you seriously considered hurting yourself?" wrappingWidth="262.1367645263672" />
+                  <Text layoutX="83.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Have you ever made a plan about how you would end your life?" wrappingWidth="262.1367645263672" />
+                  <Text layoutX="83.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Have you ever attempted suicide or self-harm?" wrappingWidth="262.1367645263672" />
                   <RadioButton layoutX="83.0" layoutY="123.0" mnemonicParsing="false" text="Yes" />
                   <RadioButton layoutX="203.0" layoutY="123.0" mnemonicParsing="false" text="No" />
-                  <RadioButton layoutX="83.0" layoutY="219.0" mnemonicParsing="false" text="Yes" />
-                  <RadioButton layoutX="203.0" layoutY="219.0" mnemonicParsing="false" text="No" />
-                  <RadioButton layoutX="83.0" layoutY="324.0" mnemonicParsing="false" text="Yes" />
-                  <RadioButton layoutX="203.0" layoutY="324.0" mnemonicParsing="false" text="No" />
+                  <RadioButton layoutX="83.0" layoutY="228.0" mnemonicParsing="false" text="Yes" />
+                  <RadioButton layoutX="203.0" layoutY="228.0" mnemonicParsing="false" text="No" />
+                  <RadioButton layoutX="83.0" layoutY="342.0" mnemonicParsing="false" text="Yes" />
+                  <RadioButton layoutX="203.0" layoutY="342.0" mnemonicParsing="false" text="No" />
                   <RadioButton layoutX="83.0" layoutY="441.0" mnemonicParsing="false" text="Yes" />
                   <RadioButton layoutX="203.0" layoutY="441.0" mnemonicParsing="false" text="No" />
+                  <Text layoutX="83.0" layoutY="507.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do you currently feel like you are in immediate danger of harming yourself?" wrappingWidth="292.1015625" />
+                  <RadioButton layoutX="83.0" layoutY="555.0" mnemonicParsing="false" text="Yes" />
+                  <RadioButton layoutX="214.0" layoutY="555.0" mnemonicParsing="false" text="No" />
                </children>
             </AnchorPane>
          </children>

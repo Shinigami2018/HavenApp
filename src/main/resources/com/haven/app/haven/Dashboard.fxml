@@ -39,9 +39,9 @@
                </font>
             </Button>
             <Button fx:id="middle_button1" layoutX="82.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color3" prefHeight="26.0" prefWidth="82.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Journal" />
-            <Button fx:id="middle_button2" layoutX="163.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color4" prefHeight="26.0" prefWidth="82.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Button" />
-            <Button fx:id="middle_button3" layoutX="244.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color5" prefHeight="26.0" prefWidth="82.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Button" />
-            <Button fx:id="right_curved_button" layoutX="325.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color2" prefHeight="26.0" prefWidth="82.0" styleClass="right-curved-button" stylesheets="@style.css" text="Button" />
+            <Button fx:id="middle_button2" layoutX="163.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color4" prefHeight="26.0" prefWidth="82.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Relax" />
+            <Button fx:id="middle_button3" layoutX="244.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color5" prefHeight="26.0" prefWidth="82.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Report" />
+            <Button fx:id="right_curved_button" layoutX="325.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color2" prefHeight="26.0" prefWidth="82.0" styleClass="right-curved-button" stylesheets="@style.css" text="settings" />
          </children>
       </AnchorPane>
    </children>
