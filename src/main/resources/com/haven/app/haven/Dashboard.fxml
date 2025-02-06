@@ -31,17 +31,44 @@
                </children>
             </StackPane>
          </graphic></Button>
-      <AnchorPane layoutX="202.0" layoutY="36.0" prefHeight="34.0" prefWidth="411.0">
+      <AnchorPane layoutX="195.0" layoutY="36.0" prefHeight="34.0" prefWidth="370.0">
          <children>
-            <Button fx:id="left_curved_button" layoutX="1.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color1" prefHeight="26.0" prefWidth="82.4" styleClass="left-curved-button" stylesheets="@style.css" text="Dashboard">
+            <Button fx:id="left_curved_button" layoutX="23.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color1" prefHeight="26.0" prefWidth="100.0" styleClass="left-curved-button" stylesheets="@style.css" text="Dashboard">
                <font>
                   <Font size="10.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../icons/dashboard_pic.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Button fx:id="middle_button1" layoutX="82.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color3" prefHeight="26.0" prefWidth="82.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Journal" />
-            <Button fx:id="middle_button2" layoutX="163.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color4" prefHeight="26.0" prefWidth="82.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Relax" />
-            <Button fx:id="middle_button3" layoutX="244.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color5" prefHeight="26.0" prefWidth="82.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Report" />
-            <Button fx:id="right_curved_button" layoutX="325.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color2" prefHeight="26.0" prefWidth="82.0" styleClass="right-curved-button" stylesheets="@style.css" text="settings" />
+            <Button fx:id="middle_button1" layoutX="122.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color3" prefHeight="26.0" prefWidth="89.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Journal">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../icons/journal_pic.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="middle_button2" layoutX="210.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color4" prefHeight="26.0" prefWidth="82.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Relax">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../icons/relax_pic.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="right_curved_button" layoutX="291.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color2" prefHeight="26.0" prefWidth="90.0" styleClass="right-curved-button" stylesheets="@style.css" text="Report">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../icons/reports_pic.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
          </children>
       </AnchorPane>
    </children>
