@@ -37,7 +37,7 @@ public class HelloController {
 
     public void switch_screen_to_personality(ActionEvent event)
     {
-        HelloApplication.switchRoot("Personality.fxml");
+        HelloApplication.switchRoot("Personality.fxml",894,648);
         prompt1.setVisible(true);
         prompt2.setVisible(false);
         next.setVisible(true);
@@ -55,16 +55,16 @@ public class HelloController {
 
     public void switch_screen_to_dashboard(ActionEvent event)
     {
-        HelloApplication.switchRoot("Dashboard.fxml");
+        HelloApplication.switchRoot("Dashboard.fxml",815,667);
         dashbboard.setVisible(true);
         System.out.println("YES");
     }
-    public void switch_screen_to_dashboard2(ActionEvent event)
+    /*public void switch_screen_to_dashboard2(ActionEvent event)
     {
         HelloApplication.switchRoot("Dashboard.fxml");
         dashbboard.setVisible(true);
         System.out.println("YES");
-    }
+    }*/
 
     public void setPrompt2(ActionEvent event)
     {

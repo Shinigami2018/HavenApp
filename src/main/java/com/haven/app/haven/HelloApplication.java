@@ -28,10 +28,14 @@ public class HelloApplication extends Application {
     //method to change the root node
     //fxmlFile The FXML file to load as the new root.
 
-    public static void switchRoot(String fxmlFile) {
+    public static void switchRoot(String fxmlFile,int width,int height) {
         try {
             Parent newRoot = FXMLLoader.load(HelloApplication.class.getResource(fxmlFile));
             primaryStage.getScene().setRoot(newRoot);
+            // Set new width and height
+            primaryStage.setWidth(width);
+            primaryStage.setHeight(height);
+
         } catch (Exception e) {
             System.err.println("Failed to load FXML file: " + fxmlFile);
             e.printStackTrace();
