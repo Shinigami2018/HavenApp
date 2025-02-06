@@ -100,3 +100,9 @@
     -fx-background-color: rgba(163, 57, 223, 0.5);
     -fx-background-radius: 50%;
 }
+
+.music-button:hover {
+    -fx-background-color: rgba(163, 57, 223, 0.75);
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
