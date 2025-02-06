@@ -87,7 +87,7 @@
             <Text fill="WHITE" layoutX="9.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Relax Time" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="611.0" layoutY="123.0" prefHeight="184.0" prefWidth="170.0" styleClass="daily-quote-box" stylesheets="@style.css">
+      <AnchorPane layoutX="611.0" layoutY="123.0" prefHeight="184.0" prefWidth="170.0" styleClass="music-box" stylesheets="@style.css">
          <children>
             <Button layoutX="117.0" layoutY="130.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="38.0" styleClass="music-button" stylesheets="@style.css">
                <graphic>
@@ -118,7 +118,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="611.0" layoutY="376.0" prefHeight="160.0" prefWidth="170.0" styleClass="daily-quote-box" stylesheets="@style.css">
+      <AnchorPane layoutX="611.0" layoutY="376.0" prefHeight="160.0" prefWidth="170.0" styleClass="yoga-box" stylesheets="@style.css">
          <children>
             <Text fill="WHITE" layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Let us yoga" />
          </children>

@@ -110,15 +110,6 @@ public class HelloController {
         middle_button3.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
     }
 
-    public void change_color5(ActionEvent event)
-    {
-        left_curved_button.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
-        right_curved_button.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
-        middle_button1.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
-        middle_button2.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
-        middle_button3.getStyleClass().add("middle-button-clicked");
-    }
-
 
 
 
