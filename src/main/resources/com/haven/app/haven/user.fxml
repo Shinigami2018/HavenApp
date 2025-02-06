@@ -3,15 +3,14 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="567.0" prefWidth="815.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.HelloController">
    <children>
       <AnchorPane layoutX="21.0" layoutY="24.0" prefHeight="520.0" prefWidth="200.0" styleClass="user-menu-left-side" stylesheets="@style.css">
          <children>
-            <Button fx:id="menu_journal" layoutX="32.0" layoutY="136.0" mnemonicParsing="false" onAction="#change_color6" styleClass="user-menu-left-sub-button" stylesheets="@style.css" text="Journal" />
-            <Button fx:id="menu_contacts" layoutX="30.0" layoutY="216.0" mnemonicParsing="false" onAction="#change_color7" styleClass="user-menu-left-sub-button" stylesheets="@style.css" text="Emergency Contacts" />
-            <Button fx:id="menu_resource" layoutX="30.0" layoutY="297.0" mnemonicParsing="false" onAction="#change_color8" styleClass="user-menu-left-sub-button" stylesheets="@style.css" text="Mental Health Resources" />
-            <Button fx:id="user_back" layoutX="30.0" layoutY="371.0" mnemonicParsing="false" onAction="#switch_screen_to_dashboard" styleClass="user-menu-left-sub-button" stylesheets="@style.css" text="Back" />
+            <Button fx:id="menu_journal" layoutX="32.0" layoutY="100.0" mnemonicParsing="false" onAction="#change_color6" styleClass="user-menu-left-sub-button" stylesheets="@style.css" text="Journal" />
+            <Button fx:id="menu_contacts" layoutX="30.0" layoutY="145.0" mnemonicParsing="false" onAction="#change_color7" styleClass="user-menu-left-sub-button" stylesheets="@style.css" text="Emergency Contacts" />
+            <Button fx:id="menu_resource" layoutX="32.0" layoutY="186.0" mnemonicParsing="false" onAction="#change_color8" styleClass="user-menu-left-sub-button" stylesheets="@style.css" text="Mental Health Resources" />
+            <Button fx:id="user_back" layoutX="30.0" layoutY="394.0" mnemonicParsing="false" onAction="#switch_screen_to_dashboard" styleClass="user-menu-left-sub-button" stylesheets="@style.css" text="Back" />
             <Button fx:id="user_logout" layoutX="30.0" layoutY="439.0" mnemonicParsing="false" onAction="#switch_to_login_screen" styleClass="user-menu-left-sub-button" stylesheets="@style.css" text="Log Out" />
             <Button fx:id="menu_calender" layoutX="30.0" layoutY="54.0" mnemonicParsing="false" onAction="#change_color5" styleClass="user-menu-left-sub-button" stylesheets="@style.css" text="Calender" />
          </children>
