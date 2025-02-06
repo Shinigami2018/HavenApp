@@ -15,7 +15,7 @@
             <Image url="@../../../../haven_logo.png" />
          </image>
       </ImageView>
-      <Button id="user_button" fx:id="user_button" layoutX="721.0" layoutY="28.0" mnemonicParsing="false" styleClass="circular-button" stylesheets="@style.css">
+      <Button id="user_button" fx:id="user_button" layoutX="721.0" layoutY="28.0" mnemonicParsing="false" onAction="#switch_screen_to_user" styleClass="circular-button" stylesheets="@style.css">
          <graphic>
             <StackPane prefHeight="50.0" prefWidth="50.0">
                <children>

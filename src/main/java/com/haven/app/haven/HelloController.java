@@ -18,6 +18,8 @@ public class HelloController {
     public Button next,finished;
     public AnchorPane dashbboard;
     public Button left_curved_button,right_curved_button,middle_button1,middle_button2,middle_button3;
+    public Button user_button;
+    public Button menu_journal,menu_contact,menu_resource,menu_back,menu_logout,menu_calendar;
 
 
     public void setLogin(ActionEvent event)
@@ -108,6 +110,67 @@ public class HelloController {
         middle_button1.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
         middle_button2.getStyleClass().add("middle-button-clicked");
         middle_button3.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+    }
+
+    public void switch_screen_to_user(ActionEvent event)
+    {
+        HelloApplication.switchRoot("user.fxml",815,667);
+
+
+    }
+
+
+    /*adding click animations to user left sub buttons*/
+
+    public void change_color5(ActionEvent event) /*for calender*/
+    {
+        menu_calendar.getStyleClass().add("user-menu-left-sub-button-clicked");
+        menu_back.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        menu_logout.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        menu_contact.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        menu_journal.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        menu_resource.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+
+    }
+
+    public void change_color6(ActionEvent event) /*for journal*/
+    {
+        menu_calendar.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        menu_back.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        menu_logout.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        menu_contact.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        menu_journal.getStyleClass().add("user-menu-left-sub-button-clicked");
+        menu_resource.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+
+    }
+
+    public void change_color7(ActionEvent event) /*for emergency contacts*/
+    {
+        menu_calendar.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        menu_back.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        menu_logout.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        menu_contact.getStyleClass().add("user-menu-left-sub-button-clicked");
+        menu_journal.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        menu_resource.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+
+    }
+
+    public void change_color8(ActionEvent event) /*for medical resources*/
+    {
+        menu_calendar.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        menu_back.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        menu_logout.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        menu_contact.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        menu_journal.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
+        menu_resource.getStyleClass().add("user-menu-left-sub-button-clicked");
+
+    }
+
+
+    public void switch_to_login_screen(ActionEvent event) /*for logout*/
+    {
+        HelloApplication.switchRoot("log.fxml",400,259);
+
     }
 
 
