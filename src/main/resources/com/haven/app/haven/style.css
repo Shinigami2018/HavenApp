@@ -151,7 +151,5 @@
 }
 
 .user-menu-left-sub-button-clicked {
-    -fx-background-color: #3498db; /* Blue highlight */
-    -fx-text-fill: white;
-    -fx-border-radius: 15px 15px 15px 15px;
+    -fx-background-color: rgba(246, 248, 248, 0.75);
 }
