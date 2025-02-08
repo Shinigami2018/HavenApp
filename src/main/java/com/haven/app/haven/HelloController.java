@@ -32,6 +32,7 @@ public class HelloController {
 
     @FXML
     private TextField emailTextField;
+    //ariful cmnt just
    public  void signUpButtonOnAction()
    {
        if (!usernameTextField.getText().isEmpty() && !passwordPasswordField.getText().isEmpty() && !repasswordPasswordField.getText().isEmpty() && !emailTextField.getText().isEmpty()) {
