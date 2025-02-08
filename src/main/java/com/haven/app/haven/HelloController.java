@@ -20,161 +20,65 @@ public class HelloController {
     public Button left_curved_button, right_curved_button, middle_button1, middle_button2, middle_button3;
     
     // ariful writing 
-    
-//    private Label loginMessageLabel;
-//    private TextField usernameTextField;
-//    private PasswordField passwordPasswordField;
+    //;
+    @FXML
+    private TextField usernameTextField;
+
+    @FXML
+    private PasswordField passwordPasswordField;
+
+    @FXML
+    private PasswordField repasswordPasswordField;
+
+    @FXML
+    private TextField emailTextField;
+   public  void signUpButtonOnAction()
+   {
+       if (!usernameTextField.getText().isEmpty() && !passwordPasswordField.getText().isEmpty() && !repasswordPasswordField.getText().isEmpty() && !emailTextField.getText().isEmpty()) {
+           //loginMessageLabel.setText("you try to login!");
+           System.out.println("you try to login!");
+           if(passwordPasswordField.getText().equals(repasswordPasswordField.getText()))
+           {
+            validateSignUp();
+           }
+               //loginMessageLabel.setText("Password Match!");
+               //signupuser(event,emailTextField.getText(),usernameTextField.getText(),passwordPasswordField.getText(),repasswordPasswordField.getText());
+           
+       } else {
+        //loginMessageLabel.setText("Please enter all the information correctly!");
+       }
+   }
 //
-//
-//    public  void loginButtonOnAction(ActionEvent event)
-//    {
-//        if (usernameTextField.getText().isBlank() == false && passwordPasswordField.getText().isBlank() == false) {
-//            //loginMessageLabel.setText("you try to login!");
-//            validateLogin();
-//        } else {
-//            loginMessageLabel.setText("Please enter username and password.");
-//
-//        }
-//    }
-//
-//    public void validateLogin()
-//    {
-//        DatabaseConnection connectNow = new DatabaseConnection();
-//
-//       // Connection connectdb = connectNow.getConnection();
-//        String verifyLogin="SELECT count (1) FROM useraccounts WHERE username='" +usernameTextField.getText() + "'AND password='"+passwordPasswordField.getText()+ "'";
-//
-//        try{
-//            Statement statement=connectdb.createStatement();
-//            ResultSet queryResult=statement.executeQuery(verifyLogin);
-//            while(queryResult.next())
-//            {
-//                if(queryResult.getInt(1)==1)
-//                {
-//                    loginMessageLabel.setText("Welcome!");
-//                }
-//                else
-//                {
-//                    loginMessageLabel.setText("Invalide Login ,Please Try again");
-//
-//                }
-//            }
-//        }
-//        catch(Exception event){
-//          event.printStackTrace();
-//        }
-//    }
-   //ariful
-public static void signupuser (ActionEvent event,String Email,String Username,String Password,String Repassword) throws SQLException {
-    Connection connection = null;
-    PreparedStatement psInsert = null;
-    PreparedStatement psCheckUserExists = null;
-    ResultSet resultSet = null;
+public void validateSignUp() {
+    DatabaseConnection connectionNow = new DatabaseConnection();
+    Connection connectDB = connectionNow.getConnection();
+
+    if (connectDB == null) {
+        System.out.println("Database connection failed.");
+        return;
+    }
+
+    String addUser = "INSERT INTO useraccounts(Username, Password, Email) VALUES (?, ?, ?)";
+
     try {
-        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "124519@#maisk#");
-        psCheckUserExists = connection.prepareStatement("select * from useraccounts where username='" + Username + "'");
-        resultSet = psCheckUserExists.executeQuery();
-        if (resultSet.isBeforeFirst()) {
-            System.out.println("Username already exists");
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Error");
-            alert.showAndWait();
-        }
-        else
-        {
-            psInsert=connection.prepareStatement("INSERT INTO useraccounts(username,password,repassword,email) VALUES(?,?,?,?) ");
-            psInsert.setString(1,Username);
-            psInsert.setString(2,Password);
-            psInsert.setString(3,Repassword);
-            psInsert.setString(4,Email);
-            psInsert.executeUpdate();
-            signupuser(event,Email,Username,Password,Repassword);
+        PreparedStatement preparedStatement = connectDB.prepareStatement(addUser);
+        preparedStatement.setString(1, usernameTextField.getText());
+        preparedStatement.setString(2, passwordPasswordField.getText());
+        preparedStatement.setString(3, emailTextField.getText());
 
-        }
-    }
-    catch (SQLException e) {
+        preparedStatement.executeUpdate();
+
+        HelloApplication.switchRoot("Personality.fxml", 894, 648);
+        prompt1.setVisible(true);
+        prompt2.setVisible(false);
+        next.setVisible(true);
+        finished.setVisible(false);
+    } catch (SQLException e) {
         e.printStackTrace();
-
-    }
-
-    finally {
-        if(resultSet!=null)
-        { try { resultSet.close(); } catch (SQLException e) { e.printStackTrace(); }
-
-        }
-        if(psInsert!=null)
-        {
-            try { psInsert.close(); } catch (SQLException e) { e.printStackTrace(); }
-        }
-        if(psCheckUserExists != null)
-        {
-            try { psCheckUserExists.close(); } catch (SQLException e) { e.printStackTrace(); }
-        }
-        if(connection!=null)
-        {
-            try { connection.close(); } catch (SQLException e) { e.printStackTrace(); }
-        }
-    }
-
+    } 
 }
 
-public static void loginuser(ActionEvent event,String Email,String Username,String Password,String Repassword) throws SQLException {
-        Connection connection = null;
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
-        try{
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "124519@#maisk#");
-            preparedStatement=connection.prepareStatement("select * from useraccounts where username='" + Username + "'");
-            resultSet=preparedStatement.executeQuery();
-            if(resultSet.isBeforeFirst())
-            {
-                System.out.println("Username already exists");
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Error");
-                alert.showAndWait();
 
-            }else
-            {
-                while(resultSet.next())
-                {
-                    String gusername = resultSet.getString("username");
-                    String gpassword = resultSet.getString("password");
-                    String grepassword = resultSet.getString("repassword");
-                    String gemail = resultSet.getString("email");
-                    if(gpassword.equals(Password) && gusername == Username)
-                    {
-                        loginuser(event,Email,Username,Password,Repassword);
-                    }
-                    else
-                    {
-                        System.out.println("Wrong Password");
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setTitle("Error");
-                        alert.showAndWait();
-                        
-
-                    }
-
-                }
-            }
-
-        }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
-        finally {
-            if(resultSet!=null)
-                { try { resultSet.close(); } catch (SQLException e) { e.printStackTrace(); }}
-            if(preparedStatement!=null)
-                { try { preparedStatement.close(); } catch (SQLException e) { e.printStackTrace(); }}
-            if(connection!=null)
-            {
-                try { connection.close(); } catch (SQLException e) { e.printStackTrace(); }
-
-            }
-        }
-
-}
 /// ariful     
     public Button user_button;
     @FXML
@@ -198,6 +102,9 @@ public static void loginuser(ActionEvent event,String Email,String Username,Stri
 
     public void switch_screen_to_personality(ActionEvent event)
     {
+
+        // get the data for username, email password and confirm password
+
         HelloApplication.switchRoot("Personality.fxml",894,648);
         prompt1.setVisible(true);
         prompt2.setVisible(false);

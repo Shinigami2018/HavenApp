@@ -8,9 +8,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import  javafx.scene.layout.*?>
-
-
 
 <BorderPane fx:id="LOGIN_BORDER" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.HelloController">
     <left>
@@ -40,15 +37,15 @@
             </AnchorPane>
             <AnchorPane fx:id="signuppane" prefHeight="400.0" prefWidth="343.0" style="-fx-background-color: #A9A9A9;" visible="true">
                 <children>
-                    <TextField layoutX="110.0" layoutY="95.0" promptText="set username" style="-fx-background-color: #FFFFFF;" />
+                    <TextField fx:id="usernameTextField" layoutX="110.0" layoutY="95.0" promptText="set username" style="-fx-background-color: #FFFFFF;" />
                     <Label layoutX="20.0" layoutY="87.0" prefHeight="34.0" prefWidth="90.0" text="Username" />
                     <Label layoutX="20.0" layoutY="131.0" prefHeight="26.0" prefWidth="80.0" text="Email address" />
                     <Label layoutX="22.0" layoutY="175.0" prefHeight="18.0" prefWidth="86.0" text="Password" />
-                    <TextField layoutX="110.0" layoutY="135.0" style="-fx-background-color: #FFFFFF;" />
-                    <TextField layoutX="110.0" layoutY="172.0" promptText="set password" style="-fx-background-color: #FFFFFF;" />
+                    <TextField fx:id="emailTextField" layoutX="110.0" layoutY="135.0" style="-fx-background-color: #FFFFFF;" />
+                    <PasswordField fx:id="passwordPasswordField" accessibleRole="PASSWORD_FIELD" layoutX="110.0" layoutY="172.0" promptText="set password" style="-fx-background-color: #FFFFFF;" />
                     <Label layoutX="22.0" layoutY="216.0" prefHeight="18.0" prefWidth="86.0" text="Password" />
-                    <TextField layoutX="110.0" layoutY="213.0" promptText="re-enter password" style="-fx-background-color: #FFFFFF;" />
-                    <Button layoutX="133.0" layoutY="291.0" mnemonicParsing="false" onAction="#switch_screen_to_personality" text="Get Started" />
+                    <PasswordField fx:id="repasswordPasswordField" accessibleRole="PASSWORD_FIELD" layoutX="110.0" layoutY="213.0" promptText="re-enter password" style="-fx-background-color: #FFFFFF;" />
+                    <Button layoutX="133.0" layoutY="298.0" mnemonicParsing="false" onAction="#signUpButtonOnAction" prefWidth="76.0" text="Get Started" />
                 </children>
             </AnchorPane>
         </AnchorPane>
