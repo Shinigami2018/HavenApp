@@ -78,6 +78,35 @@ public void validateSignUp() {
         e.printStackTrace();
     } 
 }
+public void loginUser(ActionEvent event) {
+    DatabaseConnection connectionNow = new DatabaseConnection();
+    Connection connectDB = connectionNow.getConnection();
+
+    if (connectDB == null) {
+        System.out.println("Database connection failed.");
+        return;
+    }
+
+    String verifyLogin = "SELECT * FROM useraccounts WHERE Username = ? AND Password = ?";
+    
+    try {
+        PreparedStatement preparedStatement = connectDB.prepareStatement(verifyLogin);
+        preparedStatement.setString(1, usernameTextField.getText());
+        preparedStatement.setString(2, passwordPasswordField.getText());
+
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        if (resultSet.next()) {
+            // Login successful, now switch to the dashboard screen
+            System.out.println("Login successful!");
+            switch_screen_to_dashboard(event);
+        } else {
+            System.out.println("Invalid credentials! Please try again.");
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
 
 
 /// ariful     
