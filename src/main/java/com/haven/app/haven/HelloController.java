@@ -88,16 +88,12 @@ public void validateSignUp() {
 
     public void setLogin(ActionEvent event)
     {
-        loginpane.setVisible(true);
-        signuppane.setVisible(false);
-        System.out.println("Login Successful");
+        HelloApplication.switchRoot("login.fxml",619,434);
     }
 
     public void setSignup(ActionEvent event)
     {
-        loginpane.setVisible(false);
-        signuppane.setVisible(true);
-        System.out.println("Signup Successful");
+        HelloApplication.switchRoot("signup.fxml",619,434);
 
     }
 
@@ -233,7 +229,7 @@ public void validateSignUp() {
     @FXML
     public void switch_to_login_screen(ActionEvent event) /*for logout*/
     {
-        HelloApplication.switchRoot("log.fxml",400,259);
+        HelloApplication.switchRoot("login.fxml",619,434);
 
     }
 
