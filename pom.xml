@@ -13,6 +13,13 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 <junit.version>5.10.2</junit.version>  </properties>
 
+<!--  <repositories>-->
+<!--    <repository>-->
+<!--      <id>jitpack.io</id>-->
+<!--      <url>https://jitpack.io</url>-->
+<!--    </repository>-->
+<!--  </repositories>-->
+
   <dependencies>
     <dependency>
       <groupId>org.openjfx</groupId>
@@ -25,7 +32,15 @@
       <version>17.0.6</version>
     </dependency>
 
-<dependency>
+<!--    <dependency>-->
+<!--      <groupId>com.github.cdimascio</groupId>-->
+<!--      <artifactId>java-dotenv</artifactId>-->
+<!--      <version>5.2.2</version>-->
+<!--    </dependency>-->
+
+
+
+    <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
       <version>${junit.version}</version>

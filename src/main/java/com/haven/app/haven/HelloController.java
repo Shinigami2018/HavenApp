@@ -7,6 +7,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.*;
 
 public class HelloController {
@@ -18,7 +19,8 @@ public class HelloController {
     public Button next,finished;
     public AnchorPane dashbboard;
     public Button left_curved_button, right_curved_button, middle_button1, middle_button2, middle_button3;
-    
+    public Button smsButton;
+
     // ariful writing 
     //;
     @FXML
@@ -153,6 +155,26 @@ public void loginUser(ActionEvent event) {
         dashbboard.setVisible(true);
         System.out.println("YES");
     }
+    
+
+//    @FXML
+//    public void initialize() {
+//        smsButton.setOnAction(this::email_send);
+//    }
+
+    @FXML
+    private void email_send(ActionEvent event) {
+        try {
+            ProcessBuilder processBuilder = new ProcessBuilder("python3", "src/main/java/com/haven/app/haven/send_sms.py");
+            processBuilder.inheritIO(); // Redirects output to the console
+            Process process = processBuilder.start();
+            process.waitFor(); // Waits for the process to finish
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     /*public void switch_screen_to_dashboard2(ActionEvent event)
     {
         HelloApplication.switchRoot("Dashboard.fxml");
