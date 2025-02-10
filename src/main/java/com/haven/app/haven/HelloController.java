@@ -214,7 +214,7 @@ public void loginUser(ActionEvent event) {
 
     /*adding click animations to user left sub buttons*/
     @FXML
-    public void change_color5(ActionEvent event) /*for calender*/
+    public void change_color5(ActionEvent event) /*for calender*/ /*needs debugging*/
     {
         menu_calendar.getStyleClass().add("user-menu-left-sub-button-clicked");
         menu_journal.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
@@ -225,7 +225,7 @@ public void loginUser(ActionEvent event) {
 
     }
     @FXML
-    public void change_color6(ActionEvent event) /*for journal*/
+    public void change_color6(ActionEvent event) /*for journal*/ /*needs debugging*/
     {
         menu_calendar.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
         menu_journal.getStyleClass().add("user-menu-left-sub-button-clicked");
@@ -235,7 +235,7 @@ public void loginUser(ActionEvent event) {
 
     }
     @FXML
-    public void change_color7(ActionEvent event) /*for emergency contacts*/
+    public void change_color7(ActionEvent event) /*for emergency contacts*/ /*needs debugging*/
     {
         menu_calendar.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
         menu_journal.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
@@ -245,7 +245,7 @@ public void loginUser(ActionEvent event) {
 
     }
     @FXML
-    public void change_color8(ActionEvent event) /*for medical resources*/
+    public void change_color8(ActionEvent event) /*for medical resources*/ /*needs debugging*/
     {
         menu_calendar.getStyleClass().removeIf(style -> style.endsWith("-clicked"));
         menu_journal.getStyleClass().removeIf(style -> style.endsWith("-clicked"));

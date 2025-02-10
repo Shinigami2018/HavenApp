@@ -6,6 +6,29 @@
     -fx-background-repeat: no-repeat; /* No repeating */
     -fx-background-position: center; /* Center the image */
 }
+
+.login_signup_background {
+    -fx-background-image: url(login_signup_side_background.png);
+    -fx-background-size: cover; /* Adjust size */
+    -fx-background-repeat: no-repeat; /* No repeating */
+    -fx-background-position: center; /* Center the image */
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+}
+
+.login_signup_button {
+    -fx-background-color: rgba(163, 57, 223, 0.35);
+    -fx-background-radius: 15px 15px 15px 15px;
+    -fx-text-fill: white;
+    -fx-border-radius: 15px 15px 15px 15px;
+    -fx-border-width: 2px;
+}
+
+.login_signup_button:hover {
+    -fx-background-color: #945e95; /* Darker blue on hover */
+    -fx-scale-x: 1.1; /* Slightly increase size */
+    -fx-scale-y: 1.1;
+}
+
 .circular-button {
     -fx-background-radius: 50%; /* Makes it circular */
     -fx-min-width: 50px;
@@ -153,3 +176,33 @@
 .user-menu-left-sub-button-clicked {
     -fx-background-color: rgba(246, 248, 248, 0.75);
 }
+
+.user_name_displayed {      /*for account name in user page*/
+    -fx-alignment: center;
+    -fx-text-fill: white;
+}
+
+.user_photo_displayed {
+    -fx-background-image: url(noun-female-5295234.png);
+    -fx-background-color: #945e95;
+    -fx-background-size: cover;
+
+    -fx-background-radius: 50%;
+    -fx-border-radius: 50%;
+
+}
+
+.sms_button {
+    -fx-background-color: rgba(163, 57, 223, 0.25);
+    -fx-background-radius: 15px 15px 15px 15px;
+    -fx-text-fill: white;
+    -fx-font-size: 10px;
+    -fx-padding: 5px 15px;
+}
+
+.sms_button:hover {
+    -fx-background-color: rgba(163, 57, 223, 0.75);
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
