@@ -165,7 +165,7 @@ public void loginUser(ActionEvent event) {
     @FXML
     private void email_send(ActionEvent event) {
         try {
-            ProcessBuilder processBuilder = new ProcessBuilder("python3", "src/main/java/com/haven/app/haven/send_sms.py");
+            ProcessBuilder processBuilder = new ProcessBuilder("python", "src/main/java/com/haven/app/haven/send_sms.py");
             processBuilder.inheritIO(); // Redirects output to the console
             Process process = processBuilder.start();
             process.waitFor(); // Waits for the process to finish
