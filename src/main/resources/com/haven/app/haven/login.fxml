@@ -8,18 +8,26 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane fx:id="LOGIN_BORDER" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.HelloController">
     <left>
-        <AnchorPane fx:id="Login_left" prefHeight="400.0" prefWidth="259.0" stylesheets="@style.css" BorderPane.alignment="CENTER">
+        <AnchorPane fx:id="Login_left" prefHeight="400.0" prefWidth="259.0" styleClass="login_signup_left" stylesheets="@style.css" BorderPane.alignment="CENTER">
             <children>
-                <Button fx:id="login_left_button" layoutX="58.0" layoutY="220.0" mnemonicParsing="false" onAction="#setLogin" prefHeight="26.0" prefWidth="134.0" styleClass="login_signup_button" stylesheets="@style.css" text="Login" />
-                <Button fx:id="login_right_button" layoutX="58.0" layoutY="275.0" mnemonicParsing="false" onAction="#setSignup" prefHeight="26.0" prefWidth="134.0" styleClass="login_signup_button" stylesheets="@style.css" text="Signup" />
+                <Button fx:id="login_left_button" alignment="CENTER" layoutX="58.0" layoutY="220.0" mnemonicParsing="false" onAction="#setLogin" prefHeight="26.0" prefWidth="134.0" styleClass="login_button" stylesheets="@style.css" text="Login" textFill="#3d3d3d">
+                    <font>
+                        <Font name="SansSerif Bold" size="12.0" />
+                    </font></Button>
+                <Button fx:id="login_right_button" alignment="CENTER" layoutX="58.0" layoutY="275.0" mnemonicParsing="false" onAction="#setSignup" prefHeight="26.0" prefWidth="134.0" styleClass="login_signup_button" stylesheets="@style.css" text="Signup">
+                    <font>
+                        <Font name="SansSerif Bold" size="12.0" />
+                    </font></Button>
                 <ImageView fitHeight="128.0" fitWidth="123.0" layoutX="68.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../haven_logo.png" />
                     </image>
                 </ImageView>
+
 
             </children>
         </AnchorPane>
@@ -28,11 +36,20 @@
         <AnchorPane fx:id="login_right_main">
             <AnchorPane fx:id="loginpane" layoutX="-2.0" prefHeight="400.0" prefWidth="345.0" styleClass="login_signup_background" stylesheets="@style.css" visible="true">
                 <children>
-                    <Label layoutX="41.0" layoutY="54.0" prefHeight="30.0" prefWidth="67.0" style="-fx-text-fill: white;" text="Username" />
+                    <Label layoutX="41.0" layoutY="54.0" prefHeight="30.0" prefWidth="67.0" text="Username" textFill="#3d3d3d">
+                        <font>
+                            <Font name="Segoe UI Semibold" size="13.0" />
+                        </font></Label>
                     <PasswordField fx:id="passwordPasswordField" layoutX="107.0" layoutY="94.0" minHeight="25.6" minWidth="149.6" prefHeight="25.6" prefWidth="149.6" />
-                    <Label layoutX="41.0" layoutY="97.0" style="-fx-text-fill: white;" text="Password" />
+                    <Label layoutX="41.0" layoutY="97.0" text="Password" textFill="#3d3d3d">
+                        <font>
+                            <Font name="Segoe UI Semibold" size="13.0" />
+                        </font></Label>
                     <TextField fx:id="usernameTextField" layoutX="108.0" layoutY="61.0" />
-                    <Button fx:id="login_to_dashboard" layoutX="107.0" layoutY="148.0" minHeight="29.6" minWidth="149.6" mnemonicParsing="false" onAction="#loginUser" prefHeight="26.0" prefWidth="138.0" styleClass="login_signup_button" stylesheets="@style.css" text="Login" />
+                    <Button fx:id="login_to_dashboard" layoutX="107.0" layoutY="148.0" minHeight="29.6" minWidth="149.6" mnemonicParsing="false" onAction="#loginUser" prefHeight="26.0" prefWidth="138.0" styleClass="login_signup_button" stylesheets="@style.css" text="Login" textAlignment="CENTER" textFill="#3d3d3d">
+                        <font>
+                            <Font name="SansSerif Bold" size="12.0" />
+                        </font></Button>
                 </children>
             </AnchorPane>
         </AnchorPane>

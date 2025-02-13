@@ -18,7 +18,7 @@ public class HelloApplication extends Application {
 
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
-        Parent root = FXMLLoader.load(getClass().getResource("signup.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Personality.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setResizable(true);

@@ -128,6 +128,10 @@ public void loginUser(ActionEvent event) {
 
     }
 
+
+    /*on-click */
+
+
     public void switch_screen_to_personality(ActionEvent event)
     {
 

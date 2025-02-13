@@ -1,31 +1,110 @@
 .root{
-    -fx-background-color: green;
+    -fx-background-color: #FDF8EE;
 
-    -fx-background-image: url(background.jpg);
-    -fx-background-size: cover; /* Adjust size */
-    -fx-background-repeat: no-repeat; /* No repeating */
-    -fx-background-position: center; /* Center the image */
+    /*-fx-background-image: url(background.jpg);
+    /*-fx-background-size: cover; /* Adjust size */
+    /*-fx-background-repeat: no-repeat; /* No repeating */
+    /*-fx-background-position: center;*/ /* Center the image */
 }
 
 .login_signup_background {
-    -fx-background-image: url(login_signup_side_background.png);
-    -fx-background-size: cover; /* Adjust size */
-    -fx-background-repeat: no-repeat; /* No repeating */
-    -fx-background-position: center; /* Center the image */
-    -fx-background-color: rgba(0, 0, 0, 0.5);
+    /*-fx-background-image: url(login_signup_side_background.png);
+    /*-fx-background-size: cover; /* Adjust size */
+    /*-fx-background-repeat: no-repeat; /* No repeating */
+    /*-fx-background-position: center; /* Center the image */
+    -fx-background-color: #F9E79F;
 }
 
+.login_signup_left {
+    -fx-background-color: #FDF8EE;
+}
+
+
 .login_signup_button {
-    -fx-background-color: rgba(163, 57, 223, 0.35);
+    -fx-background-color: #FFD2A0;
     -fx-background-radius: 15px 15px 15px 15px;
-    -fx-text-fill: white;
+    -fx-text-fill: #3D3D3D;
     -fx-border-radius: 15px 15px 15px 15px;
     -fx-border-width: 2px;
+    -fx-border-color: black;
+    -fx-padding: 5px;
+}
+
+.signup_button {
+    -fx-background-color: #f1b06a;
+    -fx-background-radius: 15px 15px 15px 15px;
+    -fx-text-fill: black;
+    -fx-border-radius: 15px 15px 15px 15px;
+    -fx-border-width: 3px;
+    -fx-border-color: black;
+    -fx-padding: 5px;
+    -fx-scale-x: 0.9;
+    -fx-scale-y: 0.9;
+}
+
+.login_button {
+    -fx-background-color: #f1b06a;
+    -fx-background-radius: 15px 15px 15px 15px;
+    -fx-text-fill: black;
+    -fx-border-radius: 15px 15px 15px 15px;
+    -fx-border-width: 3px;
+    -fx-border-color: black;
+    -fx-padding: 5px;
+    -fx-scale-x: 0.9;
+    -fx-scale-y: 0.9;
 }
 
 .login_signup_button:hover {
-    -fx-background-color: #945e95; /* Darker blue on hover */
+    -fx-background-color: #f6b27e; /* Darker blue on hover */
     -fx-scale-x: 1.1; /* Slightly increase size */
+    -fx-scale-y: 1.1;
+}
+
+.mood_button_happy{
+    -fx-background-color: #90EE90;
+    -fx-background-radius: 50%;
+    -fx-border-radius: 50%;
+    -fx-border-color: #6b7717;
+}
+
+.mood_button_happy:hover{
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.mood_button_sad{
+    -fx-background-color: #2a2ac0;
+    -fx-background-radius: 50%;
+    -fx-border-radius: 50%;
+    -fx-border-color: #01021f;
+}
+
+.mood_button_sad:hover{
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.mood_button_neutral{
+    -fx-background-color: #bdbdb3;
+    -fx-background-radius: 50%;
+    -fx-border-radius: 50%;
+    -fx-border-color: #494646;
+}
+
+.mood_button_neutral:hover{
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.mood_button_severe{
+    -fx-background-color: #da0c0c;
+    -fx-background-radius: 50%;
+    -fx-border-radius: 50%;
+    -fx-border-color: #340c0c;
+}
+
+.mood_button_severe:hover{
+    -fx-scale-x: 1.1;
     -fx-scale-y: 1.1;
 }
 
@@ -106,42 +185,44 @@
 }
 
 .daily-quote-box {
-    -fx-background-color: rgba(163, 57, 223, 0.25);
+    -fx-background-color: #F9E79F;
     -fx-background-radius: 15px 15px 15px 15px;
 
 }
 
 .music-box {
-    -fx-background-color: rgba(163, 57, 223, 0.25);
+    -fx-background-color: #F9E79F;
     -fx-background-radius: 15px 15px 15px 15px;
-    -fx-background-image: url("music_background-modified.png");
+    /*-fx-background-image: url("music_background-modified.png");
     -fx-background-size: 100% 100%; /* Scale image to fill the AnchorPane */
-    -fx-background-repeat: no-repeat; /* Prevent tiling */
-    -fx-background-position: center; /* Center the image */
+    /*-fx-background-repeat: no-repeat; /* Prevent tiling */
+    /*-fx-background-position: center; /* Center the image */
 }
 
 
 
 
 .music-button {
-    -fx-background-color: rgba(163, 57, 223, 0.5);
+    -fx-background-color: #FFD2A0;
     -fx-background-radius: 50%;
+    -fx-border-color: black;
+    -fx-border-radius: 50%;
 }
 
 .music-button:hover {
-    -fx-background-color: rgba(163, 57, 223, 0.75);
+    -fx-background-color: #f6b27e;
     -fx-scale-x: 1.1;
     -fx-scale-y: 1.1;
 }
 
 
 .yoga-box {
-    -fx-background-color: rgba(163, 57, 223, 0.25);
+    -fx-background-color: #F9E79F;
     -fx-background-radius: 15px 15px 15px 15px;
-    -fx-background-image: url("yoga-modified.png");
-    -fx-background-size: 100% 100%; /* Scale image to fill the AnchorPane */
-    -fx-background-repeat: no-repeat; /* Prevent tiling */
-    -fx-background-position: center; /* Center the image */
+    /*-fx-background-image: url("yoga-modified.png");
+    /*-fx-background-size: 100% 100%; /* Scale image to fill the AnchorPane */
+    /*-fx-background-repeat: no-repeat; /* Prevent tiling */
+    /*-fx-background-position: center; /* Center the image */
 }
 
 .user-menu-left-side {

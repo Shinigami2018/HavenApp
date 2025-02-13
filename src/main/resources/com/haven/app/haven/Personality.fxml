@@ -1,80 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="648.0" maxWidth="894.0" minHeight="648.0" minWidth="894.0" prefHeight="648.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.HelloController">
-   <left>
-      <AnchorPane prefHeight="648.0" prefWidth="490.0" style="-fx-background-color: #9A9A9A;" BorderPane.alignment="CENTER">
-         <children>
-            <AnchorPane fx:id="prompt1" layoutX="-2.0" prefHeight="648.0" prefWidth="494.0" styleClass="login_signup_background" stylesheets="@style.css" visible="true">
-               <children>
-                  <Text fill="WHITE" layoutX="64.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="In the past two weeks, have you felt little interest or pleasure in doing things?" wrappingWidth="350.1366882324219" />
-                  <RadioButton layoutX="78.0" layoutY="146.0" mnemonicParsing="false" text="Yes" textFill="WHITE">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="A" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <RadioButton layoutX="225.0" layoutY="146.0" mnemonicParsing="false" text="No" textFill="WHITE" toggleGroup="$A" />
-                  <Text fill="WHITE" layoutX="64.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Have you often felt down,depressed or hopeless?" wrappingWidth="350.1366882324219" />
-                  <RadioButton layoutX="78.0" layoutY="234.0" mnemonicParsing="false" text="Yes" textFill="WHITE">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="A1" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <RadioButton layoutX="225.0" layoutY="234.0" mnemonicParsing="false" text="No" textFill="WHITE" toggleGroup="$A1" />
-                  <Text fill="WHITE" layoutX="64.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Have you had trouble sleeping? (sleeping too much or too little)" wrappingWidth="350.1366882324219" />
-                  <RadioButton layoutX="78.0" layoutY="315.0" mnemonicParsing="false" text="Yes" textFill="WHITE">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="A11" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <RadioButton layoutX="225.0" layoutY="315.0" mnemonicParsing="false" text="No" textFill="WHITE" toggleGroup="$A11" />
-                  <Text fill="WHITE" layoutX="64.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Have you felt tired or had little energy most of the time?" wrappingWidth="350.1366882324219" />
-                  <RadioButton layoutX="78.0" layoutY="401.0" mnemonicParsing="false" text="Yes" textFill="WHITE">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="A111" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <RadioButton layoutX="225.0" layoutY="401.0" mnemonicParsing="false" text="No" textFill="WHITE" toggleGroup="$A111" />
-                  <Text fill="WHITE" layoutX="64.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Have you had trouble concentrating on tasks, such as reading or watching TV?" wrappingWidth="350.1366882324219" />
-                  <RadioButton layoutX="78.0" layoutY="511.0" mnemonicParsing="false" text="Yes" textFill="WHITE">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="A1111" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <RadioButton layoutX="225.0" layoutY="511.0" mnemonicParsing="false" text="No" textFill="WHITE" toggleGroup="$A1111" />
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="prompt2" layoutY="-1.0" prefHeight="648.0" prefWidth="494.0" styleClass="login_signup_background" stylesheets="@style.css" visible="false">
-               <children>
-                  <Text fill="WHITE" layoutX="83.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Have you ever had thoughts that you would be better off dead?" wrappingWidth="262.1367645263672" />
-                  <Text fill="WHITE" layoutX="83.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="In the past month, have you seriously considered hurting yourself?" wrappingWidth="262.1367645263672" />
-                  <Text fill="WHITE" layoutX="83.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Have you ever made a plan about how you would end your life?" wrappingWidth="262.1367645263672" />
-                  <Text fill="WHITE" layoutX="83.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Have you ever attempted suicide or self-harm?" wrappingWidth="262.1367645263672" />
-                  <RadioButton layoutX="83.0" layoutY="123.0" mnemonicParsing="false" text="Yes" textFill="WHITE" />
-                  <RadioButton layoutX="203.0" layoutY="123.0" mnemonicParsing="false" text="No" textFill="WHITE" />
-                  <RadioButton layoutX="83.0" layoutY="228.0" mnemonicParsing="false" text="Yes" textFill="WHITE" />
-                  <RadioButton layoutX="203.0" layoutY="228.0" mnemonicParsing="false" text="No" textFill="WHITE" />
-                  <RadioButton layoutX="83.0" layoutY="342.0" mnemonicParsing="false" text="Yes" textFill="WHITE" />
-                  <RadioButton layoutX="203.0" layoutY="342.0" mnemonicParsing="false" text="No" textFill="WHITE" />
-                  <RadioButton layoutX="83.0" layoutY="441.0" mnemonicParsing="false" text="Yes" textFill="WHITE" />
-                  <RadioButton layoutX="203.0" layoutY="441.0" mnemonicParsing="false" text="No" textFill="WHITE" />
-                  <Text fill="WHITE" layoutX="83.0" layoutY="507.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do you currently feel like you are in immediate danger of harming yourself?" wrappingWidth="292.1015625" />
-                  <RadioButton layoutX="83.0" layoutY="555.0" mnemonicParsing="false" text="Yes" textFill="WHITE" />
-                  <RadioButton layoutX="214.0" layoutY="555.0" mnemonicParsing="false" text="No" textFill="WHITE" />
-               </children>
-            </AnchorPane>
-         </children>
-      </AnchorPane>
-   </left>
-   <right>
-      <AnchorPane prefHeight="648.0" prefWidth="410.0" styleClass="root" stylesheets="@style.css" BorderPane.alignment="CENTER">
-         <children>
-            <Button fx:id="next" layoutX="129.0" layoutY="531.0" mnemonicParsing="false" onAction="#setPrompt2" prefHeight="42.0" prefWidth="128.0" styleClass="login_signup_button" stylesheets="@style.css" text="Next" visible="true" />
-            <Button fx:id="finished" layoutX="128.0" layoutY="531.0" mnemonicParsing="false" onAction="#switch_screen_to_dashboard" prefHeight="42.0" prefWidth="129.0" styleClass="login_signup_button" stylesheets="@style.css" text="Finish" visible="false" />
-         </children>
-      </AnchorPane>
-   </right>
-</BorderPane>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="998.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.PersonalityFxmlController">
+   <children>
+      <JFXButton fx:id="cur_button" buttonType="RAISED" layoutX="417.0" layoutY="477.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_neutral" text="Curiosity">
+         <font>
+            <Font name="SansSerif Bold" size="18.0" />
+         </font></JFXButton>
+      <JFXButton fx:id="joy_button" buttonType="RAISED" layoutX="624.0" layoutY="493.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_happy" text="Joy">
+         <font>
+            <Font name="SansSerif Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="des_button" buttonType="RAISED" layoutX="94.0" layoutY="335.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_severe" text="Despair">
+         <font>
+            <Font name="SansSerif Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="sad_button" buttonType="RAISED" layoutX="226.0" layoutY="465.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_sad" text="Sad">
+         <font>
+            <Font name="SansSerif Bold" size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

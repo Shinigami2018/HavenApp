@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="567.0" maxWidth="815.0" minHeight="567.0" minWidth="815.0" prefHeight="567.0" prefWidth="815.0" style="-fx-background-image: background.jpg;" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.HelloController">
+<AnchorPane maxHeight="567.0" maxWidth="815.0" minHeight="567.0" minWidth="815.0" prefHeight="567.0" prefWidth="815.0" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.HelloController">
    <children>
       <ImageView fitHeight="59.0" fitWidth="57.0" layoutX="47.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
          <image>
