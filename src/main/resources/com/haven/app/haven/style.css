@@ -127,48 +127,53 @@
 }
 
 .left-curved-button {
-    -fx-background-color: rgba(163, 57, 223, 0.25); /* Blue color */
-    -fx-text-fill: white; /* Text color */
+    -fx-background-color: #f1b06a; /* Blue color */
+     /* Text color */
     -fx-font-size: 10px;
     -fx-padding: 5px 15px;
     -fx-background-radius: 15px 0px 0px 15px; /* only left Curved edges */
     -fx-border-radius: 15px 0px 0px 15px;
-    -fx-border-width: 2px;
+    -fx-border-width: 2px 1px 2px 2px;
+    -fx-border-color: black;
+
 
 }
 .right-curved-button {
-    -fx-background-color: rgba(163, 57, 223, 0.25); /* Blue color */
-    -fx-text-fill: white; /* Text color */
+    -fx-background-color: #FFD2A0; /* Blue color */
+    -fx-text-fill: black; /* Text color */
     -fx-font-size: 10px;
     -fx-padding: 5px 15px;
     -fx-background-radius: 0px 15px 15px 0px; /* only right Curved edges */
     -fx-border-radius: 0px 15px 15px 0px;
-    -fx-border-width: 2px;
+    -fx-border-width: 2px 2px 2px 1px;
+    -fx-border-color: black;
 
 }
 
 .menu-middle-button {
-    -fx-background-color: rgba(163, 57, 223, 0.25);
-    -fx-text-fill: white;
+    -fx-background-color: #FFD2A0;
+    -fx-text-fill: black;
     -fx-font-size: 10px;
     -fx-padding: 5px 15px;
+    -fx-border-width: 2px 1px 2px 1px;
+    -fx-border-color: black;
 }
 .menu-middle-button:hover {
-    -fx-background-color: #945e95;
-    -fx-scale-x: 1.1; /* Slightly increase size */
-    -fx-scale-y: 1.1;
+    -fx-background-color: #f6b27e;
+    -fx-scale-x: 1.05; /* Slightly increase size */
+    -fx-scale-y: 1.05;
 
 }
 
 .left-curved-button:hover {
-    -fx-background-color: #945e95;
-    -fx-scale-x: 1.1; /* Slightly increase size */
-    -fx-scale-y: 1.1;
+    -fx-background-color: #f6b27e;
+    -fx-scale-x: 1.05; /* Slightly increase size */
+    -fx-scale-y: 1.05;
 }
 .right-curved-button:hover {
-    -fx-background-color: #945e95;
-    -fx-scale-x: 1.1; /* Slightly increase size */
-    -fx-scale-y: 1.1;
+    -fx-background-color: #f6b27e;
+    -fx-scale-x: 1.05; /* Slightly increase size */
+    -fx-scale-y: 1.05;
 }
 
 /* Clicked Styles */

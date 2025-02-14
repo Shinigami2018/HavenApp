@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
@@ -36,9 +37,9 @@
          </graphic></Button>
       <AnchorPane layoutX="195.0" layoutY="36.0" prefHeight="34.0" prefWidth="370.0">
          <children>
-            <Button fx:id="left_curved_button" layoutX="23.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color1" prefHeight="26.0" prefWidth="100.0" styleClass="left-curved-button" stylesheets="@style.css" text="Dashboard">
+            <JFXButton fx:id="left_curved_button" buttonType="RAISED" layoutX="14.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color1" prefHeight="26.0" prefWidth="108.0" styleClass="left-curved-button" stylesheets="@style.css" text="Dashboard">
                <font>
-                  <Font size="10.0" />
+                  <Font name="SansSerif Bold" size="10.0" />
                </font>
                <graphic>
                   <ImageView fitHeight="15.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
@@ -47,31 +48,36 @@
                      </image>
                   </ImageView>
                </graphic>
-            </Button>
-            <Button fx:id="middle_button1" layoutX="122.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color3" prefHeight="26.0" prefWidth="89.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Journal">
-               <graphic>
-                  <ImageView fitHeight="15.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../icons/joural.png" />
-                     </image>
-                  </ImageView>
-               </graphic></Button>
-            <Button fx:id="middle_button2" layoutX="210.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color4" prefHeight="26.0" prefWidth="82.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Relax">
-               <graphic>
-                  <ImageView fitHeight="15.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../icons/relax2.png" />
-                     </image>
-                  </ImageView>
-               </graphic></Button>
-            <Button fx:id="right_curved_button" layoutX="291.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color2" prefHeight="26.0" prefWidth="90.0" styleClass="right-curved-button" stylesheets="@style.css" text="Report">
+            </JFXButton>
+            <JFXButton fx:id="right_curved_button" buttonType="RAISED" layoutX="293.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color2" prefHeight="26.0" prefWidth="108.0" styleClass="right-curved-button" stylesheets="@style.css" text="Report">
                <graphic>
                   <ImageView fitHeight="15.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../icons/report2.png" />
                      </image>
                   </ImageView>
-               </graphic></Button>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="middle_button1" buttonType="RAISED" layoutX="122.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color3" prefHeight="26.0" prefWidth="89.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Journal">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../icons/joural.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="middle_button2" buttonType="RAISED" layoutX="211.0" layoutY="3.0" mnemonicParsing="false" onAction="#change_color4" prefHeight="26.0" prefWidth="82.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Relax">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../icons/relax2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+
+
          </children>
       </AnchorPane>
       <AnchorPane layoutX="68.0" layoutY="125.0" prefHeight="56.0" prefWidth="480.0" styleClass="daily-quote-box" stylesheets="@style.css">
@@ -136,5 +142,6 @@
          </children>
       </AnchorPane>
       <Label layoutX="719.0" layoutY="81.0" styleClass="user_name_displayed" stylesheets="@style.css" text="Username" />
+
    </children>
 </AnchorPane>
