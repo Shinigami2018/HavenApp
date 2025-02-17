@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.DrawingFxmlController">
+   <center>
+      <AnchorPane prefHeight="696.0" prefWidth="1222.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+         <children>
+            <Canvas fx:id="drawing_board" height="491.0" layoutX="1.0" layoutY="-9.0" width="1205.0" />
+         </children>
+      </AnchorPane>
+   </center>
+   <left>
+      <VBox prefHeight="696.0" prefWidth="236.0" style="-fx-background-color: yellow;" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="138.0" prefWidth="262.0" text="Label" />
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="150.0" prefWidth="1027.0" style="-fx-background-color: cyan;">
+               <children>
+                  <JFXButton layoutX="558.0" layoutY="44.0" prefHeight="69.0" prefWidth="311.0" style="-fx-background-color: orange; -fx-border-color: black;" />
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </top>
+   <bottom>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: pink;">
+               <children>
+                  <JFXButton fx:id="white_marker" layoutX="298.0" layoutY="32.0" prefHeight="57.0" prefWidth="151.0" text="White" />
+                  <JFXButton fx:id="eraser" layoutX="511.0" layoutY="43.0" prefHeight="46.0" prefWidth="102.0" text="eraser" />
+                  <JFXButton layoutX="642.0" layoutY="47.0" prefHeight="42.0" prefWidth="94.0" />
+                  <JFXButton layoutX="778.0" layoutY="51.0" prefHeight="38.0" prefWidth="94.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </bottom>
+</BorderPane>
