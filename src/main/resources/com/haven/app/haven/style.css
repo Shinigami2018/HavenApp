@@ -60,6 +60,10 @@
     -fx-scale-y: 1.1;
 }
 
+.personality_background {
+    -fx-background-color: #efc4a9;
+}
+
 .mood_button_happy{
     -fx-background-color: #90EE90;
     -fx-background-radius: 50%;
@@ -73,7 +77,7 @@
 }
 
 .mood_button_sad{
-    -fx-background-color: #2a2ac0;
+    -fx-background-color: #5555c0;
     -fx-background-radius: 50%;
     -fx-border-radius: 50%;
     -fx-border-color: #01021f;
@@ -97,7 +101,7 @@
 }
 
 .mood_button_severe{
-    -fx-background-color: #da0c0c;
+    -fx-background-color: #f34d4d;
     -fx-background-radius: 50%;
     -fx-border-radius: 50%;
     -fx-border-color: #340c0c;
@@ -135,6 +139,7 @@
     -fx-border-radius: 15px 0px 0px 15px;
     -fx-border-width: 2px 1px 2px 2px;
     -fx-border-color: black;
+
 
 
 }
