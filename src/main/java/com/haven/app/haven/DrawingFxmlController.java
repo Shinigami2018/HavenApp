@@ -29,7 +29,7 @@ public class DrawingFxmlController implements Initializable {
         drawing_board.setWidth(1205);
         gc = drawing_board.getGraphicsContext2D();
         gc.setFill(Color.BLACK);
-        gc.fillRect(0, 0, drawing_board.getWidth(), drawing_board.getHeight());
+        gc.fillOval(0, 0, drawing_board.getWidth(), drawing_board.getHeight());
         gc.setFill(Color.WHITE);
 
         drawing_board.setOnMouseDragged(new EventHandler<MouseEvent>() {

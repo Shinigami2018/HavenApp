@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.DrawingFxmlController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="200" minWidth="400" prefHeight="780.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.DrawingFxmlController">
    <center>
       <AnchorPane prefHeight="696.0" prefWidth="1222.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
          <children>
