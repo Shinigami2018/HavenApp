@@ -32,7 +32,6 @@ public class PersonalityFxmlController implements Initializable {
 
         // Animate button 4
         animateButton(joy_button);
-
         animateButton(gra_button);
         animateButton(cur_button);
         animateButton(exc_button);
