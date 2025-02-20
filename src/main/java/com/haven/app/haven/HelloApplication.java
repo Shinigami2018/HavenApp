@@ -43,6 +43,7 @@ public class HelloApplication extends Application {
         } catch (Exception e) {
             System.err.println("Failed to load FXML file: " + fxmlFile);
             e.printStackTrace();
+            //Critical github issue
         }
     }
 
