@@ -155,7 +155,7 @@ public void loginUser(ActionEvent event) {
 
     public void switch_screen_to_dashboard(ActionEvent event)
     {
-        HelloApplication.switchRoot("Dashboard.fxml",815,667);
+        HelloApplication.switchRoot("Dashboard.fxml",1500,820);
         dashbboard.setVisible(true);
         System.out.println("YES");
     }

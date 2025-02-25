@@ -43,12 +43,12 @@
                   </HBox>
                   <StackPane layoutX="1298.0" layoutY="5.0" minHeight="30.0" minWidth="100" prefHeight="92.0" prefWidth="216.0">
                      <children>
-                        <Button maxHeight="87.0" maxWidth="94.0" mnemonicParsing="false" prefHeight="87.0" prefWidth="94.0" styleClass="circular-button" />
                         <ImageView fitHeight="70.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@noun-female-5295234.png" />
                            </image>
                         </ImageView>
+                        <Button fx:id="user_button" maxHeight="87.0" maxWidth="94.0" mnemonicParsing="false" onAction="#switch_screen_to_user_page" opacity="0.44" prefHeight="87.0" prefWidth="94.0" styleClass="circular-button" />
                      </children>
                   </StackPane>
                </children>
@@ -57,7 +57,7 @@
       </StackPane>
    </top>
    <right>
-      <StackPane prefHeight="670.0" prefWidth="247.0" minHeight="350" minWidth="170" BorderPane.alignment="CENTER">
+      <StackPane minHeight="350" minWidth="170" prefHeight="670.0" prefWidth="247.0" BorderPane.alignment="CENTER">
          <children>
             <AnchorPane prefHeight="670.0" prefWidth="239.0">
                <children>
@@ -77,7 +77,7 @@
          </children></StackPane>
    </right>
    <center>
-      <StackPane prefHeight="670.0" prefWidth="1163.0" minHeight="300.0" minWidth="600" BorderPane.alignment="CENTER">
+      <StackPane minHeight="300.0" minWidth="600" prefHeight="670.0" prefWidth="1163.0" BorderPane.alignment="CENTER">
          <children>
             <AnchorPane prefHeight="670.0" prefWidth="1190.0">
                <children>
