@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="LOGIN_BORDER" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.HelloController">
+<BorderPane fx:id="LOGIN_BORDER" minHeight="150.0" minWidth="300.0" prefHeight="402.0" prefWidth="605.0" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.HelloController">
     <left>
         <AnchorPane fx:id="Login_left" prefHeight="400.0" prefWidth="259.0" BorderPane.alignment="CENTER">
             <children>
@@ -33,7 +33,7 @@
     </left>
     <center>
         <AnchorPane fx:id="login_right_main">
-            <AnchorPane fx:id="signuppane" prefHeight="400.0" prefWidth="343.0" styleClass="login_signup_background" stylesheets="@style.css" visible="true">
+            <AnchorPane fx:id="signuppane" prefHeight="402.0" prefWidth="349.0" styleClass="login_signup_background" stylesheets="@style.css" visible="true">
                 <children>
                     <TextField fx:id="usernameTextField" layoutX="110.0" layoutY="95.0" promptText="set username" style="-fx-background-color: #FFFFFF;" />
                     <Label layoutX="20.0" layoutY="87.0" prefHeight="34.0" prefWidth="90.0" style="-fx-text-fill: #3d3d3d;" text="Username" textFill="#3d3d3d">
