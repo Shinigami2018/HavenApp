@@ -21,6 +21,7 @@ public class PersonalityFxmlController implements Initializable {
 
     private Map<JFXButton, Integer> buttonScores = new HashMap<>();
     private int score = 0;
+    private int clk = 0;
 
     @Override
     public void initialize(URL url, ResourceBundle rb)
@@ -37,12 +38,44 @@ public class PersonalityFxmlController implements Initializable {
 
     private void initializeButton()
     {
-        buttonScores.put(hel_button, 1);
-        buttonScores.put(par_button, 1);
-        buttonScores.put(anx_button, 1);
-        buttonScores.put(empt_button, 1);
-        buttonScores.put(des_button, 1);
-        buttonScores.put(wor_button, 1);
+        buttonScores.put(hel_button, -2);
+        buttonScores.put(par_button, -2);
+        buttonScores.put(anx_button, -2);
+        buttonScores.put(empt_button, -2);
+        buttonScores.put(des_button, -2);
+        buttonScores.put(wor_button, -2);
+
+        buttonScores.put(sad_button, -1);
+        buttonScores.put(sha_button, -1);
+        buttonScores.put(hopl_button, -1);
+        buttonScores.put(fra_button, -1);
+        buttonScores.put(str_button, -1);
+        buttonScores.put(fea_button, -1);
+        buttonScores.put(ang_button, -1);
+        buttonScores.put(gui_button, -1);
+        buttonScores.put(lon_button, -1);
+
+        buttonScores.put(cur_button, 1);
+        buttonScores.put(nos_button, 1);
+        buttonScores.put(conf_button, 1);
+        buttonScores.put(ind_button, 1);
+        buttonScores.put(bor_button, 1);
+
+        buttonScores.put(joy_button, 2);
+        buttonScores.put(gra_button, 2);
+        buttonScores.put(exc_button, 2);
+        buttonScores.put(hop_button, 2);
+        buttonScores.put(con_button, 2);
+        buttonScores.put(rel_button, 2);
+        buttonScores.put(ent_button, 2);
+        buttonScores.put(pri_button, 2);
+        buttonScores.put(cont_button, 2);
+        buttonScores.put(sat_button, 2);
+        buttonScores.put(pea_button, 2);
+        buttonScores.put(emp_button, 2);
+        
+        
+        
         // Add scores for other buttons similarly
     }
 
@@ -87,17 +120,21 @@ public class PersonalityFxmlController implements Initializable {
     {
         System.out.println(button.getText() + " clicked");
         score += buttonScores.getOrDefault(button, 0);
-        states(score);
+        clk++;
+        if(clk == 6)
+        {
+            states(score);
+        }
     }
 
     private void states(int score)
     {
         String status;
-        if(score < 2)
+        if(score < 0)
         {
             status = "Low";
         }
-        else if(score < 3)
+        else if(score < 10)
         {
             status = "Medium";
         }
@@ -125,6 +162,7 @@ public class PersonalityFxmlController implements Initializable {
         animateButton(fea_button);
         animateButton(str_button);
         animateButton(hopl_button);
+
         animateButton(fra_button);
         animateButton(empt_button);
         animateButton(anx_button);
