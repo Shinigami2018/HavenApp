@@ -35,30 +35,42 @@
         <AnchorPane fx:id="login_right_main">
             <AnchorPane fx:id="signuppane" prefHeight="402.0" prefWidth="349.0" styleClass="login_signup_background" stylesheets="@style.css" visible="true">
                 <children>
-                    <TextField fx:id="usernameTextField" layoutX="110.0" layoutY="95.0" promptText="set username" style="-fx-background-color: #FFFFFF;" />
-                    <Label layoutX="20.0" layoutY="87.0" prefHeight="34.0" prefWidth="90.0" style="-fx-text-fill: #3d3d3d;" text="Username" textFill="#3d3d3d">
+                    <TextField fx:id="usernameTextField" layoutX="134.0" layoutY="56.0" promptText="set username" style="-fx-background-color: #FFFFFF;" />
+                    <Label layoutX="20.0" layoutY="49.0" prefHeight="34.0" prefWidth="90.0" style="-fx-text-fill: #3d3d3d;" text="Username" textFill="#3d3d3d">
                   <font>
                      <Font name="Segoe UI Semibold" size="13.0" />
                   </font></Label>
-                    <Label layoutX="20.0" layoutY="131.0" prefHeight="26.0" prefWidth="80.0" style="-fx-text-fill: #3d3d3d;" text="Email" textFill="#3d3d3d">
+                    <Label layoutX="20.0" layoutY="91.0" prefHeight="26.0" prefWidth="80.0" style="-fx-text-fill: #3d3d3d;" text="Email" textFill="#3d3d3d">
                   <font>
                      <Font name="Segoe UI Semibold" size="13.0" />
                   </font></Label>
-                    <Label layoutX="22.0" layoutY="175.0" prefHeight="18.0" prefWidth="86.0" style="-fx-text-fill: #3d3d3d;" text="Password">
+                    <Label layoutX="21.0" layoutY="130.0" prefHeight="18.0" prefWidth="86.0" style="-fx-text-fill: #3d3d3d;" text="Password">
                   <font>
                      <Font name="Segoe UI Semibold" size="13.0" />
                   </font></Label>
-                    <TextField fx:id="emailTextField" layoutX="110.0" layoutY="135.0" promptText="enter email address" style="-fx-background-color: #FFFFFF;" />
-                    <PasswordField fx:id="passwordPasswordField" accessibleRole="PASSWORD_FIELD" layoutX="110.0" layoutY="172.0" promptText="set password" style="-fx-background-color: #FFFFFF;" />
-                    <Label layoutX="22.0" layoutY="216.0" prefHeight="18.0" prefWidth="86.0" style="-fx-text-fill: #3d3d3d;" text="Password">
+                    <TextField fx:id="emailTextField" layoutX="134.0" layoutY="91.0" promptText="enter email address" style="-fx-background-color: #FFFFFF;" />
+                    <PasswordField fx:id="passwordPasswordField" accessibleRole="PASSWORD_FIELD" layoutX="133.0" layoutY="127.0" promptText="set password" style="-fx-background-color: #FFFFFF;" />
+                    <Label layoutX="21.0" layoutY="166.0" prefHeight="18.0" prefWidth="86.0" style="-fx-text-fill: #3d3d3d;" text="Password">
                   <font>
                      <Font name="Segoe UI Semibold" size="13.0" />
                   </font></Label>
-                    <PasswordField fx:id="repasswordPasswordField" accessibleRole="PASSWORD_FIELD" layoutX="110.0" layoutY="213.0" promptText="re-enter password" style="-fx-background-color: #FFFFFF;" />
+                    <PasswordField fx:id="repasswordPasswordField" accessibleRole="PASSWORD_FIELD" layoutX="133.0" layoutY="164.0" promptText="re-enter password" style="-fx-background-color: #FFFFFF;" />
                     <Button layoutX="122.0" layoutY="300.0" mnemonicParsing="false" onAction="#signUpButtonOnAction" prefHeight="34.0" prefWidth="98.0" styleClass="login_signup_button" stylesheets="@style.css" text="Get Started">
                     <font>
                         <Font name="SansSerif Bold" size="12.0" />
                     </font> </Button>
+               <Label layoutX="18.0" layoutY="205.0" text="Emergency Email">
+                  <font>
+                     <Font name="Segoe UI Semibold" size="13.0" />
+                  </font>
+               </Label>
+               <Label layoutX="17.0" layoutY="238.0" prefHeight="30.0" prefWidth="103.0" text="Emergency Phone Number">
+                  <font>
+                     <Font name="Segoe UI Semibold" size="13.0" />
+                  </font>
+               </Label>
+               <TextField layoutX="132.0" layoutY="203.0" promptText="enter email address" />
+               <TextField layoutX="132.0" layoutY="238.0" promptText="enter phone number" />
                 </children>
             </AnchorPane>
         </AnchorPane>
