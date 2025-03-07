@@ -7,11 +7,11 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
-public class Sms8Api {
+public class emergencySMS {
     private final String smsText;
     private final String phoneNumber;
 
-    public Sms8Api(String txt, String number) {
+    public emergencySMS(String txt, String number) {
         this.smsText = txt;
         this.phoneNumber = number;
     }
@@ -49,8 +49,8 @@ public class Sms8Api {
         }
     }
 
-    public static void main(String[] args) {
-        Sms8Api sms = new Sms8Api("Hello, this is a test!", "+8801613392018");
-        sms.sendSms();
-    }
+//    public static void main(String[] args) {
+//        emergencySMS sms = new emergencySMS("Hello, this is a test!", "+8801613392018");
+//        sms.sendSms();
+//    }
 }

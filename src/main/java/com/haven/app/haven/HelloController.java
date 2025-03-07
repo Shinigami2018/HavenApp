@@ -169,14 +169,22 @@ public void loginUser(ActionEvent event) {
     @FXML
     private void email_send(ActionEvent event) {
         try {
-            ProcessBuilder processBuilder = new ProcessBuilder("python", "src/main/java/com/haven/app/haven/send_sms.py");
+            // Get user input for recipient email (replace this with actual user input mechanism)
+            String recipientEmail = "user@example.com"; // Replace with actual user input
+
+            // Pass email as an argument to Python script
+            ProcessBuilder processBuilder = new ProcessBuilder("python", "src/main/java/com/haven/app/haven/send_sms.py", recipientEmail);
             processBuilder.inheritIO(); // Redirects output to the console
             Process process = processBuilder.start();
             process.waitFor(); // Waits for the process to finish
+
+            // Send SMS as well
+            emergencySMS sms = new emergencySMS("User needs help! Please call or message as soon as possible!", "+8801613392018");
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
+
 
 
 
