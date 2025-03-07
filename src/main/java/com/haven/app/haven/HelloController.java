@@ -20,9 +20,8 @@ public class HelloController {
     public AnchorPane dashbboard;
     public Button left_curved_button, right_curved_button, middle_button1, middle_button2, middle_button3;
     public Button smsButton;
+    public static String usename;
 
-    // ariful writing 
-    //;
     @FXML
     private TextField usernameTextField;
 
@@ -34,10 +33,15 @@ public class HelloController {
 
     @FXML
     private TextField emailTextField;
+    @FXML
+    private TextField emergency;
+    @FXML
+    private TextField ephone;
+
     //ariful cmnt just
    public  void signUpButtonOnAction()
    {
-       if (!usernameTextField.getText().isEmpty() && !passwordPasswordField.getText().isEmpty() && !repasswordPasswordField.getText().isEmpty() && !emailTextField.getText().isEmpty()) {
+       if (!usernameTextField.getText().isEmpty() && !passwordPasswordField.getText().isEmpty() && !repasswordPasswordField.getText().isEmpty() && !emailTextField.getText().isEmpty() && !emergency.getText().isEmpty() && !ephone.getText().isEmpty()) {
            //loginMessageLabel.setText("you try to login!");
            System.out.println("you try to login!");
            if(passwordPasswordField.getText().equals(repasswordPasswordField.getText()))
@@ -61,13 +65,17 @@ public void validateSignUp() {
         return;
     }
 
-    String addUser = "INSERT INTO useraccounts(Username, Password, Email) VALUES (?, ?, ?)";
+    String addUser = "INSERT INTO useraccounts(Username, Password, Email,Eemail,Phone,score) VALUES (?, ?, ?, ?, ?,?)";
 
     try {
         PreparedStatement preparedStatement = connectDB.prepareStatement(addUser);
         preparedStatement.setString(1, usernameTextField.getText());
         preparedStatement.setString(2, passwordPasswordField.getText());
         preparedStatement.setString(3, emailTextField.getText());
+        preparedStatement.setString(4, emergency.getText());
+        preparedStatement.setString(5, ephone.getText());
+        preparedStatement.setInt(6, 0);
+        usename=usernameTextField.getText();
 
         preparedStatement.executeUpdate();
 

@@ -1,18 +1,19 @@
 package com.haven.app.haven;
-
 import com.jfoenix.controls.JFXButton;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import javafx.animation.TranslateTransition;
 import javafx.util.Duration;
 
@@ -29,12 +30,12 @@ public class PersonalityFxmlController implements Initializable {
     public Map<JFXButton, Integer> buttonScores = new HashMap<>();
     public int score = 0;
     public int clk = 0;
-public AnchorPane prompt1,prompt2;
-    public AnchorPane dashbboard;
-    public Button next,finished;
+    public AnchorPane prompt1, prompt2;
+
+    public Button next, finished;
+
     @Override
-    public void initialize(URL url, ResourceBundle rb)
-    {
+    public void initialize(URL url, ResourceBundle rb) {
         // Initialize button scores
         initializeButton();
 
@@ -45,8 +46,7 @@ public AnchorPane prompt1,prompt2;
         animateButtons();
     }
 
-    public void initializeButton()
-    {
+    public void initializeButton() {
         buttonScores.put(hel_button, -2);
         buttonScores.put(par_button, -2);
         buttonScores.put(anx_button, -2);
@@ -83,13 +83,10 @@ public AnchorPane prompt1,prompt2;
         buttonScores.put(pea_button, 2);
         buttonScores.put(emp_button, 2);
 
-
-
         // Add scores for other buttons similarly
     }
 
-    public void addEventHandlers()
-    {
+    public void addEventHandlers() {
         hel_button.setOnAction(event -> handleButtonClick(hel_button));
         par_button.setOnAction(event -> handleButtonClick(par_button));
         anx_button.setOnAction(event -> handleButtonClick(anx_button));
@@ -125,32 +122,56 @@ public AnchorPane prompt1,prompt2;
         // Add event handlers for other buttons similarly
     }
 
-    public void handleButtonClick(JFXButton button)
-    {
+    public void handleButtonClick(JFXButton button) {
         System.out.println(button.getText() + " clicked");
         score += buttonScores.getOrDefault(button, 0);
         clk++;
-        if(clk == 6)
-        {
-          switchToDashboard();
+        if (clk == 6) {
+            switchToDashboard(score);
         }
     }
-    public void switchToDashboard() {
-            try{
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("Dashboard.fxml"));
-                Parent root = loader.load();
-                DashboardFxmlController controller = loader.getController();
-                controller.setScore(score);
-                HelloApplication.switchRoot("Dashboard.fxml", 894, 648);
-                prompt1.setVisible(true);
-                prompt2.setVisible(false);
-                next.setVisible(true);
-                finished.setVisible(false);
-            } catch (Exception e) {
-                System.out.println("Error: " + e);
-            }
 
+    public void switchToDashboard(int score) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Dashboard.fxml"));
+            Parent root = loader.load();
+            DashboardFxmlController controller = loader.getController();
+            controller.setScore(score);
+            String nn = HelloController.usename;
+            System.out.println("Username: " + nn);
+            saveScoreToDatabase(nn, score);
+            HelloApplication.switchRoot("Dashboard.fxml", 894, 648);
+            prompt1.setVisible(true);
+            prompt2.setVisible(false);
+            next.setVisible(true);
+            finished.setVisible(false);
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
     }
+
+    //save the score to the database
+    //save the score to the database
+    public void saveScoreToDatabase(String username, int scor) {
+        try {
+            System.out.println("Saving score to database");
+            System.out.println("Username: " + username);
+            System.out.println("Score: " + scor);
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "124519@#maisk#");
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE useraccounts SET score = ? WHERE Username = ?");
+            preparedStatement.setInt(1, scor);
+            preparedStatement.setString(2, username);
+
+
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+    }
+
+
 
     private void animateButtons() {
         animateButton(sad_button);
@@ -170,7 +191,6 @@ public AnchorPane prompt1,prompt2;
         animateButton(fea_button);
         animateButton(str_button);
         animateButton(hopl_button);
-
         animateButton(fra_button);
         animateButton(empt_button);
         animateButton(anx_button);
