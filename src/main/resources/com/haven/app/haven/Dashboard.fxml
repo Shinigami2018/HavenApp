@@ -73,17 +73,19 @@
                         <JFXButton layoutX="2.0" layoutY="2.0" prefHeight="295.0" prefWidth="210.0" text="let us yoga" />
                      </children>
                   </AnchorPane>
-               </children></AnchorPane>
-         </children></StackPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
    </right>
    <center>
       <StackPane minHeight="300.0" minWidth="600" prefHeight="670.0" prefWidth="1163.0" BorderPane.alignment="CENTER">
          <children>
             <AnchorPane prefHeight="670.0" prefWidth="1190.0">
                <children>
-                  <AnchorPane layoutX="31.0" layoutY="53.0" prefHeight="200.0" prefWidth="306.0" style="-fx-background-color: #F9E79F; -fx-background-radius: 25 25 25 25;">
+                  <AnchorPane fx:id="scorleb" layoutX="31.0" layoutY="53.0" prefHeight="200.0" prefWidth="306.0" style="-fx-background-color: #F9E79F; -fx-background-radius: 25 25 25 25;">
                      <children>
-                        <Label layoutX="91.0" layoutY="130.0" text="Mood score here" />
+                        <Label fx:id="scor" layoutX="91.0" layoutY="130.0" text="Mood score here" />
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="32.0" layoutY="333.0" prefHeight="298.0" prefWidth="1125.0" style="-fx-background-color: #F9E79F; -fx-background-radius: 25 25 25 25;">
@@ -98,6 +100,7 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-         </children></StackPane>
+         </children>
+      </StackPane>
    </center>
 </BorderPane>

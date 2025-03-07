@@ -5,7 +5,14 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
+
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javafx.animation.TranslateTransition;
 import javafx.util.Duration;
 
@@ -19,10 +26,12 @@ public class PersonalityFxmlController implements Initializable {
     public JFXButton anx_button,wor_button,par_button,hel_button,ent_button,rel_button,pri_button,cont_button,sat_button;
     public JFXButton pea_button,emp_button,bor_button,lon_button;
 
-    private Map<JFXButton, Integer> buttonScores = new HashMap<>();
-    private int score = 0;
-    private int clk = 0;
-
+    public Map<JFXButton, Integer> buttonScores = new HashMap<>();
+    public int score = 0;
+    public int clk = 0;
+public AnchorPane prompt1,prompt2;
+    public AnchorPane dashbboard;
+    public Button next,finished;
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
@@ -36,7 +45,7 @@ public class PersonalityFxmlController implements Initializable {
         animateButtons();
     }
 
-    private void initializeButton()
+    public void initializeButton()
     {
         buttonScores.put(hel_button, -2);
         buttonScores.put(par_button, -2);
@@ -73,13 +82,13 @@ public class PersonalityFxmlController implements Initializable {
         buttonScores.put(sat_button, 2);
         buttonScores.put(pea_button, 2);
         buttonScores.put(emp_button, 2);
-        
-        
-        
+
+
+
         // Add scores for other buttons similarly
     }
 
-    private void addEventHandlers()
+    public void addEventHandlers()
     {
         hel_button.setOnAction(event -> handleButtonClick(hel_button));
         par_button.setOnAction(event -> handleButtonClick(par_button));
@@ -116,32 +125,31 @@ public class PersonalityFxmlController implements Initializable {
         // Add event handlers for other buttons similarly
     }
 
-    private void handleButtonClick(JFXButton button)
+    public void handleButtonClick(JFXButton button)
     {
         System.out.println(button.getText() + " clicked");
         score += buttonScores.getOrDefault(button, 0);
         clk++;
         if(clk == 6)
         {
-            states(score);
+          switchToDashboard();
         }
     }
+    public void switchToDashboard() {
+            try{
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Dashboard.fxml"));
+                Parent root = loader.load();
+                DashboardFxmlController controller = loader.getController();
+                controller.setScore(score);
+                HelloApplication.switchRoot("Dashboard.fxml", 894, 648);
+                prompt1.setVisible(true);
+                prompt2.setVisible(false);
+                next.setVisible(true);
+                finished.setVisible(false);
+            } catch (Exception e) {
+                System.out.println("Error: " + e);
+            }
 
-    private void states(int score)
-    {
-        String status;
-        if(score < 0)
-        {
-            status = "Low";
-        }
-        else if(score < 10)
-        {
-            status = "Medium";
-        }
-        else{
-            status = "High";
-        }
-        System.out.println("Mental Status: " + status);
     }
 
     private void animateButtons() {
