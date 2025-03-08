@@ -96,7 +96,7 @@
             <Font name="SansSerif Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="fra_button" buttonType="RAISED" layoutX="614.0" layoutY="526.0" prefHeight="135.0" prefWidth="134.0" styleClass="mood_button_sad" text="Fraustration">
+      <JFXButton fx:id="fra_button" buttonType="RAISED" layoutX="614.0" layoutY="526.0" prefHeight="135.0" prefWidth="134.0" styleClass="mood_button_sad" text="Frustration">
          <font>
             <Font name="SansSerif Bold" size="18.0" />
          </font>
