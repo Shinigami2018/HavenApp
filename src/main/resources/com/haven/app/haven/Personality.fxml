@@ -16,7 +16,7 @@
             <Font name="SansSerif Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="des_button" buttonType="RAISED" layoutX="24.0" layoutY="540.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_severe" text="Despair">
+      <JFXButton fx:id="des_button" buttonType="RAISED" layoutX="49.0" layoutY="540.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_severe" text="Despair">
          <font>
             <Font name="SansSerif Bold" size="18.0" />
          </font>
@@ -61,12 +61,12 @@
             <Font name="SansSerif Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="lon_button" buttonType="RAISED" layoutX="372.0" layoutY="636.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_sad" text="Lonely">
+      <JFXButton fx:id="lon_button" buttonType="RAISED" layoutX="391.0" layoutY="636.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_sad" text="Lonely">
          <font>
             <Font name="SansSerif Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="gui_button" buttonType="RAISED" layoutX="737.0" layoutY="482.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_sad" text="Guilt">
+      <JFXButton fx:id="gui_button" buttonType="RAISED" layoutX="755.0" layoutY="496.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_sad" text="Guilt">
          <font>
             <Font name="SansSerif Bold" size="18.0" />
          </font>
@@ -76,12 +76,12 @@
             <Font name="SansSerif Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="ang_button" buttonType="RAISED" layoutX="764.0" layoutY="636.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_sad" text="Anger">
+      <JFXButton fx:id="ang_button" buttonType="RAISED" layoutX="820.0" layoutY="618.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_sad" text="Anger">
          <font>
             <Font name="SansSerif Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="fea_button" buttonType="RAISED" layoutX="543.0" layoutY="655.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_sad" text="Fear">
+      <JFXButton fx:id="fea_button" buttonType="RAISED" layoutX="549.0" layoutY="655.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_sad" text="Fear">
          <font>
             <Font name="SansSerif Bold" size="18.0" />
          </font>
@@ -96,12 +96,12 @@
             <Font name="SansSerif Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="fra_button" buttonType="RAISED" layoutX="603.0" layoutY="529.0" prefHeight="135.0" prefWidth="134.0" styleClass="mood_button_sad" text="Fraustration">
+      <JFXButton fx:id="fra_button" buttonType="RAISED" layoutX="614.0" layoutY="526.0" prefHeight="135.0" prefWidth="134.0" styleClass="mood_button_sad" text="Fraustration">
          <font>
             <Font name="SansSerif Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="empt_button" buttonType="RAISED" layoutX="204.0" layoutY="539.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_severe" text="Empty">
+      <JFXButton fx:id="empt_button" buttonType="RAISED" layoutX="231.0" layoutY="544.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_severe" text="Empty">
          <font>
             <Font name="SansSerif Bold" size="18.0" />
          </font>
@@ -111,12 +111,12 @@
             <Font name="SansSerif Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="wor_button" buttonType="RAISED" layoutX="112.0" layoutY="643.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_severe" text="Worthless">
+      <JFXButton fx:id="wor_button" buttonType="RAISED" layoutX="134.0" layoutY="643.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_severe" text="Worthless">
          <font>
             <Font name="SansSerif Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="par_button" buttonType="RAISED" layoutX="24.0" layoutY="261.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_severe" text="Paranoia">
+      <JFXButton fx:id="par_button" buttonType="RAISED" layoutX="35.0" layoutY="261.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_severe" text="Paranoia">
          <font>
             <Font name="SansSerif Bold" size="18.0" />
          </font>
@@ -126,37 +126,37 @@
             <Font name="SansSerif Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="ent_button" buttonType="RAISED" layoutX="1233.0" layoutY="219.0" prefHeight="135.0" prefWidth="134.0" styleClass="mood_button_happy" text="Enthusiasm">
+      <JFXButton fx:id="ent_button" buttonType="RAISED" layoutX="1263.0" layoutY="219.0" prefHeight="135.0" prefWidth="134.0" styleClass="mood_button_happy" text="Enthusiasm">
          <font>
             <Font name="SansSerif Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="rel_button" buttonType="RAISED" layoutX="1099.0" layoutY="392.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_happy" text="Relief">
+      <JFXButton fx:id="rel_button" buttonType="RAISED" layoutX="1128.0" layoutY="392.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_happy" text="Relief">
          <font>
             <Font name="SansSerif Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="pri_button" buttonType="RAISED" layoutX="1233.0" layoutY="392.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_happy" text="Pride">
+      <JFXButton fx:id="pri_button" buttonType="RAISED" layoutX="1276.0" layoutY="392.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_happy" text="Pride">
          <font>
             <Font name="SansSerif Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="cont_button" buttonType="RAISED" layoutX="1099.0" layoutY="229.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_happy" text="Content">
+      <JFXButton fx:id="cont_button" buttonType="RAISED" layoutX="1118.0" layoutY="229.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_happy" text="Content">
          <font>
             <Font name="SansSerif Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="sat_button" buttonType="RAISED" layoutX="957.0" layoutY="586.0" prefHeight="135.0" prefWidth="134.0" styleClass="mood_button_happy" text="Satisfaction">
+      <JFXButton fx:id="sat_button" buttonType="RAISED" layoutX="982.0" layoutY="586.0" prefHeight="135.0" prefWidth="134.0" styleClass="mood_button_happy" text="Satisfaction">
          <font>
             <Font name="SansSerif Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="pea_button" buttonType="RAISED" layoutX="1099.0" layoutY="540.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_happy" text="Peaceful">
+      <JFXButton fx:id="pea_button" buttonType="RAISED" layoutX="1129.0" layoutY="540.0" prefHeight="115.0" prefWidth="118.0" styleClass="mood_button_happy" text="Peaceful">
          <font>
             <Font name="SansSerif Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="emp_button" buttonType="RAISED" layoutX="1241.0" layoutY="557.0" prefHeight="135.0" prefWidth="134.0" styleClass="mood_button_happy" text="Empowered">
+      <JFXButton fx:id="emp_button" buttonType="RAISED" layoutX="1263.0" layoutY="557.0" prefHeight="135.0" prefWidth="134.0" styleClass="mood_button_happy" text="Empowered">
          <font>
             <Font name="SansSerif Bold" size="18.0" />
          </font>
