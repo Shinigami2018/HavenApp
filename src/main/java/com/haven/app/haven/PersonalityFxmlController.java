@@ -162,6 +162,11 @@ public class PersonalityFxmlController implements Initializable {
             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE useraccounts SET score = ? WHERE Username = ?");
             preparedStatement.setInt(1, scor);
             preparedStatement.setString(2, username);
+//            timefunction timefunction1 = new timefunction();
+//            int day = timefunction1.uday;
+//            preparedStatement = connection.prepareStatement("UPDATE useraccounts SET date = ? WHERE Username = ?");
+//            preparedStatement.setInt(1, day);
+//            preparedStatement.setString(2, username);
 
 
             preparedStatement.executeUpdate();

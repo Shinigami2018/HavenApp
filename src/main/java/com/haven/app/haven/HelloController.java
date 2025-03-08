@@ -1,5 +1,6 @@
 package com.haven.app.haven;
 
+import com.jfoenix.controls.JFXRadioButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -26,6 +27,7 @@ public class HelloController {
     public static  String eEmail;
     public static String ePHN;
 
+
     @FXML
     private TextField usernameTextField;
 
@@ -42,10 +44,10 @@ public class HelloController {
     @FXML
     private TextField ephone;
 
-    public RadioButton maleRadio;
+    public JFXRadioButton maleRadio;
 
     @FXML
-    public RadioButton femaleRadio;
+    public JFXRadioButton femaleRadio;
 
     @FXML
     public ToggleGroup genderGroup; // This ensures only one selection at a time
@@ -78,7 +80,7 @@ public class HelloController {
             return;
         }
 
-        String addUser = "INSERT INTO useraccounts(Username, Password, Email,Eemail,Phone,score) VALUES (?, ?, ?, ?, ?,?)";
+        String addUser = "INSERT INTO useraccounts(Username, Password, Email,Eemail,Phone,score,Gender) VALUES (?, ?, ?, ?, ?,?,?)";
 
         try {
             PreparedStatement preparedStatement = connectDB.prepareStatement(addUser);
@@ -89,6 +91,12 @@ public class HelloController {
             String phn = "+88" + ephone.getText();
             preparedStatement.setString(5, phn);
             preparedStatement.setInt(6, 0);
+            if (maleRadio.isSelected()) {
+                selectedGender = "Male";
+            } else if (femaleRadio.isSelected()) {
+                selectedGender = "Female";
+            }
+            preparedStatement.setString(7, selectedGender);
             usename = usernameTextField.getText();
             eEmail = emergency.getText();
             ePHN = phn;
