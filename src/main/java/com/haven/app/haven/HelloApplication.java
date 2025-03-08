@@ -51,7 +51,8 @@ public class HelloApplication extends Application {
 
     public static void switchRoot(String fxmlFile, int width, int height) {
         try {
-            Parent newRoot = FXMLLoader.load(HelloApplication.class.getResource(fxmlFile));
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource(fxmlFile));
+            Parent newRoot = loader.load();
             primaryStage.getScene().setRoot(newRoot);
             // Set full screen mode
 

@@ -6,10 +6,12 @@ import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.*;
+
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 
@@ -20,11 +22,11 @@ public class HelloController {
     public AnchorPane signuppane;
     public AnchorPane prompt1, prompt2;
     public Button next, finished;
-    public AnchorPane dashbboard;
+    public BorderPane dashbboard;
     public Button left_curved_button, right_curved_button, middle_button1, middle_button2, middle_button3;
     public Button smsButton;
     public static String usename;
-    public static  String eEmail;
+    public static String eEmail;
     public static String ePHN;
 
 
@@ -186,8 +188,12 @@ public class HelloController {
 
     public void switch_screen_to_dashboard(ActionEvent event) {
         HelloApplication.switchRoot("Dashboard.fxml", 1500, 820);
-        dashbboard.setVisible(true);
-        System.out.println("YES");
+        if (dashbboard != null) {
+            dashbboard.setVisible(true);
+        }else {
+            System.out.println("Dashboard is null");
+        }
+
     }
 
 
