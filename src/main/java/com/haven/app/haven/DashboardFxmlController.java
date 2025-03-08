@@ -41,9 +41,9 @@ public class DashboardFxmlController {
         String gender = HelloController.getSelectedGender();
         if (gender != null) {
             if (gender.equals("Male")) {
-                profileImage.setImage(new Image("E:\\Programming\\GitHub\\HavenApp\\src\\main\\resources\\noun-male-5295254.png"));
+                profileImage.setImage(new Image("noun-male-5295254.png"));
             } else if (gender.equals("Female")) {
-                profileImage.setImage(new Image("E:\\Programming\\GitHub\\HavenApp\\src\\main\\resources\\noun-female-5295234.png"));
+                profileImage.setImage(new Image("noun-female-5295234.png"));
             }
         }
 
