@@ -67,11 +67,11 @@
                         <Font name="Segoe UI Semibold" size="13.0" />
                      </font>
                   </Label>
-                  <JFXRadioButton layoutX="134.0" layoutY="287.0" text="Male">
+                  <JFXRadioButton fx:id="maleRadio" layoutX="134.0" layoutY="287.0" text="Male">
                      <toggleGroup>
                         <ToggleGroup fx:id="genderGroup" />
                      </toggleGroup></JFXRadioButton>
-                  <JFXRadioButton layoutX="209.0" layoutY="287.0" text="Female" toggleGroup="$genderGroup" />
+                  <JFXRadioButton fx:id="femaleRadio" layoutX="209.0" layoutY="287.0" text="Female" toggleGroup="$genderGroup" />
                    </children>
                <VBox.margin>
                   <Insets />
