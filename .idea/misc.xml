@@ -3,6 +3,11 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.10 (HavenApp)" />
   </component>
+  <component name="EntryPointsManager">
+    <writeAnnotations>
+      <writeAnnotation name="javafx.fxml.FXML" />
+    </writeAnnotations>
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
     <option name="originalFiles">

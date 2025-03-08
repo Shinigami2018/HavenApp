@@ -136,18 +136,11 @@ public class PersonalityFxmlController implements Initializable {
 
     public void switchToDashboard(int score) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Dashboard.fxml"));
-            Parent root = loader.load();
-            DashboardFxmlController controller = loader.getController();
-            controller.setScore(score);
-            String nn = HelloController.usename;
-            System.out.println("Username: " + nn);
-            saveScoreToDatabase(nn, score);
+            System.out.println("Score: " + score);
+            String name = HelloController.usename;
             HelloApplication.switchRoot("Dashboard.fxml", 894, 648);
-            prompt1.setVisible(true);
-            prompt2.setVisible(false);
-            next.setVisible(true);
-            finished.setVisible(false);
+            saveScoreToDatabase(name, score);
+            DashboardFxmlController.setScore(score); // eikhane ashole ki korte chacchis ARIFUL??? BOHUTKAHINI KOREO BUJLAM NA KAJ KI EITAR
 
         } catch (Exception e) {
             System.out.println("Error: " + e);
@@ -156,23 +149,26 @@ public class PersonalityFxmlController implements Initializable {
 
     //save the score to the database
     //save the score to the database
-    public void saveScoreToDatabase(String username, int scor) {
+    public void saveScoreToDatabase(String username, int score) {
         try {
             System.out.println("Saving score to database");
             System.out.println("Username: " + username);
-            System.out.println("Score: " + scor);
+            System.out.println("Score: " + score);
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "124519@#maisk#");
             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE useraccounts SET score = ? WHERE Username = ?");
-            preparedStatement.setInt(1, scor);
+            preparedStatement.setInt(1, score);
             preparedStatement.setString(2, username);
-//            timefunction timefunction1 = new timefunction();
-//            int day = timefunction1.uday;
-//            preparedStatement = connection.prepareStatement("UPDATE useraccounts SET date = ? WHERE Username = ?");
-//            preparedStatement.setInt(1, day);
-//            preparedStatement.setString(2, username);
+            preparedStatement.executeUpdate();
+            timefunction timefunction1 = new timefunction();
+            int day = timefunction1.uday;
+            preparedStatement = connection.prepareStatement("UPDATE useraccounts SET date = ? WHERE Username = ?");
+            preparedStatement.setInt(1, day);
+            preparedStatement.setString(2, username);
 
 
             preparedStatement.executeUpdate();
+            preparedStatement.close();
+            connection.close();
 
         } catch (SQLException e) {
             System.out.println("Error: " + e);
