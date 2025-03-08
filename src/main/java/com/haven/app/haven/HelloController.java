@@ -134,6 +134,7 @@ public class HelloController {
             if (resultSet.next()) {
                 // Login successful, now switch to the dashboard screen
                 System.out.println("Login successful!");
+                selectedGender = resultSet.getString("Gender");
                 switch_screen_to_dashboard(event);
             } else {
                 System.out.println("Invalid credentials! Please try again.");
