@@ -44,15 +44,15 @@ public class HelloController {
     @FXML
     private TextField ephone;
 
-    public JFXRadioButton maleRadio;
+    public JFXRadioButton maleRadio = new JFXRadioButton();
 
     @FXML
-    public JFXRadioButton femaleRadio;
+    public JFXRadioButton femaleRadio = new JFXRadioButton();
 
     @FXML
     public ToggleGroup genderGroup; // This ensures only one selection at a time
 
-    public static String selectedGender;
+    public static String selectedGender = "male";
 
     //ariful cmnt just
     public void signUpButtonOnAction() {

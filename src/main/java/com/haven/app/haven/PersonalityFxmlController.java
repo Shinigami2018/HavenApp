@@ -1,5 +1,7 @@
 package com.haven.app.haven;
+
 import com.jfoenix.controls.JFXButton;
+
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -8,6 +10,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -22,10 +25,10 @@ public class PersonalityFxmlController implements Initializable {
     public JFXButton des_button;
     public JFXButton cur_button;
     public JFXButton joy_button;
-    public JFXButton gra_button,exc_button,hop_button,con_button,ind_button,conf_button,nos_button;
-    public JFXButton gui_button,sha_button,ang_button,fea_button,str_button,hopl_button,fra_button,empt_button;
-    public JFXButton anx_button,wor_button,par_button,hel_button,ent_button,rel_button,pri_button,cont_button,sat_button;
-    public JFXButton pea_button,emp_button,bor_button,lon_button;
+    public JFXButton gra_button, exc_button, hop_button, con_button, ind_button, conf_button, nos_button;
+    public JFXButton gui_button, sha_button, ang_button, fea_button, str_button, hopl_button, fra_button, empt_button;
+    public JFXButton anx_button, wor_button, par_button, hel_button, ent_button, rel_button, pri_button, cont_button, sat_button;
+    public JFXButton pea_button, emp_button, bor_button, lon_button;
 
     public Map<JFXButton, Integer> buttonScores = new HashMap<>();
     public int score = 0;
@@ -175,7 +178,6 @@ public class PersonalityFxmlController implements Initializable {
             System.out.println("Error: " + e);
         }
     }
-
 
 
     private void animateButtons() {
