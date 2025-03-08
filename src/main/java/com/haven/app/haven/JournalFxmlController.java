@@ -1,8 +1,10 @@
 package com.haven.app.haven;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
@@ -10,6 +12,10 @@ import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
 
 import static com.haven.app.haven.HelloApplication.primaryStage;
 
@@ -28,20 +34,30 @@ public class JournalFxmlController {
     /**
      * Saves the journal text to a file chosen by the user.
      */
+    public JFXListView<String> fileListView;  // Sidebar list
+
+    public final String journalDirectory = "journals";  // Folder to store journal files
+
+
+
     @FXML
     public void saveJournalEntry() {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Save Journal Entry");
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+        try {
+            File dir = new File(journalDirectory);
+            if (!dir.exists()) dir.mkdir();  // Create the directory if not exists
 
-        File file = fileChooser.showSaveDialog(new Stage());
-        if (file != null) {
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
-                writer.write(journalTextArea.getText());
-                System.out.println("Journal saved successfully at " + file.getAbsolutePath());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            String fileName = "Journal_" + System.currentTimeMillis() + ".txt";
+            File file = new File(dir, fileName);
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+            writer.write(journalTextArea.getText());
+            writer.close();
+
+            System.out.println("Journal saved: " + fileName);
+            refreshFileList();  // Update sidebar list
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -73,6 +89,7 @@ public class JournalFxmlController {
 
     @FXML
     public void initialize() {
+        refreshFileList();
         // Make sidebar width adjust dynamically (take 20% of window width)
         sidebar.prefWidthProperty().bind(primaryStage.widthProperty().multiply(0.17));
         // Make the editor dynamically resize
@@ -88,9 +105,32 @@ public class JournalFxmlController {
     }
 
 
-    public void refreshFileList(ActionEvent event) {
+    @FXML
+    private void loadSelectedFile() {
+        String selectedFile = fileListView.getSelectionModel().getSelectedItem();
+        if (selectedFile == null) return;
+
+        File file = new File(journalDirectory, selectedFile);
+        if (file.exists()) {
+            try {
+                String content = new String(Files.readAllBytes(Paths.get(file.getAbsolutePath())));
+                journalTextArea.setText(content);
+                System.out.println("Loaded file: " + selectedFile);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
-    public void loadSelectedFile(MouseEvent mouseEvent) {
+    /**
+     * Refreshes the ListView with available journal files.
+     */
+    @FXML
+    private void refreshFileList() {
+        File dir = new File(journalDirectory);
+        if (!dir.exists()) return;
+
+        List<String> files = Arrays.asList(dir.list((d, name) -> name.endsWith(".txt")));
+        fileListView.getItems().setAll(files);
     }
 }

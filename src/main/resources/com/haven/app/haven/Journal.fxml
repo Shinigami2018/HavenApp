@@ -46,7 +46,7 @@
                   <Font name="Segoe UI Symbol" size="18.0" />
                </font>
             </JFXButton>
-            <JFXListView prefHeight="554.0" prefWidth="250.0" />
+            <JFXListView fx:id="fileListView" onMouseClicked="#loadSelectedFile" prefHeight="554.0" prefWidth="250.0" />
          </children></VBox>
    </left>
     <bottom>
