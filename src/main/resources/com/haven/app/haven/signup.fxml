@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXRadioButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -24,7 +26,7 @@
                         <Font name="Segoe UI Semibold" size="13.0" />
                      </font>
                   </Label>
-                       <Label layoutX="20.0" layoutY="91.0" prefHeight="26.0" prefWidth="80.0" style="-fx-text-fill: #3d3d3d;" text="Email" textFill="#3d3d3d">
+                       <Label layoutX="21.0" layoutY="91.0" prefHeight="26.0" prefWidth="80.0" style="-fx-text-fill: #3d3d3d;" text="Email" textFill="#3d3d3d">
                      <font>
                         <Font name="Segoe UI Semibold" size="13.0" />
                      </font>
@@ -44,22 +46,32 @@
                        <PasswordField fx:id="repasswordPasswordField" accessibleRole="PASSWORD_FIELD" layoutX="133.0" layoutY="164.0" promptText="re-enter password" style="-fx-background-color: #FFFFFF;" />
    
    
-                       <Button layoutX="122.0" layoutY="300.0" mnemonicParsing="false" onAction="#signUpButtonOnAction" prefHeight="34.0" prefWidth="98.0" styleClass="login_signup_button" stylesheets="@style.css" text="Get Started">
+                       <Button layoutX="122.0" layoutY="329.0" mnemonicParsing="false" onAction="#signUpButtonOnAction" prefHeight="34.0" prefWidth="98.0" styleClass="login_signup_button" stylesheets="@style.css" text="Get Started">
                        <font>
                            <Font name="SansSerif Bold" size="12.0" />
                        </font> </Button>
-                  <Label layoutX="18.0" layoutY="205.0" text="Emergency Email">
+                  <Label layoutX="21.0" layoutY="205.0" text="Emergency Email">
                      <font>
                         <Font name="Segoe UI Semibold" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="17.0" layoutY="238.0" prefHeight="30.0" prefWidth="103.0" text="Emergency Phone Number">
+                  <Label layoutX="21.0" layoutY="238.0" prefHeight="30.0" prefWidth="103.0" text="Emergency Phone Number">
                      <font>
                         <Font name="Segoe UI Semibold" size="13.0" />
                      </font>
                   </Label>
                   <TextField fx:id="emergency" layoutX="132.0" layoutY="203.0" promptText="enter email address" />
                   <TextField fx:id="ephone" layoutX="132.0" layoutY="238.0" promptText="enter phone number" />
+                  <Label layoutX="23.0" layoutY="286.0" text="Gender">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="13.0" />
+                     </font>
+                  </Label>
+                  <JFXRadioButton layoutX="134.0" layoutY="287.0" text="Male">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="genderGroup" />
+                     </toggleGroup></JFXRadioButton>
+                  <JFXRadioButton layoutX="209.0" layoutY="287.0" text="Female" toggleGroup="$genderGroup" />
                    </children>
                <VBox.margin>
                   <Insets />
@@ -85,7 +97,7 @@
                       <font>
                           <Font name="SansSerif Bold" size="12.0" />
                       </font> </Button>
-                  <ImageView fitHeight="128.0" fitWidth="123.0" layoutX="68.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="50.0">
+                  <ImageView fitHeight="128.0" fitWidth="123.0" layoutX="75.0" layoutY="50.4" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="50.4">
                      <image>
                         <Image url="@../../../../haven_logo.png" />
                      </image>

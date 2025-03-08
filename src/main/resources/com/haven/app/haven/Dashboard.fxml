@@ -51,7 +51,7 @@
             </JFXButton>
             <StackPane alignment="CENTER_RIGHT" minHeight="30.0" minWidth="100" prefHeight="86.0" prefWidth="230.0" HBox.hgrow="ALWAYS">
                <children>
-                  <ImageView fitHeight="70.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_RIGHT">
+                  <ImageView fx:id="profileImage" fitHeight="70.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_RIGHT">
                      <image>
                         <Image url="@noun-female-5295234.png" />
                      </image>
@@ -103,24 +103,21 @@
    <right>
       <VBox fx:id="right_bar" prefHeight="665.0" prefWidth="278.0" BorderPane.alignment="CENTER">
       <children>
-         <AnchorPane layoutX="-7.0" layoutY="51.0" prefHeight="262.0" prefWidth="228.0" style="-fx-background-color: #F9E79F; -fx-background-radius: 25 25 25 25;" VBox.vgrow="ALWAYS">
+         <AnchorPane layoutX="-7.0" layoutY="51.0" prefHeight="325.0" prefWidth="223.0" style="-fx-background-color: #F9E79F; -fx-background-radius: 25 25 25 25;" VBox.vgrow="ALWAYS">
             <children>
-               <JFXButton fx:id="music_play" layoutX="88.0" layoutY="175.0" minHeight="5.0" minWidth="5.0" prefHeight="51.0" prefWidth="54.0" styleClass="music-button" text="Button" />
-               <JFXButton fx:id="music_prev" layoutX="19.0" layoutY="197.0" minHeight="5.0" minWidth="5.0" prefHeight="54.0" prefWidth="54.0" styleClass="music-button" stylesheets="@style.css" />
-               <JFXButton fx:id="music_next" layoutX="153.0" layoutY="198.0" minHeight="5.0" minWidth="5.0" prefHeight="51.0" prefWidth="54.0" styleClass="music-button" />
+               <JFXButton fx:id="music_play" layoutX="88.0" layoutY="198.0" minHeight="5.0" minWidth="5.0" prefHeight="51.0" prefWidth="54.0" styleClass="music-button" text="Button" />
+               <JFXButton fx:id="music_prev" layoutX="19.0" layoutY="219.0" minHeight="5.0" minWidth="5.0" prefHeight="54.0" prefWidth="54.0" styleClass="music-button" stylesheets="@style.css" />
+               <JFXButton fx:id="music_next" layoutX="153.0" layoutY="223.0" minHeight="5.0" minWidth="5.0" prefHeight="51.0" prefWidth="54.0" styleClass="music-button" />
             </children>
                <VBox.margin>
-                  <Insets bottom="20.0" right="50.0" top="45.0" />
+                  <Insets bottom="20.0" left="5.0" right="50.0" top="45.0" />
                </VBox.margin>
          </AnchorPane>
-            <AnchorPane prefHeight="218.0" prefWidth="203.0" style="-fx-background-color: #F9E79F; -fx-background-radius: 25 25 25 25;" VBox.vgrow="ALWAYS">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
+            <Button mnemonicParsing="false" prefHeight="278.0" prefWidth="279.0" style="-fx-background-color: #F9E79F; -fx-background-radius: 25 25 25 25;">
                <VBox.margin>
-                  <Insets bottom="45.0" right="50.0" top="60.0" />
+                  <Insets bottom="40.0" left="5.0" right="50.0" top="10.0" />
                </VBox.margin>
-            </AnchorPane>
+            </Button>
       </children>
       </VBox>
 

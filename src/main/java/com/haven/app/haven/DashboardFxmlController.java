@@ -5,6 +5,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import static com.haven.app.haven.HelloApplication.primaryStage;
 
@@ -17,6 +19,7 @@ public class DashboardFxmlController {
     @FXML
     private Label scor; // Make sure this matches the fx:id in your FXML
 
+    public ImageView profileImage;
     public void setScore(int score) {
         scor.setText("Score: " + score);
     }
@@ -32,6 +35,14 @@ public class DashboardFxmlController {
 
     public void initialize()
     {
+        String gender = HelloController.getSelectedGender();
+        if (gender != null) {
+            if (gender.equals("Male")) {
+                profileImage.setImage(new Image("C:\\GITHUB\\HavenApp\\src\\main\\resources\\noun-male-5295254.png"));
+            } else if (gender.equals("Female")) {
+                profileImage.setImage(new Image("C:\\GITHUB\\HavenApp\\src\\main\\resources\\noun-female-5295234.png"));
+            }
+        }
 
     }
 }

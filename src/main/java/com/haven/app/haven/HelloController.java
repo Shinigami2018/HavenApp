@@ -9,6 +9,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.*;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 
 public class HelloController {
     @FXML
@@ -39,6 +41,16 @@ public class HelloController {
     private TextField emergency;
     @FXML
     private TextField ephone;
+
+    public RadioButton maleRadio;
+
+    @FXML
+    public RadioButton femaleRadio;
+
+    @FXML
+    public ToggleGroup genderGroup; // This ensures only one selection at a time
+
+    public static String selectedGender;
 
     //ariful cmnt just
     public void signUpButtonOnAction() {
@@ -200,6 +212,25 @@ public class HelloController {
     public void switch_to_login_screen(ActionEvent event) /*for logout*/ {
         HelloApplication.switchRoot("login.fxml", 619, 434);
 
+    }
+
+    public void initialize() {
+        ToggleGroup genderGroup = new ToggleGroup();
+        maleRadio.setToggleGroup(genderGroup);
+        femaleRadio.setToggleGroup(genderGroup);
+    }
+
+    public void setSelectedGender() {
+
+        if (maleRadio.isSelected()) {
+            selectedGender = "Male";
+        } else if (femaleRadio.isSelected()) {
+            selectedGender = "Female";
+        }
+    }
+
+    public static String getSelectedGender() {
+        return selectedGender;
     }
 
 
