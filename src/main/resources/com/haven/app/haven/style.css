@@ -323,4 +323,33 @@
     -fx-scale-y: 1.1;
 }
 
+/*for journal*/
+
+.load_button{
+
+}
+
+.load_button:hover{
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.save_button{
+
+}
+
+.save_button:hover{
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.refresh_button{
+
+}
+
+.refresh_button:hover{
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
 
