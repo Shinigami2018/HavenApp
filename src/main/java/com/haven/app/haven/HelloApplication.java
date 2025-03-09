@@ -19,7 +19,7 @@ public class HelloApplication extends Application {
 
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
-        String fxmlFile = "Dashboard.fxml"; // Change this to "login.fxml" dynamically if needed
+        String fxmlFile = "user.fxml"; // Change this to "login.fxml" dynamically if needed
 
         Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
 

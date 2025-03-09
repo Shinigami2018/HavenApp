@@ -5,8 +5,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -28,7 +30,12 @@ public class HelloController {
     public static String usename;
     public static String eEmail;
     public static String ePHN;
-
+    @FXML
+    public StackPane centerContent;
+    @FXML
+    public Label account_name;
+    @FXML
+    public ImageView userPhoto;
 
     @FXML
     private TextField usernameTextField;
@@ -247,6 +254,8 @@ public class HelloController {
     public static String getSelectedGender() {
         return selectedGender;
     }
+
+
 
 
 }

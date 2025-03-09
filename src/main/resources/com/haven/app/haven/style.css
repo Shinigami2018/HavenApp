@@ -264,31 +264,14 @@
     /*-fx-background-position: center; /* Center the image */
 }
 
-.user-menu-left-side {
-    -fx-background-color: rgba(163, 57, 223, 0.25);
-    -fx-background-radius: 15px 15px 15px 15px;
-}
 
-.user-menu-right-side {
-    -fx-background-color: rgba(163, 57, 223, 0.25);
-    -fx-background-radius: 15px 15px 15px 15px;
-}
-
-.user-menu-middle-side {
-    -fx-background-color: rgba(163, 57, 223, 0.25);
-    -fx-background-radius: 15px 15px 15px 15px;
-}
 
 .user-menu-left-sub-button {
-    -fx-background-color: rgba(163, 57, 223, 0.25);
-    -fx-background-radius: 15px 15px 15px 15px;
-    -fx-text-fill: white;
-    -fx-font-size: 10px;
-    -fx-padding: 5px 15px;
+    -fx-background-color: #f1b06a;
 }
 
 .user-menu-left-sub-button:hover {
-    -fx-background-color: #945e95;
+    -fx-background-color: #f6b27e ;
     -fx-scale-x: 1.1;
     -fx-scale-y: 1.1;
 }
