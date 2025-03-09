@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -28,7 +29,7 @@ public class HelloApplication extends Application {
 
         stage.setTitle("HAVEN");
         stage.setScene(scene);
-
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("classic (1)_prev_ui.png")));
         // Disable resizing only for "signup.fxml" or "login.fxml"
         if (fxmlFile.equals("signup.fxml") || fxmlFile.equals("login.fxml")) {
             stage.setResizable(false);
