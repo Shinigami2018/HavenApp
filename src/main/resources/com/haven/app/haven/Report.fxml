@@ -1,35 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.control.*?>
-<?import com.jfoenix.controls.*?>
-
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<BorderPane xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.haven.app.haven.ReportFxmlController"
-            prefWidth="1440" prefHeight="820"
-            style="-fx-background-color: #FDF8EE;">
 
-    <!-- Top Bar -->
+<BorderPane prefHeight="820" prefWidth="1440" style="-fx-background-color: #FDF8EE;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.ReportFxmlController">
+
+
     <top>
         <HBox fx:id="Menubuttons" alignment="CENTER" layoutX="472.0" prefHeight="84.0" prefWidth="1440.0">
             <children>
-                <JFXButton prefHeight="42.0" prefWidth="147.0" styleClass="left-curved-button" stylesheets="@style.css" text="Dashboard">
+                <JFXButton onAction="#switch_to_dashboard" prefHeight="42.0" prefWidth="147.0" styleClass="left-curved-button" stylesheets="@style.css" text="Dashboard">
                     <font>
                         <Font name="SansSerif Bold" size="17.0" />
                     </font>
                 </JFXButton>
-                <JFXButton prefHeight="42.0" prefWidth="141.0" style="-fx-background-color: #f1b06a;" styleClass="menu-middle-button-clicked" stylesheets="@style.css" text="Journal">
+                <JFXButton onAction="#switch_to_journal" prefHeight="42.0" prefWidth="141.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Journal">
                     <font>
                         <Font name="SansSerif Bold" size="17.0" />
                     </font>
                 </JFXButton>
-                <JFXButton prefHeight="42.0" prefWidth="147.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Relax">
+                <JFXButton onAction="#switch_to_relax" prefHeight="42.0" prefWidth="147.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Relax">
                     <font>
                         <Font name="SansSerif Bold" size="17.0" />
                     </font>
                 </JFXButton>
-                <JFXButton prefHeight="42.0" prefWidth="147.0" styleClass="right-curved-button" stylesheets="@style.css" text="Report">
+                <JFXButton prefHeight="42.0" prefWidth="147.0" styleClass="right-curved-button-clicked" stylesheets="@style.css" text="Report">
                     <font>
                         <Font name="SansSerif Bold" size="17.0" />
                     </font>
@@ -39,37 +42,42 @@
 
     </top>
 
-    <!-- Side Bar -->
+
     <left>
-        <VBox fx:id="sideBar" style="-fx-background-color: #F9E79F; -fx-padding: 15; -fx-spacing: 8;"
-              BorderPane.alignment="CENTER" prefWidth="250">
-            <Label text="Reports" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
-            <ListView fx:id="fileList" prefWidth="230" prefHeight="700"/>
+        <VBox fx:id="sideBar" prefWidth="250" style="-fx-background-color: #F9E79F; -fx-padding: 15; -fx-spacing: 8;" BorderPane.alignment="CENTER">
+            <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Reports" />
+            <ListView fx:id="fileList" prefHeight="700" prefWidth="230" />
         </VBox>
     </left>
 
-    <!-- Mood Graph Display (Middle Section) -->
+
     <center>
-        <StackPane fx:id="graphContainer" style="-fx-background-color: white; -fx-border-color: #F9E79F; -fx-border-width: 2;"
-                   BorderPane.alignment="CENTER" prefWidth="900" prefHeight="700">
-            <Label text="Mood Graph will be displayed here" style="-fx-font-size: 22px; -fx-text-fill: gray;"/>
+        <StackPane fx:id="graphContainer" prefHeight="700" prefWidth="900" style="-fx-background-color: #f1c392; -fx-border-color: #F9E79F; -fx-border-width: 2;" BorderPane.alignment="CENTER">
+            <Label style="-fx-font-size: 22px; -fx-text-fill: gray;" text="Mood Graph will be displayed here" />
+            <LineChart fx:id="moodChart" animated="true" style="-fx-background-color: white;" title="Mood History">
+                <xAxis>
+                    <NumberAxis label="Days" fx:id="xAxis" />
+                </xAxis>
+                <yAxis>
+                    <NumberAxis fx:id="yAxis" label="Mood Score" />
+                </yAxis>
+            </LineChart>
+
         </StackPane>
     </center>
 
-    <!-- Right Section -->
+
     <right>
-        <VBox fx:id="rightPanel" style="-fx-background-color: #F9E79F; -fx-padding: 15; -fx-spacing: 15;"
-              BorderPane.alignment="CENTER" prefWidth="250">
-            <Label text="Insights" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
-            <JFXButton text="Analyze Data" fx:id="analyzeBtn" style="-fx-background-color: #FFD2A0; -fx-text-fill: black;"/>
+        <VBox fx:id="rightPanel" prefWidth="250" style="-fx-background-color: #F9E79F; -fx-padding: 15; -fx-spacing: 15;" BorderPane.alignment="CENTER">
+            <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Insights" />
+            <JFXButton fx:id="analyzeBtn" style="-fx-background-color: #FFD2A0; -fx-text-fill: black;" text="Analyze Data" />
         </VBox>
     </right>
 
-    <!-- Bottom Section -->
+
     <bottom>
-        <HBox fx:id="bottomBar" style="-fx-background-color: #F9E79F; -fx-padding: 10; -fx-alignment: center;"
-              BorderPane.alignment="CENTER">
-            <JFXButton text="Export Report" fx:id="exportBtn" style="-fx-background-color: #FFD2A0; -fx-text-fill: black;"/>
+        <HBox fx:id="bottomBar" style="-fx-background-color: #F9E79F; -fx-padding: 10; -fx-alignment: center;" BorderPane.alignment="CENTER">
+            <JFXButton fx:id="exportBtn" style="-fx-background-color: #FFD2A0; -fx-text-fill: black;" text="Export Report" />
         </HBox>
     </bottom>
 

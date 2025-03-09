@@ -18,7 +18,7 @@ public class HelloApplication extends Application {
 
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
-        String fxmlFile = "Drawing.fxml"; // Change this to "login.fxml" dynamically if needed
+        String fxmlFile = "Report.fxml"; // Change this to "login.fxml" dynamically if needed
 
         Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
 
@@ -39,8 +39,9 @@ public class HelloApplication extends Application {
             else
             {
                 primaryStage.setResizable(true);
+                primaryStage.setMaximized(true);
             }
-            primaryStage.setFullScreen(true);
+            /*primaryStage.setFullScreen(true);*/
         }
 
         stage.show();
@@ -69,16 +70,17 @@ public class HelloApplication extends Application {
                 else
                 {
                     primaryStage.setResizable(true);
+                    primaryStage.setMaximized(true);
                 }
-                primaryStage.setFullScreen(true);
+                /*primaryStage.setFullScreen(true);*/
 
                 // Handle exiting full-screen mode with custom size
-                primaryStage.fullScreenProperty().addListener((obs, wasFullScreen, isNowFullScreen) -> {
+                /*primaryStage.fullScreenProperty().addListener((obs, wasFullScreen, isNowFullScreen) -> {
                     if (!isNowFullScreen) {
                         primaryStage.setWidth(width);
                         primaryStage.setHeight(height);
                     }
-                });
+                });*/
             }
 
         } catch (Exception e) {
@@ -86,6 +88,8 @@ public class HelloApplication extends Application {
             e.printStackTrace();
         }
     }
+
+
 
     
 

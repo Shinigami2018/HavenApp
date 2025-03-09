@@ -14,7 +14,7 @@
     <top>
         <HBox fx:id="Menubuttons" alignment="CENTER" layoutX="472.0" prefHeight="84.0" prefWidth="1440.0">
             <children>
-                <JFXButton prefHeight="42.0" prefWidth="147.0" styleClass="left-curved-button" stylesheets="@style.css" text="Dashboard">
+                <JFXButton onAction="#switch_to_dashboard" prefHeight="42.0" prefWidth="147.0" styleClass="left-curved-button" stylesheets="@style.css" text="Dashboard">
                     <font>
                         <Font name="SansSerif Bold" size="17.0" />
                     </font>
@@ -24,12 +24,12 @@
                         <Font name="SansSerif Bold" size="17.0" />
                     </font>
                 </JFXButton>
-                <JFXButton prefHeight="42.0" prefWidth="147.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Relax">
+                <JFXButton onAction="#switch_to_relax" prefHeight="42.0" prefWidth="147.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Relax">
                     <font>
                         <Font name="SansSerif Bold" size="17.0" />
                     </font>
                 </JFXButton>
-                <JFXButton prefHeight="42.0" prefWidth="147.0" styleClass="right-curved-button" stylesheets="@style.css" text="Report">
+                <JFXButton onAction="#switch_to_report" prefHeight="42.0" prefWidth="147.0" styleClass="right-curved-button" stylesheets="@style.css" text="Report">
                     <font>
                         <Font name="SansSerif Bold" size="17.0" />
                     </font>

@@ -187,7 +187,7 @@ public class HelloController {
     }*/
 
     public void switch_screen_to_dashboard(ActionEvent event) {
-        HelloApplication.switchRoot("Dashboard.fxml", 1500, 820);
+        HelloApplication.switchRoot("Dashboard.fxml", 1550, 830);
         if (dashbboard != null) {
             dashbboard.setVisible(true);
         }else {

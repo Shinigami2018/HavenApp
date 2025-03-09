@@ -28,13 +28,21 @@ public class DashboardFxmlController {
     }
 
     public void switch_screen_to_user_page(ActionEvent event) {
-        HelloApplication.switchRoot("User.fxml", 1500, 820);
+        HelloApplication.switchRoot("User.fxml", 1550, 830);
         System.out.println("YES");
     }
 
-    public void switch_screen_to_journal_page(ActionEvent event) {
-        HelloApplication.switchRoot("Journal.fxml", 1500, 820);
-        System.out.println("YES");
+    public void switch_to_journal(ActionEvent event) {
+        HelloApplication.switchRoot("Journal.fxml",1550,830);
+        HelloApplication.primaryStage.setMaximized(true);
+    }
+    public void switch_to_relax(ActionEvent event) {
+        HelloApplication.switchRoot("Relax.fxml",1550,830);
+        HelloApplication.primaryStage.setMaximized(true);
+    }
+    public void switch_to_report(ActionEvent event) {
+        HelloApplication.switchRoot("Report.fxml",1550,830);
+        HelloApplication.primaryStage.setMaximized(true);
     }
 
     public void initialize() {

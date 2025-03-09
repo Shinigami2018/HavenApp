@@ -1,6 +1,7 @@
 package com.haven.app.haven;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -58,5 +59,19 @@ public class RelaxFxmlController {
     private void clearCanvas() {
         gc.setFill(Color.WHITE);
         gc.fillRect(0, 0, drawingCanvas.getWidth(), drawingCanvas.getHeight());
+    }
+
+    public void switch_to_dashboard(ActionEvent event) {
+        HelloApplication.switchRoot("Dashboard.fxml",1550,830);
+        HelloApplication.primaryStage.setMaximized(true);
+    }
+    public void switch_to_journal(ActionEvent event) {
+        HelloApplication.switchRoot("Journal.fxml",1550,830);
+        HelloApplication.primaryStage.setMaximized(true);
+    }
+
+    public void switch_to_report(ActionEvent event) {
+        HelloApplication.switchRoot("Report.fxml",1550,830);
+        HelloApplication.primaryStage.setMaximized(true);
     }
 }

@@ -133,4 +133,18 @@ public class JournalFxmlController {
         List<String> files = Arrays.asList(dir.list((d, name) -> name.endsWith(".txt")));
         fileListView.getItems().setAll(files);
     }
+
+
+    public void switch_to_dashboard(ActionEvent event) {
+        HelloApplication.switchRoot("Dashboard.fxml",1550,830);
+        HelloApplication.primaryStage.setMaximized(true);
+    }
+    public void switch_to_relax(ActionEvent event) {
+        HelloApplication.switchRoot("Relax.fxml",1550,830);
+        HelloApplication.primaryStage.setMaximized(true);
+    }
+    public void switch_to_report(ActionEvent event) {
+        HelloApplication.switchRoot("Report.fxml",1550,830);
+        HelloApplication.primaryStage.setMaximized(true);
+    }
 }

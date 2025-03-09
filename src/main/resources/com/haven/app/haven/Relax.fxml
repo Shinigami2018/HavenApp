@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.canvas.*?>
-<?import javafx.scene.control.*?>
-<?import com.jfoenix.controls.*?>
-
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<BorderPane xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.haven.app.haven.RelaxFxmlController"
-            prefWidth="1440" prefHeight="820"
-            style="-fx-background-color: #FDF8EE;">
 
-    <!-- Top Bar -->
+<BorderPane prefHeight="820" prefWidth="1440" style="-fx-background-color: #FDF8EE;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.RelaxFxmlController">
+
+    
     <top>
-        <HBox fx:id="Menubuttons" alignment="CENTER" layoutX="472.0" prefHeight="84.0" prefWidth="1440.0">
+        <HBox fx:id="Menubuttons" alignment="CENTER" layoutX="472.0" prefHeight="84.0" prefWidth="1440.0" BorderPane.alignment="CENTER">
             <children>
-                <JFXButton prefHeight="42.0" prefWidth="147.0" styleClass="left-curved-button" stylesheets="@style.css" text="Dashboard">
+                <JFXButton onAction="#switch_to_dashboard" prefHeight="42.0" prefWidth="147.0" styleClass="left-curved-button" stylesheets="@style.css" text="Dashboard" HBox.hgrow="ALWAYS">
                     <font>
                         <Font name="SansSerif Bold" size="17.0" />
                     </font>
                 </JFXButton>
-                <JFXButton prefHeight="42.0" prefWidth="141.0" style="-fx-background-color: #f1b06a;" styleClass="menu-middle-button-clicked" stylesheets="@style.css" text="Journal">
+                <JFXButton onAction="#switch_to_journal" prefHeight="42.0" prefWidth="141.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Journal" HBox.hgrow="ALWAYS">
                     <font>
                         <Font name="SansSerif Bold" size="17.0" />
                     </font>
                 </JFXButton>
-                <JFXButton prefHeight="42.0" prefWidth="147.0" styleClass="menu-middle-button" stylesheets="@style.css" text="Relax">
+                <JFXButton prefHeight="42.0" prefWidth="147.0" styleClass="menu-middle-button-clicked" stylesheets="@style.css" text="Relax" HBox.hgrow="ALWAYS">
                     <font>
                         <Font name="SansSerif Bold" size="17.0" />
                     </font>
                 </JFXButton>
-                <JFXButton prefHeight="42.0" prefWidth="147.0" styleClass="right-curved-button" stylesheets="@style.css" text="Report">
+                <JFXButton onAction="#switch_to_report" prefHeight="42.0" prefWidth="147.0" styleClass="right-curved-button" stylesheets="@style.css" text="Report" HBox.hgrow="ALWAYS">
                     <font>
                         <Font name="SansSerif Bold" size="17.0" />
                     </font>
@@ -41,24 +41,22 @@
 
     <!-- Side Bar (Tools & Color Selection) -->
     <left>
-        <VBox fx:id="sideBar" style="-fx-background-color: #F9E79F; -fx-padding: 15; -fx-spacing: 10;"
-              BorderPane.alignment="CENTER" prefWidth="200">
-            <Label text="Tools" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
-            <JFXButton text="Clear Canvas" fx:id="clearBtn" style="-fx-background-color: #FFD2A0; -fx-text-fill: black; -fx-font-size: 16px; -fx-pref-width: 160px; -fx-pref-height: 50px;"/>
-            <Label text="Colors" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 10px 0px 0px 0px;"/>
-            <JFXButton text="Black" fx:id="blackColor" style="-fx-background-color: black; -fx-text-fill: white; -fx-font-size: 16px; -fx-pref-width: 160px; -fx-pref-height: 50px;"/>
-            <JFXButton text="Red" fx:id="redColor" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-size: 16px; -fx-pref-width: 160px; -fx-pref-height: 50px;"/>
-            <JFXButton text="Blue" fx:id="blueColor" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-size: 16px; -fx-pref-width: 160px; -fx-pref-height: 50px;"/>
-            <JFXButton text="Green" fx:id="greenColor" style="-fx-background-color: green; -fx-text-fill: white; -fx-font-size: 16px; -fx-pref-width: 160px; -fx-pref-height: 50px;"/>
-            <JFXButton text="Eraser" fx:id="eraser" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-size: 16px; -fx-pref-width: 160px; -fx-pref-height: 50px;"/>
+        <VBox fx:id="sideBar" prefWidth="200" style="-fx-background-color: #F9E79F; -fx-padding: 15; -fx-spacing: 10;" BorderPane.alignment="CENTER">
+            <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Tools" />
+            <JFXButton fx:id="clearBtn" style="-fx-background-color: #FFD2A0; -fx-text-fill: black; -fx-font-size: 16px; -fx-pref-width: 160px; -fx-pref-height: 50px;" text="Clear Canvas" />
+            <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 10px 0px 0px 0px;" text="Colors" />
+            <JFXButton fx:id="blackColor" style="-fx-background-color: black; -fx-text-fill: white; -fx-font-size: 16px; -fx-pref-width: 160px; -fx-pref-height: 50px;" text="Black" />
+            <JFXButton fx:id="redColor" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-size: 16px; -fx-pref-width: 160px; -fx-pref-height: 50px;" text="Red" />
+            <JFXButton fx:id="blueColor" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-size: 16px; -fx-pref-width: 160px; -fx-pref-height: 50px;" text="Blue" />
+            <JFXButton fx:id="greenColor" style="-fx-background-color: green; -fx-text-fill: white; -fx-font-size: 16px; -fx-pref-width: 160px; -fx-pref-height: 50px;" text="Green" />
+            <JFXButton fx:id="eraser" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-size: 16px; -fx-pref-width: 160px; -fx-pref-height: 50px;" text="Eraser" />
         </VBox>
     </left>
 
     <!-- Drawing Board -->
     <center>
-        <StackPane fx:id="canvasContainer" style="-fx-border-color: #F9E79F; -fx-border-width: 2;"
-                   BorderPane.alignment="CENTER" prefWidth="1000" prefHeight="700">
-            <Canvas fx:id="drawingCanvas" width="1000" height="700"/>
+        <StackPane fx:id="canvasContainer" prefHeight="700" prefWidth="1000" style="-fx-border-color: #F9E79F; -fx-border-width: 2;" BorderPane.alignment="CENTER">
+            <Canvas fx:id="drawingCanvas" height="700" width="1000" />
         </StackPane>
     </center>
 
