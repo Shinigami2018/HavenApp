@@ -6,7 +6,10 @@
     /*-fx-background-repeat: no-repeat; /* No repeating */
     /*-fx-background-position: center;*/ /* Center the image */
 }
-
+.dashboard{
+    -fx-background-color: #FDF8EE;
+    -fx-background-image: url(dashboardbackground.png)
+}
 .login_signup_background {
     /*-fx-background-image: url(login_signup_side_background.png);
     /*-fx-background-size: cover; /* Adjust size */
