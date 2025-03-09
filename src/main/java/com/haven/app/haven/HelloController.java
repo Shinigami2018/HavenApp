@@ -105,7 +105,7 @@ public class HelloController {
 
             preparedStatement.executeUpdate();
 
-            HelloApplication.switchRoot("Personality.fxml", 894, 648);
+            HelloApplication.switchRoot("Personality.fxml", 1550, 830);
             prompt1.setVisible(true);
             prompt2.setVisible(false);
             next.setVisible(true);
@@ -170,7 +170,7 @@ public class HelloController {
 
         // get the data for username, email password and confirm password
 
-        HelloApplication.switchRoot("Personality.fxml", 894, 648);
+        HelloApplication.switchRoot("Personality.fxml", 1550, 830);
         prompt1.setVisible(true);
         prompt2.setVisible(false);
         next.setVisible(true);
