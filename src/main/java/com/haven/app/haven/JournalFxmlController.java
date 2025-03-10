@@ -45,8 +45,9 @@ public class JournalFxmlController {
         try {
             File dir = new File(journalDirectory);
             if (!dir.exists()) dir.mkdir();  // Create the directory if not exists
+            timefunction time = new timefunction();
 
-            String fileName = "Journal_" + System.currentTimeMillis() + ".txt";
+            String fileName = "Journal " + time.uday +" "+ time.umonth+" "+time.uhour+ ".txt";
             File file = new File(dir, fileName);
 
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));

@@ -9,6 +9,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -224,6 +226,8 @@ public class HelloController {
         ToggleGroup genderGroup = new ToggleGroup();
         maleRadio.setToggleGroup(genderGroup);
         femaleRadio.setToggleGroup(genderGroup);
+        webView.setVisible(false);
+
     }
 
     public void setSelectedGender() {
@@ -237,6 +241,16 @@ public class HelloController {
 
     public static String getSelectedGender() {
         return selectedGender;
+    }
+
+    @FXML
+    private WebView webView;
+
+    public void mental_resources(ActionEvent event) {
+        centerContent.setOpacity(0.6);
+        webView.setVisible(true);
+        WebEngine webEngine = webView.getEngine();
+        webEngine.load("https://monerbondhu.com/");
     }
 
 

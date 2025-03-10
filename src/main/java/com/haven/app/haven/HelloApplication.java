@@ -19,7 +19,7 @@ public class HelloApplication extends Application {
 
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
-        String fxmlFile = "signup.fxml"; // Change this to "login.fxml" dynamically if needed
+        String fxmlFile = "user.fxml"; // Change this to "login.fxml" dynamically if needed
 
         Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
 
@@ -45,7 +45,9 @@ public class HelloApplication extends Application {
             /*primaryStage.setFullScreen(true);*/
         }
 
+
         stage.show();
+        stage.centerOnScreen();
     }
 
     //method to change the root node
@@ -84,6 +86,7 @@ public class HelloApplication extends Application {
                     }
                 });*/
             }
+            primaryStage.centerOnScreen();
 
         } catch (Exception e) {
             System.err.println("Failed to load FXML file: " + fxmlFile);

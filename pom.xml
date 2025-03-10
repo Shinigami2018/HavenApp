@@ -28,6 +28,11 @@
     </dependency>
     <dependency>
       <groupId>org.openjfx</groupId>
+      <artifactId>javafx-web</artifactId>
+      <version>17.0.6</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
       <artifactId>javafx-fxml</artifactId>
       <version>17.0.6</version>
     </dependency>
@@ -37,8 +42,15 @@
       <version>17.0.6</version> <!-- Change to your JavaFX version -->
     </dependency>
 
+      <dependency>
+        <groupId>com.jfoenix</groupId>
+        <artifactId>jfoenix</artifactId>
+        <version>9.0.10</version>
+      </dependency>
 
-<!--    <dependency>-->
+
+
+    <!--    <dependency>-->
 <!--      <groupId>com.github.cdimascio</groupId>-->
 <!--      <artifactId>java-dotenv</artifactId>-->
 <!--      <version>5.2.2</version>-->
