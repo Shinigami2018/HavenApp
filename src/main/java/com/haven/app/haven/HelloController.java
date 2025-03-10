@@ -267,12 +267,14 @@ public class HelloController {
         }
 
     }
+    @FXML
+    private WebView webView = new WebView();
 
     public void initialize() {
         ToggleGroup genderGroup = new ToggleGroup();
         maleRadio.setToggleGroup(genderGroup);
         femaleRadio.setToggleGroup(genderGroup);
-        //webView.setVisible(false);
+        webView.setVisible(false);
         if (selectedGender != null) {
             if (selectedGender.equals("Male")) {
                 userPhoto.setImage(new Image("noun-male-5295254.png"));
@@ -297,8 +299,6 @@ public class HelloController {
         return selectedGender;
     }
 
-    @FXML
-    private WebView webView;
 
     public void mental_resources(ActionEvent event) {
         centerContent.setOpacity(0.6);
