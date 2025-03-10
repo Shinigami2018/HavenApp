@@ -2,6 +2,7 @@ package com.haven.app.haven;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.*;
+import javafx.application.HostServices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
@@ -183,6 +184,7 @@ public class DashboardFxmlController {
         xAxis.setLabel("Days");
         yAxis.setLabel("Mood Score");
 
+<<<<<<< Updated upstream
         // Create a data series
         XYChart.Series<Number, Number> series = new XYChart.Series<>();
 
@@ -295,6 +297,10 @@ public class DashboardFxmlController {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+=======
+        setHostServices(hostServices);
+
+>>>>>>> Stashed changes
     }
 
 
@@ -338,6 +344,31 @@ public class DashboardFxmlController {
         timeline.setCycleCount(text.length()); // Number of characters
         timeline.play();
     }
+
+    public HostServices hostServices;
+
+    public void setHostServices(HostServices hostServices) {
+        this.hostServices = hostServices;
+    }
+
+
+    @FXML
+    private Button game_button;
+
+    private void openWebsite(String url) {
+        if (hostServices != null) {
+            hostServices.showDocument(url);
+        } else {
+            System.out.println("HostServices is not available.");
+        }
+    }
+
+    @FXML
+    private void play_games(ActionEvent event) {
+        openWebsite("https://www.google.com");
+    }
+
+
 
 
 }

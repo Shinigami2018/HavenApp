@@ -232,6 +232,10 @@
 .music-box {
     -fx-background-color: #F9E79F;
     -fx-background-radius: 15px 15px 15px 15px;
+
+    -fx-background-image: url("dj_hipster_GIF_by_MINI_Italia_Small.png");
+    -fx-background-size: cover;
+    -fx-background-positon: center;
     /*-fx-background-image: url("music_background-modified.png");
     -fx-background-size: 100% 100%; /* Scale image to fill the AnchorPane */
     /*-fx-background-repeat: no-repeat; /* Prevent tiling */
@@ -366,6 +370,17 @@
 }
 
 .refresh_button:hover{
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.game_button
+{
+    -fx-background-image: url(poki.png);
+}
+.game_button:hover
+{
+    -fx-background-image: url(poki.png);
     -fx-scale-x: 1.1;
     -fx-scale-y: 1.1;
 }

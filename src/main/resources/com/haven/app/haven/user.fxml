@@ -77,7 +77,7 @@
                   <Image url="@../../../../noun-male-5295254.png" />
                </image></ImageView>
             <Label fx:id="account_name" style="-fx-font-size: 18px; -fx-text-fill: black;" text="Username" />
-            <JFXButton fx:id="smsButton" onAction="#email_send" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f1b06a; -fx-text-fill: black; -fx-background-radius: 25;" styleClass="user-menu-left-sub-button" text="SMS" VBox.vgrow="ALWAYS">
+            <JFXButton fx:id="smsButton" onAction="#email_send" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f1b06a; -fx-text-fill: black; -fx-background-radius: 25;" styleClass="user-menu-left-sub-button" text="Emergency Button" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Segoe UI Semibold" size="17.0" />
                </font></JFXButton>
