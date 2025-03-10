@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -18,11 +19,11 @@
    <left>
       <AnchorPane fx:id="left_bar" layoutX="30" layoutY="20" opacity="0.8" prefWidth="260.0" style="-fx-background-color: #F9E79F; -fx-background-radius: 40;" BorderPane.alignment="CENTER">
          <VBox fx:id="leftContent" layoutX="33.0" layoutY="161.0" spacing="20">
-            <JFXButton fx:id="menu_journal" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f1b06a; -fx-text-fill: black; -fx-background-radius: 25 25 25 25;" styleClass="user-menu-left-sub-button" text="Journal" VBox.vgrow="ALWAYS">
+            <JFXButton fx:id="menu_journal" onAction="#take_me_to_journal" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f1b06a; -fx-text-fill: black; -fx-background-radius: 25 25 25 25;" styleClass="user-menu-left-sub-button" text="Journal" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Segoe UI Semibold" size="17.0" />
                </font></JFXButton>
-            <JFXButton fx:id="menu_contacts" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f1b06a; -fx-text-fill: black; -fx-background-radius: 25;" styleClass="user-menu-left-sub-button" text="Emergency Helpline" VBox.vgrow="ALWAYS">
+            <JFXButton fx:id="menu_contacts" onAction="#emergency_helpline" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f1b06a; -fx-text-fill: black; -fx-background-radius: 25;" styleClass="user-menu-left-sub-button" text="Emergency Helpline" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Segoe UI Semibold" size="17.0" />
                </font></JFXButton>
@@ -31,10 +32,6 @@
                   <Font name="Segoe UI Semibold" size="15.0" />
                </font></JFXButton>
             <JFXButton fx:id="user_back" onAction="#switch_screen_to_dashboard" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f1b06a; -fx-text-fill: black; -fx-background-radius: 25;" styleClass="user-menu-left-sub-button" text="Back" VBox.vgrow="ALWAYS">
-               <font>
-                  <Font name="Segoe UI Semibold" size="17.0" />
-               </font></JFXButton>
-            <JFXButton fx:id="user_logout" onAction="#switch_to_login_screen" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f1b06a; -fx-text-fill: black; -fx-background-radius: 25;" styleClass="user-menu-left-sub-button" text="Log Out" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Segoe UI Semibold" size="17.0" />
                </font></JFXButton>
@@ -58,13 +55,23 @@
          </BorderPane.margin>
          <children>
             <WebView fx:id="webView" opacity="0.8" prefHeight="200.0" prefWidth="200.0" StackPane.alignment="CENTER" />
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label prefHeight="63.0" prefWidth="270.0" text="Your Journals: ">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="25.0" />
+                     </font>
+                  </Label>
+                  <JFXListView fx:id="listView" prefHeight="583.0" prefWidth="830.0" />
+               </children>
+            </VBox>
          </children></StackPane>
    </center>
 
    <!-- Right Panel -->
    <right>
       <AnchorPane fx:id="right_bar" layoutX="30" layoutY="20" opacity="0.8" prefWidth="260.0" style="-fx-background-color: #F9E79F; -fx-background-radius: 50;" BorderPane.alignment="CENTER">
-         <VBox fx:id="rightContent" alignment="CENTER" layoutX="40" layoutY="100" spacing="20">
+         <VBox fx:id="rightContent" alignment="CENTER" layoutX="33.0" layoutY="100.0" spacing="20">
             <ImageView fx:id="userPhoto" fitHeight="100" fitWidth="100" style="-fx-background-radius: 50%;" VBox.vgrow="ALWAYS">
                <image>
                   <Image url="@../../../../noun-male-5295254.png" />
@@ -75,6 +82,11 @@
                   <Font name="Segoe UI Semibold" size="17.0" />
                </font></JFXButton>
          </VBox>
+         <JFXButton fx:id="user_logout" layoutX="34.0" layoutY="626.0" onAction="#switch_to_login_screen" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f1b06a; -fx-text-fill: black; -fx-background-radius: 25;" styleClass="user-menu-left-sub-button" text="Log Out">
+            <font>
+               <Font name="Segoe UI Semibold" size="17.0" />
+            </font>
+         </JFXButton>
          <BorderPane.margin>
             <Insets bottom="40.0" left="20.0" right="40.0" top="40.0" />
          </BorderPane.margin>

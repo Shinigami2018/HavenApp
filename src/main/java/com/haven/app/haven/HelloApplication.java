@@ -64,10 +64,10 @@ public class HelloApplication extends Application {
             primaryStage.setHeight(height);
 
             // Disable resizing for "signup.fxml" or "login.fxml"
-            if (fxmlFile.equals("signup.fxml") || fxmlFile.equals("login.fxml") || fxmlFile.equals("user.fxml")) {
+            if (fxmlFile.equals("signup.fxml") || fxmlFile.equals("login.fxml")) {
                 primaryStage.setResizable(false);
             } else {
-                if (fxmlFile.equals("Personality.fxml")) {
+                if (fxmlFile.equals("Personality.fxml")||fxmlFile.equals("user.fxml")) {
                     primaryStage.setResizable(false);
                     primaryStage.setMaximized(true);
                 }

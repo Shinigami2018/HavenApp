@@ -42,7 +42,7 @@ public class DashboardFxmlController {
     }
 
     public void switch_screen_to_user_page(ActionEvent event) {
-        HelloApplication.switchRoot("User.fxml", 1550, 830);
+        HelloApplication.switchRoot("user.fxml", 1550, 830);
         System.out.println("YES");
     }
 

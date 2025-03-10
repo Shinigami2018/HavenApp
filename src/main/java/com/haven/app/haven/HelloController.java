@@ -1,6 +1,7 @@
 package com.haven.app.haven;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXRadioButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,9 +17,12 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.*;
 import java.text.MessageFormat;
+import java.util.Arrays;
+import java.util.List;
 
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
@@ -297,7 +301,8 @@ public class HelloController {
                 userPhoto.setImage(new Image("noun-female-5295234.png"));
             }
         }
-
+        refreshFileList();
+        listView.setVisible(true);
 
 
     }
@@ -321,10 +326,37 @@ public class HelloController {
 
 
     public void mental_resources(ActionEvent event) {
+        listView.setVisible(false);
         centerContent.setOpacity(0.8);
         webView.setVisible(true);
         WebEngine webEngine = webView.getEngine();
         webEngine.load("https://monerbondhu.com/");
+    }
+
+    public void emergency_helpline(ActionEvent event) {
+        listView.setVisible(false);
+        centerContent.setOpacity(0.8);
+        webView.setVisible(true);
+        WebEngine webEngine = webView.getEngine();
+        webEngine.load("https://findahelpline.com/countries/bd");
+    }
+
+    public void take_me_to_journal(ActionEvent event) {
+        HelloApplication.switchRoot("Journal.fxml", 1550, 830);
+    }
+    @FXML
+
+    private JFXListView<String> listView;
+
+    public final String journalDirectory = "journals";
+
+    @FXML
+    private void refreshFileList() {
+        File dir = new File(journalDirectory);
+        if (!dir.exists()) return;
+
+        List<String> files = Arrays.asList(dir.list((d, name) -> name.endsWith(".txt")));
+        listView.getItems().setAll(files);
     }
 
 

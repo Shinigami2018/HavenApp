@@ -274,6 +274,18 @@
     -fx-scale-y: 1.1;
 }
 
+.music-button2:hover {
+    -fx-background-color: #f6b27e;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.music-button3:hover{
+    -fx-background-color: #f6b27e;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
 
 .yoga-box {
     -fx-background-color: #F9E79F;
