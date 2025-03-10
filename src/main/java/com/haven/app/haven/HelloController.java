@@ -39,7 +39,7 @@ public class HelloController {
     @FXML
     public StackPane centerContent;
     @FXML
-    public Label account_name;
+    public Label account_name=new Label();
     @FXML
     public ImageView userPhoto = new ImageView();
 
@@ -66,8 +66,6 @@ public class HelloController {
 
     @FXML
     public ToggleGroup genderGroup; // This ensures only one selection at a time
-    @FXML
-
 
     public static String selectedGender = "male";
 
@@ -274,6 +272,7 @@ public class HelloController {
         ToggleGroup genderGroup = new ToggleGroup();
         maleRadio.setToggleGroup(genderGroup);
         femaleRadio.setToggleGroup(genderGroup);
+        account_name.setText(UserName);
         webView.setVisible(false);
         if (selectedGender != null) {
             if (selectedGender.equals("Male")) {
