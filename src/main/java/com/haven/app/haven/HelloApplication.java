@@ -19,7 +19,7 @@ public class HelloApplication extends Application {
 
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
-        String fxmlFile = "signup.fxml"; // Change this to "login.fxml" dynamically if needed
+        String fxmlFile = "user.fxml"; // Change this to "login.fxml" dynamically if needed
 
         Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
 
@@ -31,7 +31,7 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("classic (1)_prev_ui.png")));
         // Disable resizing only for "signup.fxml" or "login.fxml"
-        if (fxmlFile.equals("signup.fxml") || fxmlFile.equals("login.fxml")) {
+        if (fxmlFile.equals("signup.fxml") || fxmlFile.equals("login.fxml") || fxmlFile.equals("user.fxml")) {
             stage.setResizable(false);
         } else {
             if (fxmlFile.equals("Personality.fxml")) {
@@ -64,7 +64,7 @@ public class HelloApplication extends Application {
             primaryStage.setHeight(height);
 
             // Disable resizing for "signup.fxml" or "login.fxml"
-            if (fxmlFile.equals("signup.fxml") || fxmlFile.equals("login.fxml")) {
+            if (fxmlFile.equals("signup.fxml") || fxmlFile.equals("login.fxml") || fxmlFile.equals("user.fxml")) {
                 primaryStage.setResizable(false);
             } else {
                 if (fxmlFile.equals("Personality.fxml")) {
