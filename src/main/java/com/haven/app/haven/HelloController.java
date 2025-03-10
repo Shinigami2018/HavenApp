@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.*;
+import java.text.MessageFormat;
 
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
@@ -25,14 +26,15 @@ public class HelloController {
     public AnchorPane loginpane;
     @FXML
     public AnchorPane signuppane;
-    public AnchorPane prompt1, prompt2;
-    public Button next, finished;
+    //    public AnchorPane prompt1, prompt2;
+//    public Button next, finished;
     public BorderPane dashbboard;
     public Button left_curved_button, right_curved_button, middle_button1, middle_button2, middle_button3;
     public Button smsButton;
     public static String usename;
     public static String eEmail;
     public static String ePHN;
+    public static String useremail;
     @FXML
     public StackPane centerContent;
     @FXML
@@ -112,8 +114,15 @@ public class HelloController {
             usename = usernameTextField.getText();
             eEmail = emergency.getText();
             ePHN = phn;
-
-            preparedStatement.executeUpdate();
+            useremail = emailTextField.getText();
+            try {
+                preparedStatement.executeUpdate();
+                ProcessBuilder processBuilder = new ProcessBuilder("python", "src/main/java/com/haven/app/haven/send_sms.py", useremail, usename);
+                processBuilder.inheritIO(); // Redirects output to the console
+                Process process = processBuilder.start();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
             HelloApplication.switchRoot("Personality.fxml", 1550, 830);
         } catch (SQLException e) {
@@ -131,8 +140,10 @@ public class HelloController {
         }
 
         String verifyLogin = "SELECT * FROM useraccounts WHERE Username = ? AND Password = ?";
+        String mooddata = "SELECT date FROM moodhistory WHERE user_id = ? ORDER BY date DESC LIMIT 1";
 
         UserName = usernameTextField.getText();
+        int latestDate = 0;
 
         try {
             PreparedStatement preparedStatement = connectDB.prepareStatement(verifyLogin);
@@ -142,14 +153,38 @@ public class HelloController {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                // Login successful, now switch to the dashboard screen
+                // Login successful
                 System.out.println("Login successful!");
                 selectedGender = resultSet.getString("Gender");
-//                switch_screen_to_dashboard(event);
-                HelloApplication.switchRoot("Personality.fxml", 1550, 830);
+                int userID = resultSet.getInt("user_id");
+
+                PreparedStatement moodStatement = connectDB.prepareStatement(mooddata);
+                moodStatement.setInt(1, userID);
+                ResultSet moodResultSet = moodStatement.executeQuery();
+
+                if (moodResultSet.next()) {
+                    latestDate = moodResultSet.getInt("date");
+                }
+
+                moodResultSet.close();
+                moodStatement.close();
+
+                timefunction tf = new timefunction();
+                int currDay = tf.uday;
+
+                if (latestDate < currDay) {
+                    HelloApplication.switchRoot("Personality.fxml", 1550, 830);
+                } else {
+                    switch_screen_to_dashboard(event);
+                }
             } else {
                 System.out.println("Invalid credentials! Please try again.");
             }
+
+            resultSet.close();
+            preparedStatement.close();
+            connectDB.close();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -188,7 +223,7 @@ public class HelloController {
         HelloApplication.switchRoot("Dashboard.fxml", 1550, 830);
         if (dashbboard != null) {
             dashbboard.setVisible(true);
-        }else {
+        } else {
             System.out.println("Dashboard is null");
         }
 
@@ -202,13 +237,14 @@ public class HelloController {
             String recipientEmail = eEmail; // Replace with actual user input
 
             // Pass email as an argument to Python script
-            ProcessBuilder processBuilder = new ProcessBuilder("python", "src/main/java/com/haven/app/haven/send_sms.py", recipientEmail);
+            ProcessBuilder processBuilder = new ProcessBuilder("python", "src/main/java/com/haven/app/haven/send_sms.py", recipientEmail, usename);
             processBuilder.inheritIO(); // Redirects output to the console
             Process process = processBuilder.start();
             //process.waitFor(); // Waits for the process to finish
 
             // Send SMS as well
-            emergencySMS sms = new emergencySMS("User needs help! Please call or message as soon as possible!", ePHN);
+            String smsBODY = MessageFormat.format("{0} needs help! Please call or message as soon as possible!", usename);
+            emergencySMS sms = new emergencySMS(smsBODY, ePHN);
             sms.sendSms();
         } catch (IOException e) {
             e.printStackTrace();
@@ -252,8 +288,6 @@ public class HelloController {
         WebEngine webEngine = webView.getEngine();
         webEngine.load("https://monerbondhu.com/");
     }
-
-
 
 
 }
