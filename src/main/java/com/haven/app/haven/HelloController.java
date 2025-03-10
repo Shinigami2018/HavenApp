@@ -88,6 +88,9 @@ public class HelloController {
     @FXML
     public JFXButton menu_journal, menu_contacts, menu_resource,user_back,user_logout;
 
+    @FXML
+    private Label journal_prompt;
+
     //ariful cmnt just
     public void signUpButtonOnAction() {
         if (!usernameTextField.getText().isEmpty() && !passwordPasswordField.getText().isEmpty() && !repasswordPasswordField.getText().isEmpty() && !emailTextField.getText().isEmpty() && !emergency.getText().isEmpty() && !ephone.getText().isEmpty()) {
@@ -303,7 +306,11 @@ public class HelloController {
         }
         refreshFileList();
         listView.setVisible(true);
-
+        listView.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                handleopenjournal();
+            }
+        });
 
     }
 
@@ -327,6 +334,7 @@ public class HelloController {
 
     public void mental_resources(ActionEvent event) {
         listView.setVisible(false);
+        journal_prompt.setVisible(false);
         centerContent.setOpacity(0.8);
         webView.setVisible(true);
         WebEngine webEngine = webView.getEngine();
@@ -335,6 +343,8 @@ public class HelloController {
 
     public void emergency_helpline(ActionEvent event) {
         listView.setVisible(false);
+        journal_prompt.setVisible(false);
+
         centerContent.setOpacity(0.8);
         webView.setVisible(true);
         WebEngine webEngine = webView.getEngine();
@@ -344,9 +354,13 @@ public class HelloController {
     public void take_me_to_journal(ActionEvent event) {
         HelloApplication.switchRoot("Journal.fxml", 1550, 830);
     }
+
+    public void take_me_to_journal_from_listview() {
+        HelloApplication.switchRoot("Journal.fxml", 1550, 830);
+    }
     @FXML
 
-    private JFXListView<String> listView;
+    private JFXListView<String> listView = new JFXListView<>();
 
     public final String journalDirectory = "journals";
 
@@ -357,6 +371,22 @@ public class HelloController {
 
         List<String> files = Arrays.asList(dir.list((d, name) -> name.endsWith(".txt")));
         listView.getItems().setAll(files);
+    }
+
+
+    /**
+     * Handles the click event on a journal item.
+     */
+    private void handleopenjournal() {
+        // Get the selected item
+        String selectedItem = listView.getSelectionModel().getSelectedItem();
+
+        if (selectedItem != null) {
+            System.out.println("Selected Journal: " + selectedItem);
+
+            // Call your method to switch to the Journal page
+            take_me_to_journal_from_listview();
+        }
     }
 
 

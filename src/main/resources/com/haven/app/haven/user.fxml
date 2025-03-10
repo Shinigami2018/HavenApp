@@ -57,12 +57,12 @@
             <WebView fx:id="webView" opacity="0.8" prefHeight="200.0" prefWidth="200.0" StackPane.alignment="CENTER" />
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label prefHeight="63.0" prefWidth="270.0" text="Your Journals: ">
+                  <Label fx:id="journal_prompt" prefHeight="63.0" prefWidth="270.0" text="Your Journals: ">
                      <font>
                         <Font name="Segoe UI Semibold" size="25.0" />
                      </font>
                   </Label>
-                  <JFXListView fx:id="listView" prefHeight="583.0" prefWidth="830.0" />
+                  <JFXListView fx:id="listView" onMouseClicked="#take_me_to_journal" prefHeight="583.0" prefWidth="830.0" />
                </children>
             </VBox>
          </children></StackPane>

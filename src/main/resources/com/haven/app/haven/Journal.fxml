@@ -73,7 +73,7 @@
     </bottom>
    <center>
        <VBox fx:id="Editor" spacing="10" BorderPane.alignment="CENTER">
-           <JFXTextArea fx:id="journalTextArea" promptText="Start typing here....." style="-fx-font-size: 28px;" VBox.vgrow="ALWAYS" />
+           <JFXTextArea fx:id="journalTextArea" promptText="Express your thoughts...." style="-fx-font-size: 28px;" VBox.vgrow="ALWAYS" />
        </VBox>
    </center>
 </BorderPane>
