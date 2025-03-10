@@ -3,13 +3,10 @@ package com.haven.app.haven;
 import com.jfoenix.controls.JFXButton;
 
 import java.net.URL;
+import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -36,6 +33,7 @@ public class PersonalityFxmlController implements Initializable {
     public AnchorPane prompt1, prompt2;
 
     public Button next, finished;
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -147,33 +145,70 @@ public class PersonalityFxmlController implements Initializable {
         }
     }
 
-    //save the score to the database
-    //save the score to the database
     public void saveScoreToDatabase(String username, int score) {
+        Connection connection = null;
+        PreparedStatement getUserIDStmt = null;
+        ResultSet resultSet = null;
+        PreparedStatement insertMoodStmt = null;
+
         try {
             System.out.println("Saving score to database");
             System.out.println("Username: " + username);
             System.out.println("Score: " + score);
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "124519@#maisk#");
-            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE useraccounts SET score = ? WHERE Username = ?");
-            preparedStatement.setInt(1, score);
-            preparedStatement.setString(2, username);
-            preparedStatement.executeUpdate();
-            timefunction timefunction1 = new timefunction();
-            int day = timefunction1.uday;
-            preparedStatement = connection.prepareStatement("UPDATE useraccounts SET date = ? WHERE Username = ?");
-            preparedStatement.setInt(1, day);
-            preparedStatement.setString(2, username);
 
+            // Establish database connection
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "124519@#maisk#");
 
-            preparedStatement.executeUpdate();
-            preparedStatement.close();
-            connection.close();
+            // Step 1: Get user ID from username
+            if(username == null) {
+               username = HelloController.UserName;
+                System.out.println("Username: " + username);
+            }
+            getUserIDStmt = connection.prepareStatement("SELECT iduseraccounts FROM useraccounts WHERE Username = ?");
+            getUserIDStmt.setString(1, username);
+            resultSet = getUserIDStmt.executeQuery();
 
+            if (resultSet.next()) {
+                int userID = resultSet.getInt("iduseraccounts");  // Fetch user ID
+                System.out.println("User ID: " + userID);
+
+                // Step 2: Get current date (you can replace with a real date system)
+                timefunction timefunction1 = new timefunction();
+                int day = timefunction1.uday; // Get the day from your time function
+                System.out.println("Day: " + day);
+
+                // Step 3: Insert new score record into moodhistory
+                insertMoodStmt = connection.prepareStatement(
+                        "INSERT INTO moodhistory (user_id, date, moodscore) VALUES (?, ?, ?)"
+                );
+                insertMoodStmt.setInt(1, userID);
+                insertMoodStmt.setInt(2, day);
+                insertMoodStmt.setInt(3, score);
+                int rowsInserted = insertMoodStmt.executeUpdate();
+
+                if (rowsInserted > 0) {
+                    System.out.println("Score saved successfully.");
+                } else {
+                    System.out.println("Failed to save score.");
+                }
+            } else {
+                System.out.println("User not found in the database.");
+            }
         } catch (SQLException e) {
             System.out.println("Error: " + e);
+        } finally {
+            // Close resources
+            try {
+                if (resultSet != null) resultSet.close();
+                if (getUserIDStmt != null) getUserIDStmt.close();
+                if (insertMoodStmt != null) insertMoodStmt.close();
+                if (connection != null) connection.close();
+            } catch (SQLException e) {
+                System.out.println("Error closing resources: " + e);
+            }
         }
     }
+
 
 
     private void animateButtons() {

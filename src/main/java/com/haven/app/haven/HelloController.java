@@ -18,6 +18,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 
 public class HelloController {
+    public static String UserName;
     @FXML
     public AnchorPane loginpane;
     @FXML
@@ -38,7 +39,7 @@ public class HelloController {
     public ImageView userPhoto;
 
     @FXML
-    private TextField usernameTextField;
+    public TextField usernameTextField;
 
     @FXML
     private PasswordField passwordPasswordField;
@@ -113,10 +114,6 @@ public class HelloController {
             preparedStatement.executeUpdate();
 
             HelloApplication.switchRoot("Personality.fxml", 1550, 830);
-            prompt1.setVisible(true);
-            prompt2.setVisible(false);
-            next.setVisible(true);
-            finished.setVisible(false);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -133,6 +130,8 @@ public class HelloController {
 
         String verifyLogin = "SELECT * FROM useraccounts WHERE Username = ? AND Password = ?";
 
+        UserName = usernameTextField.getText();
+
         try {
             PreparedStatement preparedStatement = connectDB.prepareStatement(verifyLogin);
             preparedStatement.setString(1, usernameTextField.getText());
@@ -144,7 +143,8 @@ public class HelloController {
                 // Login successful, now switch to the dashboard screen
                 System.out.println("Login successful!");
                 selectedGender = resultSet.getString("Gender");
-                switch_screen_to_dashboard(event);
+//                switch_screen_to_dashboard(event);
+                HelloApplication.switchRoot("Personality.fxml", 1550, 830);
             } else {
                 System.out.println("Invalid credentials! Please try again.");
             }
@@ -178,20 +178,9 @@ public class HelloController {
         // get the data for username, email password and confirm password
 
         HelloApplication.switchRoot("Personality.fxml", 1550, 830);
-        prompt1.setVisible(true);
-        prompt2.setVisible(false);
-        next.setVisible(true);
-        finished.setVisible(false);
+
 
     }
-
-    /*public void setPrompt1(ActionEvent event)
-    {
-        prompt1.setVisible(true);
-        prompt2.setVisible(false);
-        next.setVisible(true);
-        finished.setVisible(false);
-    }*/
 
     public void switch_screen_to_dashboard(ActionEvent event) {
         HelloApplication.switchRoot("Dashboard.fxml", 1550, 830);
@@ -203,11 +192,6 @@ public class HelloController {
 
     }
 
-
-//    @FXML
-//    public void initialize() {
-//        smsButton.setOnAction(this::email_send);
-//    }
 
     @FXML
     private void email_send(ActionEvent event) {
