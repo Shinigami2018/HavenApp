@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="250.0" minWidth="400" prefHeight="780.0" prefWidth="1440.0" style="-fx-background-image: dashboardbackground.png;" styleClass="dashboard" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.DashboardFxmlController">
-  
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="250.0" minWidth="400" prefHeight="780.0" prefWidth="1440.0" style="-fx-background-image: dashboardbackground.png;" styleClass="dashboard" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.DashboardFxmlController">
+
    <top>
       <HBox fx:id="top_bar" prefHeight="115.0" prefWidth="1440.0" BorderPane.alignment="CENTER">
          <children>
@@ -79,18 +88,18 @@
                         <Insets bottom="10.0" left="50.0" right="50.0" top="45.0" />
                      </HBox.margin>
                      <children>
-                        <ProgressBar layoutX="48.0" layoutY="184.0" opacity="0.79" prefHeight="42.0" prefWidth="282.0" progress="0.65" />
-                        <Label layoutX="104.0" layoutY="80.0" text="Your mood score">
+                        <ProgressBar fx:id="progressBar" layoutX="48.0" layoutY="184.0" opacity="0.79" prefHeight="42.0" prefWidth="282.0" progress="0.65" />
+                        <Label fx:id="dis" layoutX="104.0" layoutY="80.0" text="Your mood score">
                            <font>
                               <Font name="Segoe UI Semibold" size="21.0" />
                            </font>
                         </Label>
-                        <Label layoutX="307.0" layoutY="80.0" text="Score">
+                        <Label fx:id="Score" layoutX="307.0" layoutY="80.0" text="Score">
                            <font>
                               <Font name="Segoe UI Semibold" size="20.0" />
                            </font>
                         </Label>
-                        <Label layoutX="379.0" layoutY="135.0" text="Stay happy/ cheer up!">
+                        <Label fx:id="stt" layoutX="379.0" layoutY="135.0" text="Stay happy/ cheer up!">
                            <font>
                               <Font name="Segoe UI Semibold" size="18.0" />
                            </font>
@@ -103,12 +112,12 @@
                      </HBox.margin>
                      <children>
                         <BarChart layoutX="-18.0" layoutY="8.0" prefHeight="284.0" prefWidth="424.0">
-                          <xAxis>
-                            <CategoryAxis side="BOTTOM" />
-                          </xAxis>
-                          <yAxis>
-                            <NumberAxis side="LEFT" />
-                          </yAxis>
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
                         </BarChart>
                      </children>
                   </AnchorPane>
@@ -140,23 +149,23 @@
    </center>
    <right>
       <VBox fx:id="right_bar" prefHeight="665.0" prefWidth="305.0" BorderPane.alignment="CENTER">
-      <children>
-         <AnchorPane layoutX="-7.0" layoutY="51.0" prefHeight="297.0" prefWidth="254.0" style="-fx-background-color: #F9E79F; -fx-background-radius: 25 25 25 25;" VBox.vgrow="ALWAYS">
-            <children>
-               <Button fx:id="music_play" layoutX="93.0" layoutY="194.0" minHeight="5.0" minWidth="5.0" prefHeight="64.0" prefWidth="64.0" style=" -fx-background-image: play_pause.png;" styleClass="music-button" />
-               <Button fx:id="music_prev" layoutX="27.0" layoutY="211.0" minHeight="5.0" minWidth="5.0" prefHeight="60.0" prefWidth="59.0" style=" -fx-background-image: prev.png;" styleClass="music-button3" stylesheets="@style.css" />
-               <Button fx:id="music_next" layoutX="168.0" layoutY="210.0" minHeight="5.0" minWidth="5.0" prefHeight="61.0" prefWidth="59.0" style=" -fx-background-image: next.png;" styleClass="music-button2" />
-            </children>
+         <children>
+            <AnchorPane layoutX="-7.0" layoutY="51.0" prefHeight="297.0" prefWidth="254.0" style="-fx-background-color: #F9E79F; -fx-background-radius: 25 25 25 25;" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button fx:id="music_play" layoutX="93.0" layoutY="194.0" minHeight="5.0" minWidth="5.0" prefHeight="64.0" prefWidth="64.0" style=" -fx-background-image: play_pause.png;" styleClass="music-button" />
+                  <Button fx:id="music_prev" layoutX="27.0" layoutY="211.0" minHeight="5.0" minWidth="5.0" prefHeight="60.0" prefWidth="59.0" style=" -fx-background-image: prev.png;" styleClass="music-button3" stylesheets="@style.css" />
+                  <Button fx:id="music_next" layoutX="168.0" layoutY="210.0" minHeight="5.0" minWidth="5.0" prefHeight="61.0" prefWidth="59.0" style=" -fx-background-image: next.png;" styleClass="music-button2" />
+               </children>
                <VBox.margin>
                   <Insets bottom="20.0" left="5.0" right="50.0" top="45.0" />
                </VBox.margin>
-         </AnchorPane>
+            </AnchorPane>
             <Button mnemonicParsing="false" opacity="0.61" prefHeight="278.0" prefWidth="279.0" style="-fx-background-color: #F9E79F; -fx-background-radius: 25 25 25 25;">
                <VBox.margin>
                   <Insets bottom="40.0" left="5.0" right="50.0" top="10.0" />
                </VBox.margin>
             </Button>
-      </children>
+         </children>
       </VBox>
 
    </right>

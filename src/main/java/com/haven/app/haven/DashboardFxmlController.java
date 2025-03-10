@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -18,31 +19,47 @@ import javafx.util.Duration;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Random;
+
+
 
 public class DashboardFxmlController {
     @FXML
     public Button user_button;
-    public Button music_prev;
-    public Button music_next;
-    public Button music_play;
     @FXML
-    public static Label Score; // Make sure this matches the fx:id in your FXML
+    public Button music_prev;
+    @FXML
+    public Button music_next;
+    @FXML
+    public Button music_play;
+    // Make sure this matches the fx:id in your FXML
 
     @FXML
     public ImageView profileImage;
+    @FXML
+    public  Label Score=new Label();
+    @FXML
+    public Label stt=new Label();
+    @FXML
+    public Label dis=new Label();
+
+    @FXML
+    private ProgressBar progressBar=new ProgressBar();
     private MediaPlayer mediaPlayer;
     private boolean isPlaying = false;
 
     public static void setScore(int score) {
-        Score.setText(String.valueOf(score));
-        String s = Score.getText();
-        System.out.println(s);
+        String ss=String.valueOf(score);
+        System.out.println(ss);
 
     }
 
     public void switch_screen_to_user_page(ActionEvent event) {
-        HelloApplication.switchRoot("user.fxml", 1550, 830);
+        HelloApplication.switchRoot("User.fxml", 1550, 830);
         System.out.println("YES");
     }
 
@@ -109,6 +126,29 @@ public class DashboardFxmlController {
 
     public void initialize() {
         String gender = HelloController.getSelectedGender();
+
+        dis.setText("Your Score is :");
+        String nam=HelloController.UserName;
+        System.out.println(nam);
+
+        int scr = getUserScore(nam);
+
+        Score.setText(String.valueOf(scr));
+
+
+        System.out.println(scr);
+        if(scr<=0)
+        {    progressBar.setProgress(0);
+            System.out.println(scr+"happy");
+            stt.setText("STAY HAPPY");
+        }
+        else if(scr<=6)
+        {
+            double progress = scr / 100.0; // Assuming the score is out of 100
+            progressBar.setProgress(progress);
+            stt.setText("Cheer UP");
+        }
+
         if (gender != null) {
             if (gender.equals("Male")) {
                 profileImage.setImage(new Image("noun-male-5295254.png"));
@@ -130,8 +170,72 @@ public class DashboardFxmlController {
         quotebox.setFillHeight(true);
 
     }
+    public static int getUserScore(String username) {
+        DatabaseConnection connectionNow = new DatabaseConnection();
+        Connection connectDB = connectionNow.getConnection();
 
+        if (connectDB == null) {
+            System.out.println("Database connection failed.");
+            return -1; // Return an invalid score
+        }
 
+        String query = "SELECT date,moodscore FROM moodhistory WHERE user_id = ? ORDER BY date ASC";
+        int userID = getUserID(); // Replace with actual method to get the current user ID
+        System.out.println(userID);
+        int score = 0;
+        try {
+            PreparedStatement preparedStatement = connectDB.prepareStatement(query);
+            preparedStatement.setInt(1, userID);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                score = resultSet.getInt("moodscore");
+            }
+
+            resultSet.close();
+            preparedStatement.close();
+            connectDB.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return score;
+    }
+
+    public static int getUserID() {
+        DatabaseConnection connectionNow = new DatabaseConnection();
+        Connection connectDB = connectionNow.getConnection();
+
+        if (connectDB == null) {
+            System.out.println("Database connection failed.");
+            return -1; // Return an invalid user ID
+        }
+        System.out.println( HelloController.UserName );
+        String query = "SELECT iduseraccounts FROM useraccounts WHERE Username = ?";
+        int userID =-1;
+
+        try {
+            PreparedStatement preparedStatement = connectDB.prepareStatement(query);
+            preparedStatement.setString(1, HelloController.UserName );
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                userID = resultSet.getInt("iduseraccounts");
+                System.out.println(userID);
+            }
+
+            resultSet.close();
+            preparedStatement.close();
+            connectDB.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return userID;
+    }
 
     private static final String[] QUOTES = {
             "Believe you can and you're halfway there.",
