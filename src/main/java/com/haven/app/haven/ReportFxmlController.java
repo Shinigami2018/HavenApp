@@ -10,6 +10,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.*;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class ReportFxmlController {
 
     @FXML
@@ -38,10 +43,6 @@ public class ReportFxmlController {
 
     @FXML
     public void initialize() {
-        applyHoverEffect(analyzeBtn);
-        applyHoverEffect(exportBtn);
-        loadFileData();
-        makeResponsive();
         xAxis.setLabel("Days");
         yAxis.setLabel("Mood Score");
 
@@ -49,16 +50,82 @@ public class ReportFxmlController {
         XYChart.Series<Number, Number> series = new XYChart.Series<>();
         series.setName("User Mood");
 
-        // Dummy data (Replace this with database values)
-        series.getData().add(new XYChart.Data<>(1, 5));
-        series.getData().add(new XYChart.Data<>(2, 7));
-        series.getData().add(new XYChart.Data<>(3, 6));
-        series.getData().add(new XYChart.Data<>(4, 8));
-        series.getData().add(new XYChart.Data<>(5, 4));
+        // Fetch data from the database and populate the series
+        fetchDataAndPopulateSeries(series);
 
         // Add series to the chart
         moodChart.getData().add(series);
     }
+
+    private void fetchDataAndPopulateSeries(XYChart.Series<Number, Number> series) {
+        DatabaseConnection connectionNow = new DatabaseConnection();
+        Connection connectDB = connectionNow.getConnection();
+
+        if (connectDB == null) {
+            System.out.println("Database connection failed.");
+            return;
+        }
+
+        String query = "SELECT date,moodscore FROM moodhistory WHERE user_id = ? ORDER BY date ASC";
+        int userID = getUserID(); // Replace with actual method to get the current user ID
+        System.out.println(userID);
+        try {
+            PreparedStatement preparedStatement = connectDB.prepareStatement(query);
+            preparedStatement.setInt(1, userID);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                int dat = resultSet.getInt("date");
+                System.out.println("hi"+dat);
+                int moodScor = resultSet.getInt("moodscore");
+                System.out.println("bye"+moodScor);
+                series.getData().add(new XYChart.Data<>(dat, moodScor));
+            }
+
+            resultSet.close();
+            preparedStatement.close();
+            connectDB.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static int getUserID() {
+        DatabaseConnection connectionNow = new DatabaseConnection();
+        Connection connectDB = connectionNow.getConnection();
+
+        if (connectDB == null) {
+            System.out.println("Database connection failed.");
+            return -1; // Return an invalid user ID
+        }
+        System.out.println( HelloController.UserName );
+        String query = "SELECT iduseraccounts FROM useraccounts WHERE Username = ?";
+        int userID =-1;
+
+        try {
+            PreparedStatement preparedStatement = connectDB.prepareStatement(query);
+            preparedStatement.setString(1, HelloController.UserName );
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                userID = resultSet.getInt("iduseraccounts");
+                System.out.println(userID);
+            }
+
+            resultSet.close();
+            preparedStatement.close();
+            connectDB.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return userID;
+    }
+
 
     private void applyHoverEffect(JFXButton button) {
         button.setOnMouseEntered(e -> button.setStyle("-fx-background-color: #FFA86B; -fx-text-fill: black;"));

@@ -144,6 +144,7 @@ public class HelloController {
         String mooddata = "SELECT date FROM moodhistory WHERE user_id = ? ORDER BY date DESC LIMIT 1";
 
         UserName = usernameTextField.getText();
+        System.out.println("hi"+UserName);
         int latestDate = 0;
 
         try {
