@@ -246,6 +246,26 @@
     -fx-background-radius: 50%;
     -fx-border-color: black;
     -fx-border-radius: 50%;
+    -fx-background-image: url(play_pause.png);
+
+}
+
+.music-button2 {
+    -fx-background-color: #d39652;
+    -fx-background-radius: 50%;
+    -fx-border-color: black;
+    -fx-border-radius: 50%;
+    -fx-background-image: url(next.png);
+
+}
+
+.music-button3 {
+    -fx-background-color: #d39652;
+    -fx-background-radius: 50%;
+    -fx-border-color: black;
+    -fx-border-radius: 50%;
+    -fx-background-image: url(prev.png);
+
 }
 
 .music-button:hover {

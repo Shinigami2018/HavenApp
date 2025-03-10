@@ -23,9 +23,9 @@ import java.util.Random;
 public class DashboardFxmlController {
     @FXML
     public Button user_button;
-    public JFXButton music_prev;
-    public JFXButton music_next;
-    public JFXButton music_play;
+    public Button music_prev;
+    public Button music_next;
+    public Button music_play;
     @FXML
     public static Label Score; // Make sure this matches the fx:id in your FXML
 
