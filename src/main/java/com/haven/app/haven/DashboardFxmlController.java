@@ -18,6 +18,7 @@ import javafx.util.Duration;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Random;
 
 public class DashboardFxmlController {
     @FXML
@@ -124,10 +125,32 @@ public class DashboardFxmlController {
         messageLabel.setText("Welcome to the Dashboard!");
 
         // Apply animations
-        applyTypewriterEffect(messageLabel, "Keep your face always toward the sunshine, and shadows will fall behind you. ");
+        applyTypewriterEffect(messageLabel, displayRandomQuote()+" ");
 
         quotebox.setFillHeight(true);
 
+    }
+
+
+
+    private static final String[] QUOTES = {
+            "Believe you can and you're halfway there.",
+            "Keep your face always toward the sunshine, and shadows will fall behind you.",
+            "You are capable of amazing things.",
+            "Difficulties in life are intended to make us better, not bitter.",
+            "The only limit to our realization of tomorrow is our doubts of today.",
+            "Happiness is not by chance, but by choice.",
+            "Start where you are. Use what you have. Do what you can.",
+            "Every day may not be good, but there's something good in every day.",
+            "Do what you can, with what you have, where you are.",
+            "Act as if what you do makes a difference. It does.",
+            "Success is not the key to happiness. Happiness is the key to success."
+    };
+
+    public String displayRandomQuote() {
+        Random random = new Random();
+        int index = random.nextInt(QUOTES.length);
+        return QUOTES[index];
     }
 
 
@@ -149,4 +172,6 @@ public class DashboardFxmlController {
         timeline.setCycleCount(text.length()); // Number of characters
         timeline.play();
     }
+
+
 }

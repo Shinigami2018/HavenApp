@@ -298,9 +298,6 @@ public class HelloController {
             }
         }
 
-        //binding the width and height
-        webView.prefWidthProperty().bind(centerContent.widthProperty());
-        webView.prefHeightProperty().bind(centerContent.heightProperty());
 
 
     }
