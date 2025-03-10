@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -65,6 +66,8 @@ public class HelloController {
 
     @FXML
     public ToggleGroup genderGroup; // This ensures only one selection at a time
+    @FXML
+
 
     public static String selectedGender = "male";
 
@@ -263,7 +266,13 @@ public class HelloController {
         maleRadio.setToggleGroup(genderGroup);
         femaleRadio.setToggleGroup(genderGroup);
         webView.setVisible(false);
-
+        if (selectedGender != null) {
+            if (selectedGender.equals("Male")) {
+                userPhoto.setImage(new Image("noun-male-5295254.png"));
+            } else if (selectedGender.equals("Female")) {
+                userPhoto.setImage(new Image("noun-female-5295234.png"));
+            }
+        }
     }
 
     public void setSelectedGender() {
@@ -273,7 +282,9 @@ public class HelloController {
         } else if (femaleRadio.isSelected()) {
             selectedGender = "Female";
         }
+
     }
+
 
     public static String getSelectedGender() {
         return selectedGender;
