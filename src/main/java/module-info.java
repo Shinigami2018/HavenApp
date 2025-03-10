@@ -4,7 +4,8 @@ module com.haven.app.haven {
     requires java.sql;
     requires com.jfoenix;
     requires javafx.web;
-    requires javafx.media; // Add this line
+    requires javafx.media;
+    requires java.desktop; // Add this line
 
     opens com.haven.app.haven to javafx.fxml;
     exports com.haven.app.haven;

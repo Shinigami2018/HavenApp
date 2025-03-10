@@ -4,6 +4,9 @@ import com.jfoenix.controls.JFXButton;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
@@ -17,6 +20,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 
 
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
@@ -51,6 +55,13 @@ public class DashboardFxmlController {
     private ProgressBar progressBar=new ProgressBar();
     private MediaPlayer mediaPlayer;
     private boolean isPlaying = false;
+
+    @FXML
+    private NumberAxis xAxis = new NumberAxis();
+    @FXML
+    private NumberAxis yAxis = new NumberAxis();
+    @FXML
+    private XYChart<Number, Number> moodChart = new LineChart<>(xAxis, yAxis);
 
     public static void setScore(int score) {
         String ss=String.valueOf(score);
@@ -168,6 +179,19 @@ public class DashboardFxmlController {
         applyTypewriterEffect(messageLabel, displayRandomQuote()+" ");
 
         quotebox.setFillHeight(true);
+        //  graph
+        xAxis.setLabel("Days");
+        yAxis.setLabel("Mood Score");
+
+        // Create a data series
+        XYChart.Series<Number, Number> series = new XYChart.Series<>();
+
+
+        // Fetch data from the database and populate the series
+        fetchDataAndPopulateSeries(series);
+
+        // Add series to the chart
+        moodChart.getData().add(series);
 
     }
     public static int getUserScore(String username) {
@@ -236,6 +260,44 @@ public class DashboardFxmlController {
 
         return userID;
     }
+
+
+    private void fetchDataAndPopulateSeries(XYChart.Series<Number, Number> series) {
+        DatabaseConnection connectionNow = new DatabaseConnection();
+        Connection connectDB = connectionNow.getConnection();
+
+        if (connectDB == null) {
+            System.out.println("Database connection failed.");
+            return;
+        }
+
+        String query = "SELECT date,moodscore FROM moodhistory WHERE user_id = ? ORDER BY date ASC";
+        int userID = getUserID(); // Replace with actual method to get the current user ID
+        System.out.println(userID);
+        try {
+            PreparedStatement preparedStatement = connectDB.prepareStatement(query);
+            preparedStatement.setInt(1, userID);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                int dat = resultSet.getInt("date");
+                System.out.println("hi"+dat);
+                int moodScor = resultSet.getInt("moodscore");
+                System.out.println("bye"+moodScor);
+                series.getData().add(new XYChart.Data<>(dat, moodScor));
+            }
+
+            resultSet.close();
+            preparedStatement.close();
+            connectDB.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     private static final String[] QUOTES = {
             "Believe you can and you're halfway there.",
