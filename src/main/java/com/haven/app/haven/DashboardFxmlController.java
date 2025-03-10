@@ -22,8 +22,10 @@ import javafx.util.Duration;
 
 
 import javax.swing.*;
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -249,10 +251,11 @@ public class DashboardFxmlController {
             e.printStackTrace();
         }
 
-        setHostServices(hostServices);
-
 
     }
+
+
+
 
 
     private static final String[] QUOTES = {
@@ -294,26 +297,20 @@ public class DashboardFxmlController {
         timeline.play();
     }
 
-    public HostServices hostServices;
 
-    public void setHostServices(HostServices hostServices) {
-        this.hostServices = hostServices;
-    }
 
 
     @FXML
     private Button game_button;
 
-    private void openWebsite(String url) {
-        if (hostServices != null) {
-            hostServices.showDocument(url);
-        } else {
-            System.out.println("HostServices is not available.");
+    @FXML
+    private void openWebpage(ActionEvent event) {
+        try {
+            Desktop.getDesktop().browse(new URI("https://poki.com/"));
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
-    @FXML
-    private void play_games(ActionEvent event) {
-        openWebsite("https://www.google.com");
-    }
+
 }

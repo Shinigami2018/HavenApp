@@ -376,11 +376,15 @@
 
 .game_button
 {
-    -fx-background-image: url(poki.png);
+    -fx-background-image: url(home-1200x630_Small_Small_Small.jpeg);
+    -fx-background-image-radius: 15px 15px 15px 15px;
+    -fx-background-position: center;
 }
 .game_button:hover
 {
-    -fx-background-image: url(poki.png);
+    -fx-background-image: url(home-1200x630_Small_Small_Small.jpeg);
+    -fx-background-image-radius: 15px 15px 15px 15px;
+    -fx-background-position: center;
     -fx-scale-x: 1.1;
     -fx-scale-y: 1.1;
 }

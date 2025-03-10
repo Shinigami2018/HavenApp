@@ -1,6 +1,7 @@
 package com.haven.app.haven;
 
 import javafx.application.Application;
+import javafx.application.HostServices;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -19,7 +20,9 @@ public class HelloApplication extends Application {
 
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
+
         String fxmlFile = "login.fxml"; // Change this to "login.fxml" dynamically if needed
+
 
         Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
 
@@ -63,6 +66,7 @@ public class HelloApplication extends Application {
             primaryStage.setWidth(width);
             primaryStage.setHeight(height);
 
+
             // Disable resizing for "signup.fxml" or "login.fxml"
             if (fxmlFile.equals("signup.fxml") || fxmlFile.equals("login.fxml")) {
                 primaryStage.setResizable(false);
@@ -95,7 +99,18 @@ public class HelloApplication extends Application {
     }
 
 
+    public static HostServices hostServices;
 
+    public void setHostServices(HostServices hostServices) {
+        this.hostServices = hostServices;
+    }
+    public static void openWebsite(String url) {
+        if (hostServices != null) {
+            hostServices.showDocument(url);
+        } else {
+            System.out.println("HostServices is not available.");
+        }
+    }
     
 
     public static void main(String[] args) {
