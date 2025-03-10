@@ -87,7 +87,7 @@ public class DashboardFxmlController {
     public void audionext(ActionEvent event) {
         System.out.println("Audio Next"+mediaPlayer);
         if (mediaPlayer == null ) {
-            Media sound = new Media(new File("src/main/resources/com/haven/app/haven/halal.mp3").toURI().toString());
+            Media sound = new Media(new File("src/main/resources/com/haven/app/haven/fatiha.mp3").toURI().toString());
             mediaPlayer = new MediaPlayer(sound);
         }
 
