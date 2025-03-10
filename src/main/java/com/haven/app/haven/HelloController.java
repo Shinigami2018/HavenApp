@@ -41,7 +41,7 @@ public class HelloController {
     @FXML
     public Label account_name;
     @FXML
-    public ImageView userPhoto;
+    public ImageView userPhoto = new ImageView();
 
     @FXML
     public TextField usernameTextField;
@@ -120,7 +120,7 @@ public class HelloController {
             useremail = emailTextField.getText();
             try {
                 preparedStatement.executeUpdate();
-                ProcessBuilder processBuilder = new ProcessBuilder("python", "src/main/java/com/haven/app/haven/send_sms.py", useremail, usename);
+                ProcessBuilder processBuilder = new ProcessBuilder("python", "src/main/java/com/haven/app/haven/signupmail.py", useremail, usename);
                 processBuilder.inheritIO(); // Redirects output to the console
                 Process process = processBuilder.start();
             } catch (IOException e) {
@@ -159,7 +159,7 @@ public class HelloController {
                 // Login successful
                 System.out.println("Login successful!");
                 selectedGender = resultSet.getString("Gender");
-                int userID = resultSet.getInt("user_id");
+                int userID = resultSet.getInt("iduseraccounts");
 
                 PreparedStatement moodStatement = connectDB.prepareStatement(mooddata);
                 moodStatement.setInt(1, userID);
@@ -258,6 +258,13 @@ public class HelloController {
     @FXML
     public void switch_to_login_screen(ActionEvent event) /*for logout*/ {
         HelloApplication.switchRoot("login.fxml", 619, 434);
+        if (selectedGender != null) {
+            if (selectedGender.equals("Male")) {
+                userPhoto.setImage(new Image("noun-male-5295254.png"));
+            } else if (selectedGender.equals("Female")) {
+                userPhoto.setImage(new Image("noun-female-5295234.png"));
+            }
+        }
 
     }
 
@@ -265,7 +272,7 @@ public class HelloController {
         ToggleGroup genderGroup = new ToggleGroup();
         maleRadio.setToggleGroup(genderGroup);
         femaleRadio.setToggleGroup(genderGroup);
-        webView.setVisible(false);
+        //webView.setVisible(false);
         if (selectedGender != null) {
             if (selectedGender.equals("Male")) {
                 userPhoto.setImage(new Image("noun-male-5295254.png"));
