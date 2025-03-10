@@ -7,6 +7,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+
+import java.io.File;
+import java.io.IOException;
 
 public class DashboardFxmlController {
     @FXML
@@ -17,8 +23,10 @@ public class DashboardFxmlController {
     @FXML
     public static Label Score; // Make sure this matches the fx:id in your FXML
 
-
+    @FXML
     public ImageView profileImage;
+    private MediaPlayer mediaPlayer;
+    private boolean isPlaying = false;
 
     public static void setScore(int score) {
         Score.setText(String.valueOf(score));
@@ -44,6 +52,54 @@ public class DashboardFxmlController {
         HelloApplication.switchRoot("Report.fxml",1550,830);
         HelloApplication.primaryStage.setMaximized(true);
     }
+    public void audioplay(ActionEvent event) {
+        System.out.println("Audio Play"+mediaPlayer);
+        if (mediaPlayer == null) {
+            Media sound = new Media(new File("src/main/resources/com/haven/app/haven/surah.mp3").toURI().toString());
+            mediaPlayer = new MediaPlayer(sound);
+        }
+
+        if (isPlaying) {
+            mediaPlayer.stop();
+            mediaPlayer = null;
+            isPlaying = false;
+        } else {
+            mediaPlayer.play();
+            isPlaying = true;
+        }
+    }
+    public void audioprev(ActionEvent event) {
+        System.out.println("Audio Prev"+mediaPlayer);
+        if (mediaPlayer == null) {
+            Media sound = new Media(new File("src/main/resources/com/haven/app/haven/halal.mp3").toURI().toString());
+            mediaPlayer = new MediaPlayer(sound);
+        }
+
+        if (isPlaying) {
+            mediaPlayer.stop();
+            mediaPlayer = null;
+            isPlaying = false;
+        } else {
+            mediaPlayer.play();
+            isPlaying = true;
+        }
+    }
+    public void audionext(ActionEvent event) {
+        System.out.println("Audio Next"+mediaPlayer);
+        if (mediaPlayer == null ) {
+            Media sound = new Media(new File("src/main/resources/com/haven/app/haven/halal.mp3").toURI().toString());
+            mediaPlayer = new MediaPlayer(sound);
+        }
+
+        if (isPlaying) {
+            mediaPlayer.stop();
+            mediaPlayer = null;
+            isPlaying = false;
+        } else {
+            mediaPlayer.play();
+            isPlaying = true;
+        }
+    }
 
     public void initialize() {
         String gender = HelloController.getSelectedGender();
@@ -54,6 +110,10 @@ public class DashboardFxmlController {
                 profileImage.setImage(new Image("noun-female-5295234.png"));
             }
         }
+
+        music_play.setOnAction(this::audioplay);
+        music_prev.setOnAction(this::audioprev);
+        music_next.setOnAction(this::audionext);
 
     }
 }
