@@ -31,7 +31,6 @@ import java.sql.SQLException;
 import java.util.Random;
 
 
-
 public class DashboardFxmlController {
     @FXML
     public Button user_button;
@@ -46,14 +45,14 @@ public class DashboardFxmlController {
     @FXML
     public ImageView profileImage;
     @FXML
-    public  Label Score=new Label();
+    public Label Score = new Label();
     @FXML
-    public Label stt=new Label();
+    public Label stt = new Label();
     @FXML
-    public Label dis=new Label();
+    public Label dis = new Label();
 
     @FXML
-    private ProgressBar progressBar=new ProgressBar();
+    private ProgressBar progressBar = new ProgressBar();
     private MediaPlayer mediaPlayer;
     private boolean isPlaying = false;
 
@@ -65,7 +64,7 @@ public class DashboardFxmlController {
     private XYChart<Number, Number> moodChart = new LineChart<>(xAxis, yAxis);
 
     public static void setScore(int score) {
-        String ss=String.valueOf(score);
+        String ss = String.valueOf(score);
         System.out.println(ss);
 
     }
@@ -76,71 +75,25 @@ public class DashboardFxmlController {
     }
 
     public void switch_to_journal(ActionEvent event) {
-        HelloApplication.switchRoot("Journal.fxml",1550,830);
+        HelloApplication.switchRoot("Journal.fxml", 1550, 830);
         HelloApplication.primaryStage.setMaximized(true);
     }
+
     public void switch_to_relax(ActionEvent event) {
-        HelloApplication.switchRoot("Relax.fxml",1550,830);
+        HelloApplication.switchRoot("Relax.fxml", 1550, 830);
         HelloApplication.primaryStage.setMaximized(true);
     }
+
     public void switch_to_report(ActionEvent event) {
-        HelloApplication.switchRoot("Report.fxml",1550,830);
+        HelloApplication.switchRoot("Report.fxml", 1550, 830);
         HelloApplication.primaryStage.setMaximized(true);
-    }
-    public void audioplay(ActionEvent event) {
-        System.out.println("Audio Play"+mediaPlayer);
-        if (mediaPlayer == null) {
-            Media sound = new Media(new File("src/main/resources/com/haven/app/haven/surah.mp3").toURI().toString());
-            mediaPlayer = new MediaPlayer(sound);
-        }
-
-        if (isPlaying) {
-            mediaPlayer.stop();
-            mediaPlayer = null;
-            isPlaying = false;
-        } else {
-            mediaPlayer.play();
-            isPlaying = true;
-        }
-    }
-    public void audioprev(ActionEvent event) {
-        System.out.println("Audio Prev"+mediaPlayer);
-        if (mediaPlayer == null) {
-            Media sound = new Media(new File("src/main/resources/com/haven/app/haven/halal.mp3").toURI().toString());
-            mediaPlayer = new MediaPlayer(sound);
-        }
-
-        if (isPlaying) {
-            mediaPlayer.stop();
-            mediaPlayer = null;
-            isPlaying = false;
-        } else {
-            mediaPlayer.play();
-            isPlaying = true;
-        }
-    }
-    public void audionext(ActionEvent event) {
-        System.out.println("Audio Next"+mediaPlayer);
-        if (mediaPlayer == null ) {
-            Media sound = new Media(new File("src/main/resources/com/haven/app/haven/fatiha.mp3").toURI().toString());
-            mediaPlayer = new MediaPlayer(sound);
-        }
-
-        if (isPlaying) {
-            mediaPlayer.stop();
-            mediaPlayer = null;
-            isPlaying = false;
-        } else {
-            mediaPlayer.play();
-            isPlaying = true;
-        }
     }
 
     public void initialize() {
         String gender = HelloController.getSelectedGender();
 
         dis.setText("Your Score is :");
-        String nam=HelloController.UserName;
+        String nam = HelloController.UserName;
         System.out.println(nam);
 
         int scr = getUserScore(nam);
@@ -149,13 +102,11 @@ public class DashboardFxmlController {
 
 
         System.out.println(scr);
-        if(scr<=0)
-        {    progressBar.setProgress(0);
-            System.out.println(scr+"happy");
+        if (scr <= 0) {
+            progressBar.setProgress(0);
+            System.out.println(scr + "happy");
             stt.setText("STAY HAPPY");
-        }
-        else if(scr<=6)
-        {
+        } else if (scr <= 6) {
             double progress = scr / 100.0; // Assuming the score is out of 100
             progressBar.setProgress(progress);
             stt.setText("Cheer UP");
@@ -168,23 +119,22 @@ public class DashboardFxmlController {
                 profileImage.setImage(new Image("noun-female-5295234.png"));
             }
         }
-
-        music_play.setOnAction(this::audioplay);
-        music_prev.setOnAction(this::audioprev);
-        music_next.setOnAction(this::audionext);
+        audio audio = new audio();
+        music_play.setOnAction(event -> audio.audioplay());
+        music_prev.setOnAction(event -> audio.audioprev());
+        music_next.setOnAction(event -> audio.audionext());
 
         // Set the string to display
         messageLabel.setText("Welcome to the Dashboard!");
 
         // Apply animations
-        applyTypewriterEffect(messageLabel, displayRandomQuote()+" ");
+        applyTypewriterEffect(messageLabel, displayRandomQuote() + " ");
 
         quotebox.setFillHeight(true);
         //  graph
         xAxis.setLabel("Days");
         yAxis.setLabel("Mood Score");
 
-<<<<<<< Updated upstream
         // Create a data series
         XYChart.Series<Number, Number> series = new XYChart.Series<>();
 
@@ -196,6 +146,7 @@ public class DashboardFxmlController {
         moodChart.getData().add(series);
 
     }
+
     public static int getUserScore(String username) {
         DatabaseConnection connectionNow = new DatabaseConnection();
         Connection connectDB = connectionNow.getConnection();
@@ -237,13 +188,13 @@ public class DashboardFxmlController {
             System.out.println("Database connection failed.");
             return -1; // Return an invalid user ID
         }
-        System.out.println( HelloController.UserName );
+        System.out.println(HelloController.UserName);
         String query = "SELECT iduseraccounts FROM useraccounts WHERE Username = ?";
-        int userID =-1;
+        int userID = -1;
 
         try {
             PreparedStatement preparedStatement = connectDB.prepareStatement(query);
-            preparedStatement.setString(1, HelloController.UserName );
+            preparedStatement.setString(1, HelloController.UserName);
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -284,9 +235,9 @@ public class DashboardFxmlController {
 
             while (resultSet.next()) {
                 int dat = resultSet.getInt("date");
-                System.out.println("hi"+dat);
+                System.out.println("hi" + dat);
                 int moodScor = resultSet.getInt("moodscore");
-                System.out.println("bye"+moodScor);
+                System.out.println("bye" + moodScor);
                 series.getData().add(new XYChart.Data<>(dat, moodScor));
             }
 
@@ -297,12 +248,11 @@ public class DashboardFxmlController {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-=======
+
         setHostServices(hostServices);
 
->>>>>>> Stashed changes
-    }
 
+    }
 
 
     private static final String[] QUOTES = {
@@ -324,7 +274,6 @@ public class DashboardFxmlController {
         int index = random.nextInt(QUOTES.length);
         return QUOTES[index];
     }
-
 
 
     @FXML
@@ -367,8 +316,4 @@ public class DashboardFxmlController {
     private void play_games(ActionEvent event) {
         openWebsite("https://www.google.com");
     }
-
-
-
-
 }

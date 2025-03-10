@@ -2,12 +2,11 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
-<<<<<<< Updated upstream
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.chart.LineChart?>
-=======
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
->>>>>>> Stashed changes
+
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -20,21 +19,15 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<<<<<<< Updated upstream
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="250.0" minWidth="400" prefHeight="780.0" prefWidth="1440.0" style="-fx-background-image: dashboardbackground.png;" styleClass="dashboard" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.DashboardFxmlController">
 
-=======
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="250.0" minWidth="400" prefHeight="780.0" prefWidth="1440.0" style="-fx-background-image: dashboardbackground.png;" styleClass="dashboard" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.DashboardFxmlController">
-  
->>>>>>> Stashed changes
    <top>
       <HBox fx:id="top_bar" prefHeight="115.0" prefWidth="1440.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="112.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../classic%20(1)_prev_ui.png" />
+                  <Image url="@../../../../classic (1)_prev_ui.png" />
                </image>
             </ImageView>
             <JFXButton alignment="CENTER" prefHeight="42.0" prefWidth="147.0" style="-fx-background-color: #f1b06a;" styleClass="left-curved-button-clicked" stylesheets="@style.css" text="Dashboard">
@@ -158,35 +151,19 @@
       </VBox>
    </center>
    <right>
-<<<<<<< Updated upstream
-      <VBox fx:id="right_bar" prefHeight="665.0" prefWidth="305.0" BorderPane.alignment="CENTER">
+      <VBox fx:id="right_bar" prefHeight="665.0" prefWidth="326.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane layoutX="-7.0" layoutY="51.0" prefHeight="297.0" prefWidth="254.0" style="-fx-background-color: #F9E79F; -fx-background-radius: 25 25 25 25;" VBox.vgrow="ALWAYS">
+            <AnchorPane layoutX="-7.0" layoutY="51.0" prefHeight="284.0" prefWidth="270.0" style="-fx-background-color: #F9E79F; -fx-background-radius: 25 25 25 25;" styleClass="music-box" VBox.vgrow="ALWAYS">
                <children>
-                  <JFXButton fx:id="music_play" layoutX="93.0" layoutY="194.0" minHeight="5.0" minWidth="5.0" prefHeight="64.0" prefWidth="64.0" style=" -fx-background-image: play_pause.png;" styleClass="music-button" />
-                  <JFXButton fx:id="music_prev" layoutX="27.0" layoutY="211.0" minHeight="5.0" minWidth="5.0" prefHeight="60.0" prefWidth="59.0" style=" -fx-background-image: prev.png;" styleClass="music-button3" stylesheets="@style.css" />
-                  <JFXButton fx:id="music_next" layoutX="168.0" layoutY="210.0" minHeight="5.0" minWidth="5.0" prefHeight="61.0" prefWidth="59.0" style=" -fx-background-image: next.png;" styleClass="music-button2" />
+                  <Button fx:id="music_play" layoutX="102.0" layoutY="193.0" minHeight="5.0" minWidth="5.0" prefHeight="64.0" prefWidth="64.0" style=" -fx-background-image: play_pause.png;" styleClass="music-button" />
+                  <Button fx:id="music_prev" layoutX="23.0" layoutY="211.0" minHeight="5.0" minWidth="5.0" prefHeight="60.0" prefWidth="59.0" style=" -fx-background-image: prev.png;" styleClass="music-button3" stylesheets="@style.css" />
+                  <Button fx:id="music_next" layoutX="188.0" layoutY="210.0" minHeight="5.0" minWidth="5.0" prefHeight="61.0" prefWidth="59.0" style=" -fx-background-image: next.png;" styleClass="music-button2" />
                </children>
                <VBox.margin>
                   <Insets bottom="20.0" left="5.0" right="50.0" top="45.0" />
                </VBox.margin>
             </AnchorPane>
-            <Button mnemonicParsing="false" opacity="0.61" prefHeight="278.0" prefWidth="279.0" style="-fx-background-color: #F9E79F; -fx-background-radius: 25 25 25 25;">
-=======
-      <VBox fx:id="right_bar" prefHeight="665.0" prefWidth="326.0" BorderPane.alignment="CENTER">
-      <children>
-         <AnchorPane layoutX="-7.0" layoutY="51.0" prefHeight="284.0" prefWidth="270.0" style="-fx-background-color: #F9E79F; -fx-background-radius: 25 25 25 25;" styleClass="music-box" VBox.vgrow="ALWAYS">
-            <children>
-               <Button fx:id="music_play" layoutX="102.0" layoutY="193.0" minHeight="5.0" minWidth="5.0" prefHeight="64.0" prefWidth="64.0" style=" -fx-background-image: play_pause.png;" styleClass="music-button" />
-               <Button fx:id="music_prev" layoutX="23.0" layoutY="211.0" minHeight="5.0" minWidth="5.0" prefHeight="60.0" prefWidth="59.0" style=" -fx-background-image: prev.png;" styleClass="music-button3" stylesheets="@style.css" />
-               <Button fx:id="music_next" layoutX="188.0" layoutY="210.0" minHeight="5.0" minWidth="5.0" prefHeight="61.0" prefWidth="59.0" style=" -fx-background-image: next.png;" styleClass="music-button2" />
-            </children>
-               <VBox.margin>
-                  <Insets bottom="20.0" left="5.0" right="50.0" top="45.0" />
-               </VBox.margin>
-         </AnchorPane>
             <Button fx:id="game_button" mnemonicParsing="false" onAction="#play_games" opacity="0.61" prefHeight="278.0" prefWidth="279.0" style="-fx-background-color: #F9E79F; -fx-background-radius: 25 25 25 25; -fx-background-image: poki.png;">
->>>>>>> Stashed changes
                <VBox.margin>
                   <Insets bottom="40.0" left="5.0" right="50.0" top="10.0" />
                </VBox.margin>
