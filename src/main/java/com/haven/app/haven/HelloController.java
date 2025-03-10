@@ -41,7 +41,7 @@ public class HelloController {
     public static String ePHN;
     public static String useremail;
     @FXML
-    public StackPane centerContent;
+    public StackPane centerContent = new StackPane();
     @FXML
     public Label account_name=new Label();
     @FXML
