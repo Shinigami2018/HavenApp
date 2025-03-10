@@ -1,5 +1,6 @@
 package com.haven.app.haven;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXRadioButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,6 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -20,6 +22,8 @@ import java.text.MessageFormat;
 
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+
+import static com.haven.app.haven.HelloApplication.primaryStage;
 
 public class HelloController {
     public static String UserName;
@@ -67,7 +71,18 @@ public class HelloController {
     @FXML
     public ToggleGroup genderGroup; // This ensures only one selection at a time
 
+    @FXML
     public static String selectedGender = "male";
+
+    @FXML
+    public AnchorPane left_bar, right_bar;
+    @FXML
+    public BorderPane root;
+
+    @FXML
+    public VBox leftContent, rightContent;
+    @FXML
+    public JFXButton menu_journal, menu_contacts, menu_resource,user_back,user_logout;
 
     //ariful cmnt just
     public void signUpButtonOnAction() {
@@ -196,7 +211,7 @@ public class HelloController {
     /// ariful
     public Button user_button;
     @FXML
-    public Button menu_journal, menu_contact, menu_resource, menu_back, menu_logout, menu_calendar;
+
 
 
     public void setLogin(ActionEvent event) {
@@ -282,7 +297,15 @@ public class HelloController {
                 userPhoto.setImage(new Image("noun-female-5295234.png"));
             }
         }
+
+        //binding the width and height
+        webView.prefWidthProperty().bind(centerContent.widthProperty());
+        webView.prefHeightProperty().bind(centerContent.heightProperty());
+
+
     }
+
+
 
     public void setSelectedGender() {
 
@@ -301,7 +324,7 @@ public class HelloController {
 
 
     public void mental_resources(ActionEvent event) {
-        centerContent.setOpacity(0.6);
+        centerContent.setOpacity(0.8);
         webView.setVisible(true);
         WebEngine webEngine = webView.getEngine();
         webEngine.load("https://monerbondhu.com/");

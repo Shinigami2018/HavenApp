@@ -12,12 +12,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
-<BorderPane prefHeight="830.0" prefWidth="1550.0" style="-fx-background-color: #FDF8EE;" styleClass="dashboard" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.HelloController">
+<BorderPane fx:id="root" prefHeight="830.0" prefWidth="1550.0" style="-fx-background-color: #FDF8EE;" styleClass="dashboard" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haven.app.haven.HelloController">
 
    <!-- Left Panel -->
    <left>
-      <AnchorPane layoutX="30" layoutY="20" opacity="0.8" prefWidth="260.0" style="-fx-background-color: #F9E79F; -fx-background-radius: 40;" BorderPane.alignment="CENTER">
-         <VBox layoutX="33.0" layoutY="161.0" spacing="20">
+      <AnchorPane fx:id="left_bar" layoutX="30" layoutY="20" opacity="0.8" prefWidth="260.0" style="-fx-background-color: #F9E79F; -fx-background-radius: 40;" BorderPane.alignment="CENTER">
+         <VBox fx:id="leftContent" layoutX="33.0" layoutY="161.0" spacing="20">
             <JFXButton fx:id="menu_journal" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f1b06a; -fx-text-fill: black; -fx-background-radius: 25 25 25 25;" styleClass="user-menu-left-sub-button" text="Journal" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Segoe UI Semibold" size="17.0" />
@@ -63,8 +63,8 @@
 
    <!-- Right Panel -->
    <right>
-      <AnchorPane layoutX="30" layoutY="20" opacity="0.8" prefWidth="260.0" style="-fx-background-color: #F9E79F; -fx-background-radius: 50;" BorderPane.alignment="CENTER">
-         <VBox alignment="CENTER" layoutX="40" layoutY="100" spacing="20">
+      <AnchorPane fx:id="right_bar" layoutX="30" layoutY="20" opacity="0.8" prefWidth="260.0" style="-fx-background-color: #F9E79F; -fx-background-radius: 50;" BorderPane.alignment="CENTER">
+         <VBox fx:id="rightContent" alignment="CENTER" layoutX="40" layoutY="100" spacing="20">
             <ImageView fx:id="userPhoto" fitHeight="100" fitWidth="100" style="-fx-background-radius: 50%;" VBox.vgrow="ALWAYS">
                <image>
                   <Image url="@../../../../noun-male-5295254.png" />

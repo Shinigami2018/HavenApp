@@ -1,14 +1,19 @@
 package com.haven.app.haven;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.util.Duration;
 
 
 import java.io.File;
@@ -115,5 +120,33 @@ public class DashboardFxmlController {
         music_prev.setOnAction(this::audioprev);
         music_next.setOnAction(this::audionext);
 
+        // Set the string to display
+        messageLabel.setText("Welcome to the Dashboard!");
+
+        // Apply animations
+        applyTypewriterEffect(messageLabel, "Keep your face always toward the sunshine, and shadows will fall behind you. ");
+
+        quotebox.setFillHeight(true);
+
+    }
+
+
+
+    @FXML
+    private Label messageLabel = new Label(); // Label to display the string
+
+    @FXML
+    HBox quotebox = new HBox(messageLabel);// Container for the quote
+
+    private void applyTypewriterEffect(Label label, String text) {
+        final int[] index = {0};
+        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(100), event -> {
+            if (index[0] <= text.length()) {
+                label.setText(text.substring(0, index[0])); // Reveal one character at a time
+                index[0]++;
+            }
+        }));
+        timeline.setCycleCount(text.length()); // Number of characters
+        timeline.play();
     }
 }
