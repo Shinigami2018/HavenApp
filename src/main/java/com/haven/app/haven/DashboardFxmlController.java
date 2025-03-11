@@ -102,6 +102,8 @@ public class DashboardFxmlController {
 
         Score.setText(String.valueOf(scr));
 
+        progressBar.setStyle("-fx-accent: #ea813b;");
+
 
         System.out.println(scr);
         if (scr <= 0) {
@@ -109,9 +111,14 @@ public class DashboardFxmlController {
             System.out.println(scr + "happy");
             stt.setText("STAY HAPPY");
         } else if (scr <= 6) {
-            double progress = scr / 100.0; // Assuming the score is out of 100
+            double progress = scr / 8.0; // Assuming the score is out of 100
             progressBar.setProgress(progress);
             stt.setText("Cheer UP");
+        }
+        else {
+            double progress = scr / 10.0; // Assuming the score is out of 100
+            progressBar.setProgress(progress);
+            stt.setText("STAY HAPPY");
         }
 
         if (gender != null) {
@@ -159,7 +166,7 @@ public class DashboardFxmlController {
         }
 
         String query = "SELECT date,moodscore FROM moodhistory WHERE user_id = ? ORDER BY date ASC";
-        int userID = getUserID(); // Replace with actual method to get the current user ID
+        int userID = ReportFxmlController.getUserID(); // Replace with actual method to get the current user ID
         System.out.println(userID);
         int score = 0;
         try {
@@ -227,7 +234,7 @@ public class DashboardFxmlController {
         }
 
         String query = "SELECT date,moodscore FROM moodhistory WHERE user_id = ? ORDER BY date ASC";
-        int userID = getUserID(); // Replace with actual method to get the current user ID
+        int userID = ReportFxmlController.getUserID(); // Replace with actual method to get the current user ID
         System.out.println(userID);
         try {
             PreparedStatement preparedStatement = connectDB.prepareStatement(query);

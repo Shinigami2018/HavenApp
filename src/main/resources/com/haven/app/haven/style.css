@@ -389,4 +389,8 @@
     -fx-scale-y: 1.1;
 }
 
+.progress_bar.bar{
+    -fx-background-color: black;
+}
+
 

@@ -136,7 +136,7 @@ public class PersonalityFxmlController implements Initializable {
         try {
             System.out.println("Score: " + score);
             String name = HelloController.usename;
-            HelloApplication.switchRoot("Dashboard.fxml", 1550, 830);
+            HelloApplication.switchRoot("login.fxml", 619, 434);
             saveScoreToDatabase(name, score);
             DashboardFxmlController.setScore(score); // eikhane ashole ki korte chacchis ARIFUL??? BOHUTKAHINI KOREO BUJLAM NA KAJ KI EITAR
 

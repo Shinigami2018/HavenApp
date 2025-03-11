@@ -295,7 +295,8 @@ public class HelloController {
         ToggleGroup genderGroup = new ToggleGroup();
         maleRadio.setToggleGroup(genderGroup);
         femaleRadio.setToggleGroup(genderGroup);
-        account_name.setText(UserName);
+        if(usename==null) account_name.setText(UserName);
+        else account_name.setText(usename);
         webView.setVisible(false);
         if (selectedGender != null) {
             if (selectedGender.equals("Male")) {

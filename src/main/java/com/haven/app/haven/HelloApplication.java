@@ -80,15 +80,6 @@ public class HelloApplication extends Application {
                     primaryStage.setResizable(true);
                     primaryStage.setMaximized(true);
                 }
-                /*primaryStage.setFullScreen(true);*/
-
-                // Handle exiting full-screen mode with custom size
-                /*primaryStage.fullScreenProperty().addListener((obs, wasFullScreen, isNowFullScreen) -> {
-                    if (!isNowFullScreen) {
-                        primaryStage.setWidth(width);
-                        primaryStage.setHeight(height);
-                    }
-                });*/
             }
             primaryStage.centerOnScreen();
 
@@ -97,22 +88,6 @@ public class HelloApplication extends Application {
             e.printStackTrace();
         }
     }
-
-
-    public static HostServices hostServices;
-
-    public void setHostServices(HostServices hostServices) {
-        this.hostServices = hostServices;
-    }
-    public static void openWebsite(String url) {
-        if (hostServices != null) {
-            hostServices.showDocument(url);
-        } else {
-            System.out.println("HostServices is not available.");
-        }
-    }
-    
-
     public static void main(String[] args) {
         launch();
     }
