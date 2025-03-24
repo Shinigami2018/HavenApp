@@ -51,21 +51,13 @@ Ensure you have the following installed:
    git clone https://github.com/yourusername/haven.git
    cd haven
    ```
-2️⃣ **Set up the MySQL database** using the provided schema.
-3️⃣ **Configure the `sms8.io` API and Python email settings** in the application.
+2️⃣ **Set up the MySQL database** using the provided schema.</br>
+3️⃣ **Configure the `sms8.io` API and Python email settings** in the application.</br>
 4️⃣ **Build and run the JavaFX application:**
    ```sh
    mvn clean install
    java --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml -jar target/haven.jar
    ```
-
----
-
-## 📌 Future Enhancements
-- 🤖 AI-based **mental health insights**.
-- 📈 Advanced **mood tracking analytics**.
-- 👫 Community **support features**.
-
 ---
 
 ## 📜 License
@@ -79,4 +71,5 @@ This project is licensed under the **MIT License**.
 - **MD Ariful Islam** [(@arifulmist)](https://github.com/arifulmist)
 
 ---
+## (Unmaintained)
 
